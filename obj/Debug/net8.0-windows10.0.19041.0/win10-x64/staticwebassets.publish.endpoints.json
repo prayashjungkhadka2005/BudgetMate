@@ -3,7 +3,7 @@
   "ManifestType": "Publish",
   "Endpoints": [
     {
-      "Route": "BudgetMate.12pitu2w07.styles.css",
+      "Route": "BudgetMate.aa3snr1njl.styles.css",
       "AssetFile": "BudgetMate.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -17,7 +17,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4191"
+          "Value": "4241"
         },
         {
           "Name": "Content-Type",
@@ -25,21 +25,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WeQFv3iSeNhuq22KkX8hJYDIJSF/zODmwaVL09hzmYk=\""
+          "Value": "\"Xm2B3BTq+JvYS653f4RO2obY0Dma/67TZ8MkdR7Ia6c=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Dec 2024 03:09:56 GMT"
+          "Value": "Fri, 27 Dec 2024 03:23:36 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "12pitu2w07"
+          "Value": "aa3snr1njl"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-WeQFv3iSeNhuq22KkX8hJYDIJSF/zODmwaVL09hzmYk="
+          "Value": "sha256-Xm2B3BTq+JvYS653f4RO2obY0Dma/67TZ8MkdR7Ia6c="
         },
         {
           "Name": "label",
@@ -62,7 +62,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4191"
+          "Value": "4241"
         },
         {
           "Name": "Content-Type",
@@ -70,17 +70,17 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WeQFv3iSeNhuq22KkX8hJYDIJSF/zODmwaVL09hzmYk=\""
+          "Value": "\"Xm2B3BTq+JvYS653f4RO2obY0Dma/67TZ8MkdR7Ia6c=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 27 Dec 2024 03:09:56 GMT"
+          "Value": "Fri, 27 Dec 2024 03:23:36 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-WeQFv3iSeNhuq22KkX8hJYDIJSF/zODmwaVL09hzmYk="
+          "Value": "sha256-Xm2B3BTq+JvYS653f4RO2obY0Dma/67TZ8MkdR7Ia6c="
         }
       ]
     },

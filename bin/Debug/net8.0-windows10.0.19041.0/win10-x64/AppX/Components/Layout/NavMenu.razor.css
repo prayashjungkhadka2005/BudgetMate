@@ -12,19 +12,19 @@
 }
 
 .logo {
-
+    padding-left: 10px;
     height: 2.2rem; 
     max-width: 100%;
 }
 
 
-    .navbar-toggler:checked {
-        background-color: rgba(255, 255, 255, 0.5);
-    }
+.navbar-toggler:checked {
+    background-color: rgba(255, 255, 255, 0.5);
+}
 
 .top-row {
     height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: #2A329C;
 }
 
 .navbar-brand {
@@ -42,6 +42,9 @@
 }
 
 
+.nav-item{
+    margin-top: 0.3rem;
+}
 
 .nav-item span {
     margin-right: 0.5rem;
