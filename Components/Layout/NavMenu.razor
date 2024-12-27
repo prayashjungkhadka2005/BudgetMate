@@ -1,27 +1,39 @@
 ﻿<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">BudgetMate</a>
+        <a class="navbar-brand" href="">
+            <img src="/assets/budgetmate.png" alt="BudgetMate Logo" class="logo" />
+        </a>
     </div>
 </div>
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+<input type="checkbox"
+       title="Navigation menu"
+       class="navbar-toggler"
+       aria-label="Toggle navigation menu" />
 
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+<div class="nav-scrollable" onclick="toggleSidebar()">
     <nav class="flex-column">
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+                <span class="fa-solid fa-columns" aria-hidden="true"></span> Overview
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
+                <span class="fas fa-plus-square" aria-hidden="true"></span> Transaction
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
+                <span class="fas fa-history" aria-hidden="true"></span> Expenses History
             </NavLink>
         </div>
     </nav>
 </div>
+
+<script>
+    function toggleSidebar() {
+        const toggler = document.querySelector('.navbar-toggler');
+        toggler.checked = !toggler.checked;
+    }
+</script>

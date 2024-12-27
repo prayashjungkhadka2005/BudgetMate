@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\BudgetMate.styles.css"
     },
     {
+      "Id": "C:\\Users\\User\\source\\repos\\BudgetMate\\wwwroot\\assets\\budgetmate.png",
+      "PackagePath": "staticwebassets\\assets\\budgetmate.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\BudgetMate\\wwwroot\\budgetmate.png",
+      "PackagePath": "staticwebassets\\budgetmate.png"
+    },
+    {
       "Id": "C:\\Users\\User\\source\\repos\\BudgetMate\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
@@ -15,6 +23,10 @@
     {
       "Id": "C:\\Users\\User\\source\\repos\\BudgetMate\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\BudgetMate\\wwwroot\\css\\image-removebg-preview (4).png",
+      "PackagePath": "staticwebassets\\css\\image-removebg-preview (4).png"
     },
     {
       "Id": "C:\\Users\\User\\source\\repos\\BudgetMate\\wwwroot\\favicon.png",

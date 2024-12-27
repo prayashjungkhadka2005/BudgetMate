@@ -1,5 +1,8 @@
+wwwroot\assets\budgetmate.png
+wwwroot\budgetmate.png
 wwwroot\css\app.css
 wwwroot\css\bootstrap\bootstrap.min.css
 wwwroot\css\bootstrap\bootstrap.min.css.map
+wwwroot\css\image-removebg-preview (4).png
 wwwroot\favicon.png
 wwwroot\index.html
