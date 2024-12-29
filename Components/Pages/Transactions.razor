@@ -5,7 +5,6 @@
 <div class="transaction-container">
     <div class="transaction-box">
         <form action="/" method="post">
-            <!-- Transaction Type Dropdown -->
             <div class="transaction-row">
                 <div class="trow-title">Transaction Type</div>
                 <div class="trow-field">
@@ -17,7 +16,6 @@
                 </div>
             </div>
 
-            <!-- Transaction Title -->
             <div class="transaction-row">
                 <div class="trow-title">Transaction Title</div>
                 <div class="trow-field">
@@ -25,7 +23,13 @@
                 </div>
             </div>
 
-            <!-- Amount -->
+            <div id="due-date-row" class="transaction-row" style="display: none;">
+                <div class="trow-title">Due Date</div>
+                <div class="trow-field">
+                    <input type="date" id="due-date-picker">
+                </div>
+            </div>
+
             <div class="transaction-row">
                 <div class="trow-title">Amount</div>
                 <div class="trow-field">
@@ -33,20 +37,24 @@
                 </div>
             </div>
 
-            <!-- Tags -->
-            <div class="transaction-row">
+            <div id="source-of-debt-row" class="transaction-row" style="display: none;">
+                <div class="trow-title">Source of Debt</div>
+                <div class="trow-field">
+                    <input type="text" placeholder="Enter Source of Debt" id="source-of-debt">
+                </div>
+            </div>
+
+            <div id="tags-row" class="transaction-row">
                 <div class="trow-title">Tags</div>
                 <div class="trow-field" id="tags-container">
-                    <!-- Tags will be dynamically updated here -->
+                    <!-- tags are updated here -->
                 </div>
 
-                <!-- Custom Tag Input -->
                 <div class="custom-tag-input" style="display: none;">
                     <input type="text" placeholder="Enter custom tag..." id="custom-tag-input">
                 </div>
             </div>
 
-            <!-- Submit Button -->
             <div class="transaction-row">
                 <div class="trow-field">
                     <button type="submit">Submit</button>
@@ -57,82 +65,73 @@
 </div>
 
 <script>
-    // Elements
-    const transactionTypeSelect = document.getElementById('transaction-type');
+       const transactionTypeSelect = document.getElementById('transaction-type');
+    const tagsRow = document.getElementById('tags-row');
     const tagsContainer = document.getElementById('tags-container');
     const customTagInput = document.querySelector('.custom-tag-input');
     const customTagInputField = document.getElementById('custom-tag-input');
+    const dueDateRow = document.getElementById('due-date-row');
+    const sourceOfDebtRow = document.getElementById('source-of-debt-row');
 
-    // Function to update form based on transaction type
     function updateFormFields() {
         const selectedType = transactionTypeSelect.value;
 
-        // Reset tag container
         tagsContainer.innerHTML = '';
         customTagInput.style.display = 'none';
+        dueDateRow.style.display = selectedType === 'debt' ? 'block' : 'none';
+        sourceOfDebtRow.style.display = selectedType === 'debt' ? 'block' : 'none';
+        tagsRow.style.display = selectedType === 'debt' ? 'none' : 'block'; 
 
-        // Define tags based on selected transaction type
         let tags = [];
-
-        if (selectedType === 'expense') { // Debit
+        if (selectedType === 'expense') {
             tags = ['Clothes', 'Rent', 'Groceries'];
-        } else if (selectedType === 'income') { // Credit
+        } else if (selectedType === 'income') {
             tags = ['Salary', 'Gifts', 'Savings', 'Refunds'];
-        } else if (selectedType === 'debt') { // Debt
-            tags = ['Loan', 'Repayment', 'Credit'];
         }
 
-        // Add the tag buttons dynamically
         tags.forEach(tag => {
             const tagButton = document.createElement('div');
             tagButton.classList.add('tag-button');
             tagButton.textContent = tag;
-            tagButton.onclick = () => toggleTag(tagButton, false);
+            tagButton.onclick = () => toggleTag(tagButton);
             tagsContainer.appendChild(tagButton);
         });
 
-        // Add the custom tag button
-        const customTagButton = document.createElement('div');
-        customTagButton.classList.add('tag-button');
-        customTagButton.textContent = 'Custom Tag';
-        customTagButton.onclick = () => toggleTag(customTagButton, true);
-        tagsContainer.appendChild(customTagButton);
+        if (selectedType !== 'debt') {
+            const customTagButton = document.createElement('div');
+            customTagButton.classList.add('tag-button');
+            customTagButton.textContent = 'Custom Tag';
+            customTagButton.onclick = () => toggleTag(customTagButton, true);
+            tagsContainer.appendChild(customTagButton);
+        }
     }
 
-    // Function to toggle tag selection
     function toggleTag(button, isCustom) {
         const allTags = document.querySelectorAll('.tag-button');
         allTags.forEach(tag => tag.classList.remove('selected'));
 
         button.classList.toggle('selected');
 
-        // Show/Hide custom tag input based on selection
         customTagInput.style.display = isCustom && button.classList.contains('selected') ? 'block' : 'none';
 
-        // Clear custom tag input field if not selected
         if (!isCustom || !button.classList.contains('selected')) {
             customTagInputField.value = '';
         }
     }
 
-    // Initialize form when the page loads
     updateFormFields();
-
-    // Update form when transaction type changes
     transactionTypeSelect.addEventListener('change', updateFormFields);
+
 </script>
 
-
-<!-- Add some CSS for styling the tags -->
 <style>
     .tag-button {
         border: 0.5px solid #293198;
         display: inline-block;
         padding: 5px 14px;
-        margin: 0px;
+        margin: 0;
         background-color: white;
         border-radius: 6px;
-
         cursor: pointer;
         transition: background-color 0.3s ease;
         color: #293198;
@@ -147,11 +146,44 @@
     #tags-container {
         display: flex;
         flex-wrap: wrap;
-        justify-content: start;
         gap: 10px;
+    }
+
+    .transaction-row {
+        margin-bottom: 15px;
     }
 
     .custom-tag-input {
         margin-top: 10px;
     }
+
+    input[type="text"], input[type="date"], select {
+        border: 1px solid #293198;
+        border-radius: 6px;
+        padding: 8px;
+        box-sizing: border-box;
+        font-size: 14px;
+        color: #293198;
+    }
+
+        input[type="text"]::placeholder, input[type="date"]::placeholder {
+            color: #999;
+        }
+
+        input[type="text"]:focus, input[type="date"]:focus, select:focus {
+            outline: none;
+            border-color: #293198;
+            box-shadow: 0 0 5px rgba(41, 49, 152, 0.5);
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            border-radius: 50%;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+    select {
+        background-color: white;
+    }
 </style>
+
