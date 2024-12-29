@@ -9,6 +9,10 @@ main[b-btdjf3oo18] {
     flex: 1;
 }
 
+.content[b-btdjf3oo18] {
+    padding-left: 1.4rem;  
+}
+
 .sidebar[b-btdjf3oo18] {
     background-image: linear-gradient(180deg, #2A329C 0%, #090606 100%);
 }
@@ -16,10 +20,13 @@ main[b-btdjf3oo18] {
 .top-row[b-btdjf3oo18] {
     background-color: #f7f7f7;
     border-bottom: 1px solid #d6d5d5;
-    justify-content: flex-end;
+    justify-content: flex-start;
     height: 3.5rem;
     display: flex;
     align-items: center;
+    font-weight:bold;
+    font-size: 1.25rem;
+    padding-left: 1rem;
 }
 
     .top-row[b-btdjf3oo18]  a, .top-row[b-btdjf3oo18]  .btn-link {
@@ -71,8 +78,8 @@ main[b-btdjf3oo18] {
             width: 0;
         }
 
+    /* Avoid overriding specific padding for .content */
     .top-row[b-btdjf3oo18], article[b-btdjf3oo18] {
-        padding-left: 2rem !important;
         padding-right: 1.5rem !important;
     }
 }
@@ -123,6 +130,7 @@ main[b-btdjf3oo18] {
 
 .nav-item[b-ah7ugpknd2]{
     margin-top: 0.3rem;
+    font-size: 15.5px;
 }
 
 .nav-item span[b-ah7ugpknd2] {
@@ -132,7 +140,7 @@ main[b-btdjf3oo18] {
 }
 
     .nav-item:first-of-type[b-ah7ugpknd2] {
-        padding-top: 1rem;
+        padding-top: 0.5rem;
     }
 
     .nav-item:last-of-type[b-ah7ugpknd2] {
@@ -179,3 +187,69 @@ main[b-btdjf3oo18] {
         overflow-y: auto;
     }
 }
+/* /Components/Pages/Transactions.razor.rz.scp.css */
+body[b-48be2bzejc] {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h3[b-48be2bzejc] {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.transaction-container[b-48be2bzejc] {
+    background-color: #F8F9FA;
+    border: 2px solid #293198;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 840px;
+    max-height: 400px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+.transaction-box[b-48be2bzejc] {
+    padding: 20px;
+}
+
+.transaction-row[b-48be2bzejc] {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.trow-title[b-48be2bzejc] {
+    flex: 1;
+    font-weight: bold;
+}
+
+.trow-field[b-48be2bzejc] {
+    flex: 2;
+}
+
+input[type="text"][b-48be2bzejc], select[b-48be2bzejc] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+button[b-48be2bzejc] {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #293198;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+    button:hover[b-48be2bzejc] {
+        background-color: #1f287b;
+    }

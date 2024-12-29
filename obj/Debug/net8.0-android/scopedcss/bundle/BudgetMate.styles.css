@@ -10,7 +10,7 @@ main[b-btdjf3oo18] {
 }
 
 .sidebar[b-btdjf3oo18] {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    background-image: linear-gradient(180deg, #2A329C 0%, #090606 100%);
 }
 
 .top-row[b-btdjf3oo18] {
@@ -91,18 +91,19 @@ main[b-btdjf3oo18] {
 }
 
 .logo[b-ah7ugpknd2] {
-    height: 2rem; /* Adjust height as needed */
+    padding-left: 10px;
+    height: 2.2rem; 
     max-width: 100%;
 }
 
 
-    .navbar-toggler:checked[b-ah7ugpknd2] {
-        background-color: rgba(255, 255, 255, 0.5);
-    }
+.navbar-toggler:checked[b-ah7ugpknd2] {
+    background-color: rgba(255, 255, 255, 0.5);
+}
 
 .top-row[b-ah7ugpknd2] {
     height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: #2A329C;
 }
 
 .navbar-brand[b-ah7ugpknd2] {
@@ -120,6 +121,9 @@ main[b-btdjf3oo18] {
 }
 
 
+.nav-item[b-ah7ugpknd2]{
+    margin-top: 0.3rem;
+}
 
 .nav-item span[b-ah7ugpknd2] {
     margin-right: 0.5rem;
@@ -174,4 +178,8 @@ main[b-btdjf3oo18] {
         height: calc(100vh - 3.5rem);
         overflow-y: auto;
     }
+}
+/* /Components/Pages/Transactions.razor.rz.scp.css */
+body[b-48be2bzejc]
+{
 }

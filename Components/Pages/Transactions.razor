@@ -1,0 +1,77 @@
+﻿@page "/transactions"
+
+<h3>Transaction</h3>
+
+<div class="transaction-container">
+    <div class="transaction-box">
+        <div class="transaction-row">
+            <form action="/" method="post">
+                <!-- Transaction Type Dropdown -->
+                <div class="transaction-row">
+
+                <div class="trow-title">
+                    Transaction Type
+                </div>
+                <div class="trow-field">
+                    <select name="transactionType">
+                        <option value="expense">Expense</option>
+                        <option value="income">Income</option>
+                        <option value="investment">Investment</option>
+                    </select>
+                </div>
+        </div>
+
+        <!-- Transaction Title Input -->
+        <div class="transaction-row">
+            <div class="trow-title">
+                Transaction Title
+            </div>
+            <div class="trow-field">
+                <input type="text" name="transactionTitle" value="" placeholder="Office Rent" />
+            </div>
+        </div>
+
+        <!-- Amount Input -->
+        <div class="transaction-row">
+            <div class="trow-title">
+                Amount
+            </div>
+            <div class="trow-field">
+                <input type="text" name="amount" value="" placeholder="$ 100" />
+            </div>
+        </div>
+
+        <!-- Tags Section -->
+        <div class="transaction-row">
+            <div class="trow-title">
+                Tags
+            </div>
+            <div class="trow-field">
+                <button type="button" class="tag-button">Clothes</button>
+                <button type="button" class="tag-button">Rent</button>
+                <button type="button" class="tag-button">Groceries</button>
+            </div>
+
+            <!-- Custom Tag Input -->
+            <div class="custom-tag">
+                <input type="text" name="customTag" value="" placeholder="Custom tag..." />
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="transaction-row">
+            <div class="trow-field">
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+        
+        </form>
+        </div>
+        </div>
+    </div>
+
+
+
+@code {
+    // You can add your C# logic here
+}

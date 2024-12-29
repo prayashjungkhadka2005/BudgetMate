@@ -1,5 +1,6 @@
 ﻿html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #F8F9FA;
 }
 
 a, .btn-link {
@@ -17,7 +18,8 @@ a, .btn-link {
 }
 
 .content {
-    padding-top: 1.1rem;
+    padding-top: 1.3rem;
+    
 }
 
 h1:focus {

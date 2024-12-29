@@ -1,0 +1,13 @@
+﻿body {
+    
+}
+
+.body, h3 {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.transaction-container {
+    background-color: deeppink;
+    border: #293198;
+}

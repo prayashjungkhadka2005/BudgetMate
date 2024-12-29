@@ -44,6 +44,7 @@
 
 .nav-item{
     margin-top: 0.3rem;
+    font-size: 15.5px;
 }
 
 .nav-item span {
@@ -53,7 +54,7 @@
 }
 
     .nav-item:first-of-type {
-        padding-top: 1rem;
+        padding-top: 0.5rem;
     }
 
     .nav-item:last-of-type {

@@ -43,9 +43,6 @@
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\wwwroot\assets\budgetmate.png">
       <PackagePath>wwwroot\assets\budgetmate.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\wwwroot\budgetmate.png">
-      <PackagePath>wwwroot\budgetmate.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\wwwroot\css\app.css">
       <PackagePath>wwwroot\css\app.css</PackagePath>
     </AppxPackagedFile>
@@ -54,12 +51,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\wwwroot\css\bootstrap\bootstrap.min.css.map">
       <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css.map</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\wwwroot\css\image-removebg-preview %284%29.png">
-      <PackagePath>wwwroot\css\image-removebg-preview %284%29.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\wwwroot\favicon.png">
-      <PackagePath>wwwroot\favicon.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\wwwroot\index.html">
       <PackagePath>wwwroot\index.html</PackagePath>
@@ -518,13 +509,16 @@
       <PackagePath>wwwroot\BudgetMate.styles.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\BudgetMate.bundle.scp.css">
-      <PackagePath>wwwroot\BudgetMate.aa3snr1njl.bundle.scp.css</PackagePath>
+      <PackagePath>wwwroot\BudgetMate.hxnu2jppty.bundle.scp.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\Components\Layout\MainLayout.razor.css">
       <PackagePath>Components\Layout\MainLayout.razor.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\Components\Layout\NavMenu.razor.css">
       <PackagePath>Components\Layout\NavMenu.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\Components\Pages\Transactions.razor.css">
+      <PackagePath>Components\Pages\Transactions.razor.css</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
