@@ -270,29 +270,8 @@ h3[b-48be2bzejc] {
         color: #293198;
     }
 
-.tag-button[b-48be2bzejc] {
-    border: 0.5px solid #293198;
-    font-size: 14px;
-    display: inline-block;
-    padding: 5px 12px;
-    margin-bottom: 8px;
-    margin-left: 3px;
-    border-radius: 6px;
-    background-color: white;
-    cursor: pointer;
-    font-weight: lighter;
-    color: #293198;
-}
 
-    .tag-button.selected[b-48be2bzejc] {
-        background-color: #293198;
-        color: white;
-        border-color: #293198;
-    }
 
-.custom-tag-input[b-48be2bzejc] {
-    display: none;
-}
 
     .custom-tag-input input[type="text"][b-48be2bzejc] {
         width: 100%;
@@ -323,10 +302,13 @@ button[b-48be2bzejc] {
         background-color: #1f287b;
     }
 
-.tag-button.selected[b-48be2bzejc] {
-    background-color: #293198;
-    color: white;
-}
+
+
+
+
+
+
+
 
 @media (min-width: 641px) {
     body[b-48be2bzejc] {
@@ -349,6 +331,7 @@ button[b-48be2bzejc] {
     .trow-field input[type="text"][b-48be2bzejc], select[b-48be2bzejc] {
         font-size: 16px;
     }
+
 
     .tag-button[b-48be2bzejc] {
         font-size: 16px;

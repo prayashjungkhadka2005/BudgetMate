@@ -5,45 +5,44 @@
 <div class="transaction-container">
     <div class="transaction-box">
         <form action="/" method="post">
+            <!-- Transaction Type Dropdown -->
             <div class="transaction-row">
                 <div class="trow-title">Transaction Type</div>
                 <div class="trow-field">
-                    <select name="transaction-type">
+                    <select name="transaction-type" id="transaction-type">
                         <option value="expense">Debit</option>
                         <option value="income">Credit</option>
-                        <option value="income">Debt</option>
-
-
+                        <option value="debt">Debt</option>
                     </select>
                 </div>
             </div>
 
+            <!-- Transaction Title -->
             <div class="transaction-row">
                 <div class="trow-title">Transaction Title</div>
                 <div class="trow-field">
-                    <input type="text" placeholder="Office Rent">
+                    <input type="text" placeholder="Office Rent" id="transaction-title">
                 </div>
             </div>
 
+            <!-- Amount -->
             <div class="transaction-row">
                 <div class="trow-title">Amount</div>
                 <div class="trow-field">
-                    <input type="text" placeholder="$100">
+                    <input type="text" placeholder="$100" id="transaction-amount">
                 </div>
             </div>
 
+            <!-- Tags -->
             <div class="transaction-row">
                 <div class="trow-title">Tags</div>
-                <div class="trow-field">
-                    <div class="tag-button" onclick="toggleTag(this)">Clothes</div>
-                    <div class="tag-button" onclick="toggleTag(this)">Rent</div>
-                    <div class="tag-button" onclick="toggleTag(this)">Groceries</div>
-                    <div class="tag-button" onclick="toggleCustomTag(this)">Custom Tag</div>
+                <div class="trow-field" id="tags-container">
+                    <!-- Tags will be dynamically updated here -->
                 </div>
 
-
-                <div class="custom-tag-input">
-                    <input type="text" placeholder="Enter custom tag...">
+                <!-- Custom Tag Input -->
+                <div class="custom-tag-input" style="display: none;">
+                    <input type="text" placeholder="Enter custom tag..." id="custom-tag-input">
                 </div>
             </div>
 
@@ -58,39 +57,101 @@
 </div>
 
 <script>
-    // Allow only one tag to be selected at a time
-    function toggleTag(button) {
-        // If Custom Tag is selected, unselect it
-        const customTagButton = document.querySelector('.tag-button:last-child');
-        const customTagInput = document.querySelector('.custom-tag-input');
+    // Elements
+    const transactionTypeSelect = document.getElementById('transaction-type');
+    const tagsContainer = document.getElementById('tags-container');
+    const customTagInput = document.querySelector('.custom-tag-input');
+    const customTagInputField = document.getElementById('custom-tag-input');
 
-        if (customTagButton.classList.contains('selected')) {
-            customTagButton.classList.remove('selected');
-            customTagInput.style.display = 'none'; // Hide custom tag input
+    // Function to update form based on transaction type
+    function updateFormFields() {
+        const selectedType = transactionTypeSelect.value;
+
+        // Reset tag container
+        tagsContainer.innerHTML = '';
+        customTagInput.style.display = 'none';
+
+        // Define tags based on selected transaction type
+        let tags = [];
+
+        if (selectedType === 'expense') { // Debit
+            tags = ['Clothes', 'Rent', 'Groceries'];
+        } else if (selectedType === 'income') { // Credit
+            tags = ['Salary', 'Gifts', 'Savings', 'Refunds'];
+        } else if (selectedType === 'debt') { // Debt
+            tags = ['Loan', 'Repayment', 'Credit'];
         }
 
-        // Unselect all other tags
-        const tags = document.querySelectorAll('.tag-button');
-        tags.forEach(tag => tag.classList.remove('selected'));
+        // Add the tag buttons dynamically
+        tags.forEach(tag => {
+            const tagButton = document.createElement('div');
+            tagButton.classList.add('tag-button');
+            tagButton.textContent = tag;
+            tagButton.onclick = () => toggleTag(tagButton, false);
+            tagsContainer.appendChild(tagButton);
+        });
 
-        // Toggle the clicked tag
-        button.classList.toggle('selected');
+        // Add the custom tag button
+        const customTagButton = document.createElement('div');
+        customTagButton.classList.add('tag-button');
+        customTagButton.textContent = 'Custom Tag';
+        customTagButton.onclick = () => toggleTag(customTagButton, true);
+        tagsContainer.appendChild(customTagButton);
     }
 
-    // Show/Hide custom tag input
-    function toggleCustomTag(button) {
-        const customTagInput = document.querySelector('.custom-tag-input');
+    // Function to toggle tag selection
+    function toggleTag(button, isCustom) {
+        const allTags = document.querySelectorAll('.tag-button');
+        allTags.forEach(tag => tag.classList.remove('selected'));
 
-        // Deselect other tags if custom tag is selected
-        const tags = document.querySelectorAll('.tag-button');
-        tags.forEach(tag => tag.classList.remove('selected'));
-
-        // Toggle custom tag button and input visibility
         button.classList.toggle('selected');
-        if (button.classList.contains('selected')) {
-            customTagInput.style.display = 'block'; // Show custom tag input
-        } else {
-            customTagInput.style.display = 'none'; // Hide custom tag input
+
+        // Show/Hide custom tag input based on selection
+        customTagInput.style.display = isCustom && button.classList.contains('selected') ? 'block' : 'none';
+
+        // Clear custom tag input field if not selected
+        if (!isCustom || !button.classList.contains('selected')) {
+            customTagInputField.value = '';
         }
     }
+
+    // Initialize form when the page loads
+    updateFormFields();
+
+    // Update form when transaction type changes
+    transactionTypeSelect.addEventListener('change', updateFormFields);
 </script>
+
+
+<!-- Add some CSS for styling the tags -->
+<style>
+    .tag-button {
+        border: 0.5px solid #293198;
+        display: inline-block;
+        padding: 5px 14px;
+        margin: 0px;
+        background-color: white;
+        border-radius: 6px;
+
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        color: #293198;
+    }
+
+        .tag-button.selected {
+            background-color: #293198;
+            color: white;
+            border-color: #293198;
+        }
+
+    #tags-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        gap: 10px;
+    }
+
+    .custom-tag-input {
+        margin-top: 10px;
+    }
+</style>

@@ -80,29 +80,8 @@ h3 {
         color: #293198;
     }
 
-.tag-button {
-    border: 0.5px solid #293198;
-    font-size: 14px;
-    display: inline-block;
-    padding: 5px 12px;
-    margin-bottom: 8px;
-    margin-left: 3px;
-    border-radius: 6px;
-    background-color: white;
-    cursor: pointer;
-    font-weight: lighter;
-    color: #293198;
-}
 
-    .tag-button.selected {
-        background-color: #293198;
-        color: white;
-        border-color: #293198;
-    }
 
-.custom-tag-input {
-    display: none;
-}
 
     .custom-tag-input input[type="text"] {
         width: 100%;
@@ -133,10 +112,13 @@ button {
         background-color: #1f287b;
     }
 
-.tag-button.selected {
-    background-color: #293198;
-    color: white;
-}
+
+
+
+
+
+
+
 
 @media (min-width: 641px) {
     body {
@@ -159,6 +141,7 @@ button {
     .trow-field input[type="text"], select {
         font-size: 16px;
     }
+
 
     .tag-button {
         font-size: 16px;
