@@ -1,77 +1,96 @@
 ﻿@page "/transactions"
 
-<h3>Transaction</h3>
+<h3>Transactions</h3>
 
 <div class="transaction-container">
     <div class="transaction-box">
-        <div class="transaction-row">
-            <form action="/" method="post">
-                <!-- Transaction Type Dropdown -->
-                <div class="transaction-row">
-
-                <div class="trow-title">
-                    Transaction Type
-                </div>
+        <form action="/" method="post">
+            <div class="transaction-row">
+                <div class="trow-title">Transaction Type</div>
                 <div class="trow-field">
-                    <select name="transactionType">
+                    <select name="transaction-type">
                         <option value="expense">Expense</option>
                         <option value="income">Income</option>
-                        <option value="investment">Investment</option>
+                        <option value="income">Debt</option>
+
+
                     </select>
                 </div>
-        </div>
-
-        <!-- Transaction Title Input -->
-        <div class="transaction-row">
-            <div class="trow-title">
-                Transaction Title
-            </div>
-            <div class="trow-field">
-                <input type="text" name="transactionTitle" value="" placeholder="Office Rent" />
-            </div>
-        </div>
-
-        <!-- Amount Input -->
-        <div class="transaction-row">
-            <div class="trow-title">
-                Amount
-            </div>
-            <div class="trow-field">
-                <input type="text" name="amount" value="" placeholder="$ 100" />
-            </div>
-        </div>
-
-        <!-- Tags Section -->
-        <div class="transaction-row">
-            <div class="trow-title">
-                Tags
-            </div>
-            <div class="trow-field">
-                <button type="button" class="tag-button">Clothes</button>
-                <button type="button" class="tag-button">Rent</button>
-                <button type="button" class="tag-button">Groceries</button>
             </div>
 
-            <!-- Custom Tag Input -->
-            <div class="custom-tag">
-                <input type="text" name="customTag" value="" placeholder="Custom tag..." />
+            <div class="transaction-row">
+                <div class="trow-title">Transaction Title</div>
+                <div class="trow-field">
+                    <input type="text" placeholder="Office Rent">
+                </div>
             </div>
-        </div>
 
-        <!-- Submit Button -->
-        <div class="transaction-row">
-            <div class="trow-field">
-                <button type="submit">Submit</button>
+            <div class="transaction-row">
+                <div class="trow-title">Amount</div>
+                <div class="trow-field">
+                    <input type="text" placeholder="$100">
+                </div>
             </div>
-        </div>
-        
+
+            <div class="transaction-row">
+                <div class="trow-title">Tags</div>
+                <div class="trow-field">
+                    <div class="tag-button" onclick="toggleTag(this)">Clothes</div>
+                    <div class="tag-button" onclick="toggleTag(this)">Rent</div>
+                    <div class="tag-button" onclick="toggleTag(this)">Groceries</div>
+                    <div class="tag-button" onclick="toggleCustomTag(this)">Custom Tag</div>
+                </div>
+
+
+                <div class="custom-tag-input">
+                    <input type="text" placeholder="Enter custom tag...">
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="transaction-row">
+                <div class="trow-field">
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
         </form>
-        </div>
-        </div>
     </div>
+</div>
 
+<script>
+    // Allow only one tag to be selected at a time
+    function toggleTag(button) {
+        // If Custom Tag is selected, unselect it
+        const customTagButton = document.querySelector('.tag-button:last-child');
+        const customTagInput = document.querySelector('.custom-tag-input');
 
+        if (customTagButton.classList.contains('selected')) {
+            customTagButton.classList.remove('selected');
+            customTagInput.style.display = 'none'; // Hide custom tag input
+        }
 
-@code {
-    // You can add your C# logic here
-}
+        // Unselect all other tags
+        const tags = document.querySelectorAll('.tag-button');
+        tags.forEach(tag => tag.classList.remove('selected'));
+
+        // Toggle the clicked tag
+        button.classList.toggle('selected');
+    }
+
+    // Show/Hide custom tag input
+    function toggleCustomTag(button) {
+        const customTagInput = document.querySelector('.custom-tag-input');
+
+        // Deselect other tags if custom tag is selected
+        const tags = document.querySelectorAll('.tag-button');
+        tags.forEach(tag => tag.classList.remove('selected'));
+
+        // Toggle custom tag button and input visibility
+        button.classList.toggle('selected');
+        if (button.classList.contains('selected')) {
+            customTagInput.style.display = 'block'; // Show custom tag input
+        } else {
+            customTagInput.style.display = 'none'; // Hide custom tag input
+        }
+    }
+</script>

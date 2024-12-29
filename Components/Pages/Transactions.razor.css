@@ -13,12 +13,12 @@ h3 {
 
 .transaction-container {
     background-color: #F8F9FA;
-    border: 2px solid #293198;
+    border: 0.5px solid #293198;
     border-radius: 6px;
     width: 100%;
     max-width: 840px;
-    max-height: 400px;
-    padding: 20px;
+    max-height: 490px;
+    padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
 }
@@ -29,26 +29,94 @@ h3 {
 
 .transaction-row {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     margin-bottom: 15px;
 }
 
+    .transaction-row select {
+        width: 100%;
+        padding: 8.5px 20px 8.5px 8.5px;
+        border: 0.5px solid #293198;
+        border-radius: 4px;
+        margin-top: 3px;
+        font-size: 14px;
+        color: #293198;
+        background-color: #fff;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-position: right 10px center;
+        background-repeat: no-repeat;
+        background-size: 12px;
+        background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 10 10%22%3E%3Cpath fill=%22%23333%22 d=%22M0 2l5 5 5-5z%22/%3E%3C/svg%3E');
+    }
+
+        .transaction-row select option {
+            color: #293198;
+        }
+
+        .transaction-row select:focus, .transaction-row select:active {
+            background-color: #f4f4f4;
+            color: #293198;
+        }
+
 .trow-title {
-    flex: 1;
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
-.trow-field {
-    flex: 2;
-}
-
-input[type="text"], select {
+.trow-field input[type="text"], select {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
+    padding: 8.5px;
+    border: 0.5px solid #293198;
     border-radius: 4px;
-    margin-top: 5px;
+    margin-top: 3px;
+    font-size: 14px;
+    color: #293198;
 }
+
+    .trow-field input[type="text"]::placeholder,
+    .custom-tag-input input[type="text"]::placeholder {
+        color: #293198;
+    }
+
+.tag-button {
+    border: 0.5px solid #293198;
+    font-size: 14px;
+    display: inline-block;
+    padding: 5px 12px;
+    margin-bottom: 8px;
+    margin-left: 3px;
+    border-radius: 6px;
+    background-color: white;
+    cursor: pointer;
+    font-weight: lighter;
+    color: #293198;
+}
+
+    .tag-button.selected {
+        background-color: #293198;
+        color: white;
+        border-color: #293198;
+    }
+
+.custom-tag-input {
+    display: none;
+}
+
+    .custom-tag-input input[type="text"] {
+        width: 100%;
+        padding: 8.5px;
+        border: 0.5px solid #293198;
+        border-radius: 4px;
+        margin-top: 3px;
+        font-size: 14px;
+        color: #293198;
+    }
+
+        .custom-tag-input input[type="text"]::placeholder {
+            color: #293198;
+        }
 
 button {
     padding: 8px 12px;
@@ -58,8 +126,14 @@ button {
     color: white;
     font-weight: bold;
     cursor: pointer;
+    width: 100%;
 }
 
     button:hover {
         background-color: #1f287b;
     }
+
+.tag-button.selected {
+    background-color: #293198;
+    color: white;
+}

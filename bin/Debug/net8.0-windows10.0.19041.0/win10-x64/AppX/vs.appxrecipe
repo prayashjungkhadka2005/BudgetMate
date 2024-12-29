@@ -30,25 +30,25 @@
     <AppXManifest Include="C:\Users\User\source\repos\BudgetMate\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-12-29T12:19:11.740</Modified>
+      <Modified>2024-12-29T14:18:40.981</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-12-29T12:19:11.541</Modified>
+      <Modified>2024-12-29T14:18:40.570</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\BudgetMate.runtimeconfig.json">
       <PackagePath>BudgetMate.runtimeconfig.json</PackagePath>
-      <Modified>2024-12-29T12:19:11.369</Modified>
+      <Modified>2024-12-29T14:18:40.199</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\BudgetMate.dll">
       <PackagePath>BudgetMate.dll</PackagePath>
-      <Modified>2024-12-29T12:19:11.014</Modified>
+      <Modified>2024-12-29T14:18:39.441</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>BudgetMate.exe</PackagePath>
-      <Modified>2024-12-29T12:19:11.023</Modified>
+      <Modified>2024-12-29T14:18:39.467</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -304,7 +304,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\BudgetMate.deps.json">
       <PackagePath>BudgetMate.deps.json</PackagePath>
-      <Modified>2024-12-29T12:19:11.365</Modified>
+      <Modified>2024-12-29T14:18:40.191</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.54\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
@@ -660,7 +660,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\staticwebassets.build.endpoints.json">
       <PackagePath>BudgetMate.staticwebassets.endpoints.json</PackagePath>
-      <Modified>2024-12-29T12:19:05.661</Modified>
+      <Modified>2024-12-29T14:18:17.812</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\.nuget\packages\microsoft.maui.controls.compatibility\8.0.83\lib\net8.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
@@ -676,15 +676,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\BudgetMate.styles.css">
       <PackagePath>wwwroot\BudgetMate.styles.css</PackagePath>
-      <Modified>2024-12-29T12:18:32.992</Modified>
+      <Modified>2024-12-29T14:17:31.476</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\BudgetMate.bundle.scp.css">
-      <PackagePath>wwwroot\BudgetMate.hxnu2jppty.bundle.scp.css</PackagePath>
-      <Modified>2024-12-29T12:18:32.996</Modified>
+      <PackagePath>wwwroot\BudgetMate.7puijzgbrf.bundle.scp.css</PackagePath>
+      <Modified>2024-12-29T14:17:31.478</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\Components\Layout\MainLayout.razor.css">
       <PackagePath>Components\Layout\MainLayout.razor.css</PackagePath>
-      <Modified>2024-12-29T12:18:32.313</Modified>
+      <Modified>2024-12-29T12:20:06.527</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\Components\Layout\NavMenu.razor.css">
       <PackagePath>Components\Layout\NavMenu.razor.css</PackagePath>
@@ -692,7 +692,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\Components\Pages\Transactions.razor.css">
       <PackagePath>Components\Pages\Transactions.razor.css</PackagePath>
-      <Modified>2024-12-29T12:15:59.459</Modified>
+      <Modified>2024-12-29T14:17:30.758</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
