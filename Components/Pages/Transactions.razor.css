@@ -35,7 +35,7 @@ h3 {
 
     .transaction-row select {
         width: 100%;
-        padding: 8.5px 20px 8.5px 8.5px;
+        padding: 8px 20px 8px 8.5px;
         border: 0.5px solid #293198;
         border-radius: 4px;
         margin-top: 3px;
@@ -67,7 +67,7 @@ h3 {
 
 .trow-field input[type="text"], select {
     width: 100%;
-    padding: 8.5px;
+    padding: 9px;
     border: 0.5px solid #293198;
     border-radius: 4px;
     margin-top: 3px;
@@ -153,7 +153,6 @@ button {
     }
 
     .transaction-row select {
-        padding: 10px 25px;
         font-size: 16px;
     }
 

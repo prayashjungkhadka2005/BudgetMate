@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BudgetMate")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+76f7f1391e25cfe64d307e418f86eb7713b9e05e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+a2686f839a7b83518fdbdc811c6a9e4e717e6d96")]
 [assembly: System.Reflection.AssemblyProductAttribute("BudgetMate")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BudgetMate")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,51 +3,6 @@
   "ManifestType": "Build",
   "Endpoints": [
     {
-      "Route": "BudgetMate.shnukic1hv.styles.css",
-      "AssetFile": "BudgetMate.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "8561"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"cO6lF3eeevso5BQ1oWUcRBnBIomASgvUeMew3mqN9KE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 29 Dec 2024 14:28:53 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "shnukic1hv"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-cO6lF3eeevso5BQ1oWUcRBnBIomASgvUeMew3mqN9KE="
-        },
-        {
-          "Name": "label",
-          "Value": "BudgetMate.styles.css"
-        }
-      ]
-    },
-    {
       "Route": "BudgetMate.styles.css",
       "AssetFile": "BudgetMate.styles.css",
       "Selectors": [],
@@ -62,7 +17,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8561"
+          "Value": "8526"
         },
         {
           "Name": "Content-Type",
@@ -70,17 +25,62 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"cO6lF3eeevso5BQ1oWUcRBnBIomASgvUeMew3mqN9KE=\""
+          "Value": "\"iMVu1rhUPogxrAULCaCpi5pT+SKBE8mXosq3kxAJ75g=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 29 Dec 2024 14:28:53 GMT"
+          "Value": "Sun, 29 Dec 2024 14:48:09 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-cO6lF3eeevso5BQ1oWUcRBnBIomASgvUeMew3mqN9KE="
+          "Value": "sha256-iMVu1rhUPogxrAULCaCpi5pT+SKBE8mXosq3kxAJ75g="
+        }
+      ]
+    },
+    {
+      "Route": "BudgetMate.wag0rq5a89.styles.css",
+      "AssetFile": "BudgetMate.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8526"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iMVu1rhUPogxrAULCaCpi5pT+SKBE8mXosq3kxAJ75g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 29 Dec 2024 14:48:09 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wag0rq5a89"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-iMVu1rhUPogxrAULCaCpi5pT+SKBE8mXosq3kxAJ75g="
+        },
+        {
+          "Name": "label",
+          "Value": "BudgetMate.styles.css"
         }
       ]
     },
