@@ -225,42 +225,30 @@ h3[b-48be2bzejc] {
 
     .transaction-row select[b-48be2bzejc] {
         width: 100%;
-        padding: 8.5px 20px 8.5px 8.5px; /* Keep the padding for the dropdown arrow */
-        border: 0.5px solid #293198; /* Blue border for consistency */
+        padding: 8.5px 20px 8.5px 8.5px;
+        border: 0.5px solid #293198;
         border-radius: 4px;
         margin-top: 3px;
         font-size: 14px;
-        color: #293198; /* Text color for the dropdown field */
-        background-color: #fff; /* White background for the dropdown */
-        appearance: none; /* Remove default appearance */
-        -webkit-appearance: none; /* Remove default appearance on Safari */
-        -moz-appearance: none; /* Remove default appearance on Firefox */
-        background-position: right 10px center; /* Position the dropdown arrow */
+        color: #293198;
+        background-color: #fff;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-position: right 10px center;
         background-repeat: no-repeat;
-        background-size: 12px; /* Adjust the size of the default arrow */
-        background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 10 10%22%3E%3Cpath fill=%22%23333%22 d=%22M0 2l5 5 5-5z%22/%3E%3C/svg%3E'); /* Default dropdown arrow */
+        background-size: 12px;
+        background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 10 10%22%3E%3Cpath fill=%22%23333%22 d=%22M0 2l5 5 5-5z%22/%3E%3C/svg%3E');
     }
 
-        /* Style the dropdown options */
         .transaction-row select option[b-48be2bzejc] {
-            background-color: #293198; /* White background for options */
-            color: #fff; /* Blue text color for options */
+            color: #293198;
         }
 
-        /* When the dropdown is open, the entire menu has a blue background */
         .transaction-row select:focus[b-48be2bzejc], .transaction-row select:active[b-48be2bzejc] {
-            background-color: #293198; /* Blue background when the dropdown is open */
-            color: white; /* White text for the dropdown */
+            background-color: #f4f4f4;
+            color: #293198;
         }
-
-        /* When hovering over an option, the background should turn white and the text blue */
-        .transaction-row select option:hover[b-48be2bzejc] {
-            background-color: #ffffff; /* White background for hovered option */
-            color: #293198; /* Blue text for hovered option */
-        }
-
-
-
 
 .trow-title[b-48be2bzejc] {
     font-weight: bold;
@@ -274,13 +262,12 @@ h3[b-48be2bzejc] {
     border-radius: 4px;
     margin-top: 3px;
     font-size: 14px;
-    color: #293198; /* Ensures text color inside input is correct */
+    color: #293198;
 }
 
-    /* Add this block to style the placeholder color */
     .trow-field input[type="text"][b-48be2bzejc]::placeholder,
     .custom-tag-input input[type="text"][b-48be2bzejc]::placeholder {
-        color: #293198; /* Placeholder text color */
+        color: #293198;
     }
 
 .tag-button[b-48be2bzejc] {
@@ -304,7 +291,7 @@ h3[b-48be2bzejc] {
     }
 
 .custom-tag-input[b-48be2bzejc] {
-    display: none; /* Initially hidden */
+    display: none;
 }
 
     .custom-tag-input input[type="text"][b-48be2bzejc] {
@@ -314,12 +301,11 @@ h3[b-48be2bzejc] {
         border-radius: 4px;
         margin-top: 3px;
         font-size: 14px;
-        color: #293198; /* Text color for the custom tag input */
+        color: #293198;
     }
 
-        /* Add this block to style the placeholder color for custom tag input */
         .custom-tag-input input[type="text"][b-48be2bzejc]::placeholder {
-            color: #293198; /* Placeholder text color */
+            color: #293198;
         }
 
 button[b-48be2bzejc] {
@@ -333,13 +319,44 @@ button[b-48be2bzejc] {
     width: 100%;
 }
 
-
-
-    button: hover[b-48be2bzejc] {
+    button:hover[b-48be2bzejc] {
         background-color: #1f287b;
     }
 
 .tag-button.selected[b-48be2bzejc] {
     background-color: #293198;
     color: white;
+}
+
+@media (min-width: 641px) {
+    body[b-48be2bzejc] {
+        font-size: 16px;
+    }
+
+    .transaction-container[b-48be2bzejc] {
+        max-width: 900px;
+        max-height: 600px;
+    }
+
+    .transaction-box[b-48be2bzejc] {
+        padding: 25px;
+    }
+
+    .transaction-row select[b-48be2bzejc] {
+        padding: 10px 25px;
+        font-size: 16px;
+    }
+
+    .trow-field input[type="text"][b-48be2bzejc], select[b-48be2bzejc] {
+        font-size: 16px;
+    }
+
+    .tag-button[b-48be2bzejc] {
+        font-size: 16px;
+        padding: 7px 14px;
+    }
+
+    button[b-48be2bzejc] {
+        padding: 10px 15px;
+    }
 }

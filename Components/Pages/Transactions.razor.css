@@ -137,3 +137,36 @@ button {
     background-color: #293198;
     color: white;
 }
+
+@media (min-width: 641px) {
+    body {
+        font-size: 16px;
+    }
+
+    .transaction-container {
+        max-width: 900px;
+        max-height: 600px;
+    }
+
+    .transaction-box {
+        padding: 25px;
+    }
+
+    .transaction-row select {
+        padding: 10px 25px;
+        font-size: 16px;
+    }
+
+    .trow-field input[type="text"], select {
+        font-size: 16px;
+    }
+
+    .tag-button {
+        font-size: 16px;
+        padding: 7px 14px;
+    }
+
+    button {
+        padding: 10px 15px;
+    }
+}

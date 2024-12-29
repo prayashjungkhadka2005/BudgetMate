@@ -327,3 +327,36 @@ button[b-48be2bzejc] {
     background-color: #293198;
     color: white;
 }
+
+@media (min-width: 641px) {
+    body[b-48be2bzejc] {
+        font-size: 16px;
+    }
+
+    .transaction-container[b-48be2bzejc] {
+        max-width: 900px;
+        max-height: 600px;
+    }
+
+    .transaction-box[b-48be2bzejc] {
+        padding: 25px;
+    }
+
+    .transaction-row select[b-48be2bzejc] {
+        padding: 10px 25px;
+        font-size: 16px;
+    }
+
+    .trow-field input[type="text"][b-48be2bzejc], select[b-48be2bzejc] {
+        font-size: 16px;
+    }
+
+    .tag-button[b-48be2bzejc] {
+        font-size: 16px;
+        padding: 7px 14px;
+    }
+
+    button[b-48be2bzejc] {
+        padding: 10px 15px;
+    }
+}
