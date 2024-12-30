@@ -1,5 +1,6 @@
 Components\Layout\MainLayout.razor.css
 Components\Layout\NavMenu.razor.css
+Components\Pages\Overview.razor.css
 Components\Pages\Transactions.razor.css
 OpenSans-Regular.ttf
 appicon.ico
@@ -59,10 +60,11 @@ splashSplashScreen.scale-150.png
 splashSplashScreen.scale-200.png
 splashSplashScreen.scale-400.png
 wwwroot\BudgetMate.styles.css
-wwwroot\BudgetMate.b7kkdfmafo.bundle.scp.css
+wwwroot\BudgetMate.pbrfhu248a.bundle.scp.css
 AboutAssets.txt
 wwwroot\assets\budgetmate.png
 wwwroot\css\app.css
 wwwroot\css\bootstrap\bootstrap.min.css
 wwwroot\css\bootstrap\bootstrap.min.css.map
+wwwroot\favicon.png
 wwwroot\index.html

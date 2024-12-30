@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Id": "C:\\Users\\User\\source\\repos\\BudgetMate\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
       "Id": "C:\\Users\\User\\source\\repos\\BudgetMate\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
