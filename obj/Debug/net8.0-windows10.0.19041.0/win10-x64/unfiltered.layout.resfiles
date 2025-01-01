@@ -1,5 +1,7 @@
+Components\Layout\FirstLayout.razor.css
 Components\Layout\MainLayout.razor.css
 Components\Layout\NavMenu.razor.css
+Components\Pages\Home.razor.css
 Components\Pages\Overview.razor.css
 Components\Pages\Transactions.razor.css
 OpenSans-Regular.ttf
@@ -60,7 +62,7 @@ splashSplashScreen.scale-150.png
 splashSplashScreen.scale-200.png
 splashSplashScreen.scale-400.png
 wwwroot\BudgetMate.styles.css
-wwwroot\BudgetMate.pbrfhu248a.bundle.scp.css
+wwwroot\BudgetMate.k98a4l499h.bundle.scp.css
 AboutAssets.txt
 wwwroot\assets\budgetmate.png
 wwwroot\css\app.css

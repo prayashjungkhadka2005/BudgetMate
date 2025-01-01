@@ -1,0 +1,9 @@
+.page[b-yde05lz0rl] {
+    background-image: linear-gradient(180deg, #2A329C 0%, #090606 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}

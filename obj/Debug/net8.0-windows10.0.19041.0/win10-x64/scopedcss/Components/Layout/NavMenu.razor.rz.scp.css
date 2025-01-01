@@ -88,6 +88,18 @@
     display: block;
 }
 
+.nav-scrollable .nav-link span[b-ah7ugpknd2] {
+    font-size: 1.4rem; 
+    display: inline-block;
+    vertical-align: middle; 
+}
+
+.nav-scrollable .nav-link[b-ah7ugpknd2] {
+    display: flex;
+    align-items: center; 
+    gap: 0.5rem; 
+}
+
 @media (min-width: 641px) {
     .navbar-toggler[b-ah7ugpknd2] {
         display: none;

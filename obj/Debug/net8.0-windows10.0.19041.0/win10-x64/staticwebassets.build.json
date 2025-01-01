@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NgxGLa2hG7zbXPAldQUkWGvXk25lrXUlHbYQZPlz0M0=",
+  "Hash": "mN+GNlK4relgKtQGDhEAFtxM5rSUYrgcQFzqKtRdNBQ=",
   "Source": "BudgetMate",
   "BasePath": "/",
   "Mode": "Root",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "pbrfhu248a",
-      "Integrity": "675qsjl1tVnRvh1Q/vQkgrsekwL8zgLnEzGUGgplxy0=",
+      "Fingerprint": "k98a4l499h",
+      "Integrity": "WMDWuJIoTakU5zUn/WeIYhopr7dNEpRwxuNaqxQRS+c=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\BudgetMate.styles.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "pbrfhu248a",
-      "Integrity": "675qsjl1tVnRvh1Q/vQkgrsekwL8zgLnEzGUGgplxy0=",
+      "Fingerprint": "k98a4l499h",
+      "Integrity": "WMDWuJIoTakU5zUn/WeIYhopr7dNEpRwxuNaqxQRS+c=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css"
@@ -279,7 +279,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8015"
+          "Value": "8602"
         },
         {
           "Name": "Content-Type",
@@ -287,11 +287,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"675qsjl1tVnRvh1Q/vQkgrsekwL8zgLnEzGUGgplxy0=\""
+          "Value": "\"WMDWuJIoTakU5zUn/WeIYhopr7dNEpRwxuNaqxQRS+c=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 29 Dec 2024 16:49:54 GMT"
+          "Value": "Wed, 01 Jan 2025 13:07:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -301,12 +301,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-675qsjl1tVnRvh1Q/vQkgrsekwL8zgLnEzGUGgplxy0="
+          "Value": "sha256-WMDWuJIoTakU5zUn/WeIYhopr7dNEpRwxuNaqxQRS+c="
         }
       ]
     },
     {
-      "Route": "BudgetMate.pbrfhu248a.bundle.scp.css",
+      "Route": "BudgetMate.k98a4l499h.bundle.scp.css",
       "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -316,7 +316,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8015"
+          "Value": "8602"
         },
         {
           "Name": "Content-Type",
@@ -324,11 +324,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"675qsjl1tVnRvh1Q/vQkgrsekwL8zgLnEzGUGgplxy0=\""
+          "Value": "\"WMDWuJIoTakU5zUn/WeIYhopr7dNEpRwxuNaqxQRS+c=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 29 Dec 2024 16:49:54 GMT"
+          "Value": "Wed, 01 Jan 2025 13:07:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -338,7 +338,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "pbrfhu248a"
+          "Value": "k98a4l499h"
         },
         {
           "Name": "label",
@@ -346,12 +346,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-675qsjl1tVnRvh1Q/vQkgrsekwL8zgLnEzGUGgplxy0="
+          "Value": "sha256-WMDWuJIoTakU5zUn/WeIYhopr7dNEpRwxuNaqxQRS+c="
         }
       ]
     },
     {
-      "Route": "BudgetMate.pbrfhu248a.styles.css",
+      "Route": "BudgetMate.k98a4l499h.styles.css",
       "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\BudgetMate.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -361,7 +361,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8015"
+          "Value": "8602"
         },
         {
           "Name": "Content-Type",
@@ -369,11 +369,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"675qsjl1tVnRvh1Q/vQkgrsekwL8zgLnEzGUGgplxy0=\""
+          "Value": "\"WMDWuJIoTakU5zUn/WeIYhopr7dNEpRwxuNaqxQRS+c=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 29 Dec 2024 16:49:54 GMT"
+          "Value": "Wed, 01 Jan 2025 13:07:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -383,7 +383,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "pbrfhu248a"
+          "Value": "k98a4l499h"
         },
         {
           "Name": "label",
@@ -391,7 +391,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-675qsjl1tVnRvh1Q/vQkgrsekwL8zgLnEzGUGgplxy0="
+          "Value": "sha256-WMDWuJIoTakU5zUn/WeIYhopr7dNEpRwxuNaqxQRS+c="
         }
       ]
     },
@@ -406,7 +406,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8015"
+          "Value": "8602"
         },
         {
           "Name": "Content-Type",
@@ -414,11 +414,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"675qsjl1tVnRvh1Q/vQkgrsekwL8zgLnEzGUGgplxy0=\""
+          "Value": "\"WMDWuJIoTakU5zUn/WeIYhopr7dNEpRwxuNaqxQRS+c=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 29 Dec 2024 16:49:54 GMT"
+          "Value": "Wed, 01 Jan 2025 13:07:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -428,7 +428,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-675qsjl1tVnRvh1Q/vQkgrsekwL8zgLnEzGUGgplxy0="
+          "Value": "sha256-WMDWuJIoTakU5zUn/WeIYhopr7dNEpRwxuNaqxQRS+c="
         }
       ]
     },

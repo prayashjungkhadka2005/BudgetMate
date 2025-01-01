@@ -1,0 +1,111 @@
+﻿@page "/login"
+@using BudgetMate.Components.Layout
+@layout FirstLayout
+
+<style>
+    .login-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        width: 100%;
+        max-width: 28rem;
+        color: white;
+    }
+
+
+        .login-header h1 {
+            font-size: 1.875rem;
+            font-weight: 700;
+        }
+
+    .login-form-container {
+        background-color: #ffffff;
+        padding: 3rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        width: 400px;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #4a5568;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            padding: 0.5rem;
+            margin-top: 0.25rem;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+            .form-group input:focus,
+            .form-group select:focus {
+                border-color: #FE6C05;
+                box-shadow: 0 0 0 3px rgba(254, 108, 5, 0.3);
+            }
+
+    .login-button {
+        width: 100%;
+        background-color: #FE6C05;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 300;
+        border-radius: 0.375rem;
+        padding: 0.75rem;
+        margin-top: 1rem;
+        cursor: pointer;
+        border: none;
+    }
+
+    .signup {
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+        .signup span {
+            color: darkblue;
+            font-weight: bold;
+            cursor: pointer;
+        }
+</style>
+
+<div class="login-container">
+    <div class="login-header">
+        <h1>Signup for free</h1>
+    </div>
+
+    <div class="login-form-container">
+        <form method="post" asp-action="Login">
+            <div class="form-group">
+                <label for="Username">Username</label>
+                <input type="text" id="Username" name="Username" placeholder="Enter your username" />
+            </div>
+
+            <div class="form-group">
+                <label for="Password">Password</label>
+                <input type="password" id="Password" name="Password" placeholder="Enter your password" />
+            </div>
+            <a href="overview"> <button type="submit" class="login-button">Login</button></a>
+            <div class="signup">
+                Not registered yet? <span> <a href="/" style="text-decoration: none"> Signup Now</a></span>
+            </div>
+        </form>
+    </div>
+</div>
+
