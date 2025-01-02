@@ -1,0 +1,154 @@
+body[b-48be2bzejc] {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h3[b-48be2bzejc] {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.transaction-container[b-48be2bzejc] {
+    background-color: #F8F9FA;
+    border: 0.5px solid #293198;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 840px;
+    max-height: 490px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+.transaction-box[b-48be2bzejc] {
+    padding: 20px;
+}
+
+.transaction-row[b-48be2bzejc] {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+    .transaction-row select[b-48be2bzejc] {
+        width: 100%;
+        padding: 8px 20px 8px 8.5px;
+        border: 0.5px solid #293198;
+        border-radius: 4px;
+        margin-top: 3px;
+        font-size: 14px;
+        color: #293198;
+        background-color: #fff;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-position: right 10px center;
+        background-repeat: no-repeat;
+        background-size: 12px;
+        background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 10 10%22%3E%3Cpath fill=%22%23333%22 d=%22M0 2l5 5 5-5z%22/%3E%3C/svg%3E');
+    }
+
+        .transaction-row select option[b-48be2bzejc] {
+            color: #293198;
+        }
+
+        .transaction-row select:focus[b-48be2bzejc], .transaction-row select:active[b-48be2bzejc] {
+            background-color: #f4f4f4;
+            color: #293198;
+        }
+
+.trow-title[b-48be2bzejc] {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.trow-field input[type="text"][b-48be2bzejc], select[b-48be2bzejc] {
+    width: 100%;
+    padding: 9px;
+    border: 0.5px solid #293198;
+    border-radius: 4px;
+    margin-top: 3px;
+    font-size: 14px;
+    color: #293198;
+}
+
+    .trow-field input[type="text"][b-48be2bzejc]::placeholder,
+    .custom-tag-input input[type="text"][b-48be2bzejc]::placeholder {
+        color: #293198;
+    }
+
+
+
+
+    .custom-tag-input input[type="text"][b-48be2bzejc] {
+        width: 100%;
+        padding: 8.5px;
+        border: 0.5px solid #293198;
+        border-radius: 4px;
+        margin-top: 3px;
+        font-size: 14px;
+        color: #293198;
+    }
+
+        .custom-tag-input input[type="text"][b-48be2bzejc]::placeholder {
+            color: #293198;
+        }
+
+button[b-48be2bzejc] {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #293198;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+    button:hover[b-48be2bzejc] {
+        background-color: #1f287b;
+    }
+
+
+
+
+
+
+
+
+
+@media (min-width: 641px) {
+    body[b-48be2bzejc] {
+        font-size: 16px;
+    }
+
+    .transaction-container[b-48be2bzejc] {
+        max-width: 900px;
+        max-height: 600px;
+    }
+
+    .transaction-box[b-48be2bzejc] {
+        padding: 25px;
+    }
+
+    .transaction-row select[b-48be2bzejc] {
+        font-size: 16px;
+    }
+
+    .trow-field input[type="text"][b-48be2bzejc], select[b-48be2bzejc] {
+        font-size: 16px;
+    }
+
+
+    .tag-button[b-48be2bzejc] {
+        font-size: 16px;
+        padding: 7px 17px;
+    }
+
+    button[b-48be2bzejc] {
+        padding: 10px 15px;
+    }
+}

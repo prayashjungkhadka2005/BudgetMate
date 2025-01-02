@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using BudgetMate.Components.Services;
 
 namespace BudgetMate
 {
@@ -19,6 +20,7 @@ namespace BudgetMate
 #if DEBUG
     		builder.Services.AddBlazorWebViewDeveloperTools();  
     		builder.Logging.AddDebug();
+            builder.Services.AddSingleton<UserService>();
 #endif
 
             return builder.Build();

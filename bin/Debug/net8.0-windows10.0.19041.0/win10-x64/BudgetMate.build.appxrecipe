@@ -512,7 +512,7 @@
       <PackagePath>wwwroot\BudgetMate.styles.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\BudgetMate.bundle.scp.css">
-      <PackagePath>wwwroot\BudgetMate.k98a4l499h.bundle.scp.css</PackagePath>
+      <PackagePath>wwwroot\BudgetMate.ihvxgaycsh.bundle.scp.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\Components\Layout\FirstLayout.razor.css">
       <PackagePath>Components\Layout\FirstLayout.razor.css</PackagePath>

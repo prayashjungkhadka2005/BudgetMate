@@ -1,0 +1,10 @@
+C:\Users\User\source\repos\BudgetMate\wwwroot\css\bootstrap\bootstrap.min.css.map
+C:\Users\User\source\repos\BudgetMate\wwwroot\css\app.css
+C:\Users\User\source\repos\BudgetMate\wwwroot\css\bootstrap\bootstrap.min.css
+C:\Users\User\source\repos\BudgetMate\wwwroot\index.html
+wwwroot\assets\budgetmate.png
+wwwroot\css\app.css
+wwwroot\css\bootstrap\bootstrap.min.css
+wwwroot\css\bootstrap\bootstrap.min.css.map
+wwwroot\favicon.png
+wwwroot\index.html

@@ -1,0 +1,113 @@
+.navbar-toggler[b-ah7ugpknd2] {
+    appearance: none;
+    cursor: pointer;
+    width: 3.5rem;
+    height: 2.5rem;
+    color: white;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") no-repeat center/1.75rem rgba(255, 255, 255, 0.1);
+}
+
+.logo[b-ah7ugpknd2] {
+    padding-left: 10px;
+    height: 2.2rem; 
+    max-width: 100%;
+}
+
+
+.navbar-toggler:checked[b-ah7ugpknd2] {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.top-row[b-ah7ugpknd2] {
+    height: 3.5rem;
+    background-color: #2A329C;
+}
+
+.navbar-brand[b-ah7ugpknd2] {
+    font-size: 1.1rem;
+}
+
+.bi[b-ah7ugpknd2] {
+    display: inline-block;
+    position: relative;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.75rem;
+    top: -1px;
+    background-size: cover;
+}
+
+
+.nav-item[b-ah7ugpknd2]{
+    margin-top: 0.3rem;
+    font-size: 15.5px;
+}
+
+.nav-item span[b-ah7ugpknd2] {
+    margin-right: 0.5rem;
+    font-size: 1.25rem;
+    color: white;
+}
+
+    .nav-item:first-of-type[b-ah7ugpknd2] {
+        padding-top: 0.5rem;
+    }
+
+    .nav-item:last-of-type[b-ah7ugpknd2] {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item[b-ah7ugpknd2]  a {
+        color: #d7d7d7;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+    }
+
+        .nav-item[b-ah7ugpknd2]  a.active {
+            background-color: rgba(255,255,255,0.37);
+            color: white;
+        }
+
+        .nav-item[b-ah7ugpknd2]  a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+.nav-scrollable[b-ah7ugpknd2] {
+    display: none;
+}
+
+.navbar-toggler:checked ~ .nav-scrollable[b-ah7ugpknd2] {
+    display: block;
+}
+
+.nav-scrollable .nav-link span[b-ah7ugpknd2] {
+    font-size: 1.4rem; 
+    display: inline-block;
+    vertical-align: middle; 
+}
+
+.nav-scrollable .nav-link[b-ah7ugpknd2] {
+    display: flex;
+    align-items: center; 
+    gap: 0.5rem; 
+}
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-ah7ugpknd2] {
+        display: none;
+    }
+
+    .nav-scrollable[b-ah7ugpknd2] {
+        display: block;
+        height: calc(100vh - 3.5rem);
+        overflow-y: auto;
+    }
+}
