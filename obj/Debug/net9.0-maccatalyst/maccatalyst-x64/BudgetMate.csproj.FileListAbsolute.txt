@@ -343,3 +343,9 @@ C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-maccatalyst\maccatalyst-x
 C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BudgetMate.pdb
 C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BudgetMate.genruntimeconfig.cache
 C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\ref\BudgetMate.dll
+C:\Users\User\source\repos\BudgetMate\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\SQLite-net.dll
+C:\Users\User\source\repos\BudgetMate\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\SQLitePCLRaw.batteries_v2.dll
+C:\Users\User\source\repos\BudgetMate\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\SQLitePCLRaw.core.dll
+C:\Users\User\source\repos\BudgetMate\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\User\source\repos\BudgetMate\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\libe_sqlite3.dylib
+C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BudgetMate.sourcelink.json

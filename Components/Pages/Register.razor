@@ -1,9 +1,11 @@
 ﻿@page "/register"
 @using BudgetMate.Components.Layout
 @using BudgetMate.Components.Models
-
 @inject NavigationManager NavigationManager
 @using Microsoft.AspNetCore.Components.Forms
+@using BudgetMate.Components.Services
+@inject UserService UserService
+
 
 
 @layout FirstLayout
@@ -23,7 +25,6 @@
         max-width: 28rem;
         color: white;
     }
-
 
         .signup-header h1 {
             font-size: 1.875rem;
@@ -79,6 +80,11 @@
         border: none;
     }
 
+        .signup-button:disabled {
+            background-color: #d1d5db;
+            cursor: not-allowed;
+        }
+
     .login {
         text-align: center;
         margin-top: 1rem;
@@ -89,43 +95,106 @@
             font-weight: bold;
             cursor: pointer;
         }
-
 </style>
 
 <div class="signup-container">
     <div class="signup-header">
-        <h1>Signup for free</h1>
+        <h1>Signup for Free</h1>
     </div>
 
     <div class="signup-form-container">
-        <form method="post" asp-action="Signup">
+        <form>
             <div class="form-group">
                 <label for="Username">Username</label>
-                <input type="text" id="Username" name="Username" placeholder="Enter your username" />
+                <input type="text" @bind="username" id="Username" placeholder="Enter your username" />
             </div>
 
             <div class="form-group">
                 <label for="Password">Password</label>
-                <input type="password" id="Password" name="Password" placeholder="Enter your password" />
+                <input type="password" @bind="password" id="Password" placeholder="Enter your password" />
             </div>
 
             <div class="form-group">
                 <label for="Currency">Select Currency</label>
-                <select id="Currency" name="Currency">
+                <select id="Currency" @bind="currency">
                     <option value="" disabled selected>Select your currency</option>
-                    <option value="USD">NPR - Nepalese Rupees</option>
+                    <option value="NPR">NPR - Nepalese Rupees</option>
                     <option value="USD">USD - United States Dollar</option>
                     <option value="EUR">EUR - Euro</option>
-
                     <option value="INR">INR - Indian Rupee</option>
-
                 </select>
             </div>
 
-            <a href="overview"> <button type="submit" class="signup-button">Signup now</button></a>
+            <button type="button" class="signup-button" @onclick="RegisterUser" > Signup Now
+            </button>
+
             <div class="login">
-                Already Registered? <span> <a href="login" style="text-decoration: none"> Login</a></span>
+                Already Registered? <span> <a href="login" style="text-decoration: none">Login</a></span>
             </div>
         </form>
     </div>
 </div>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <p style="color: @(isSuccess ? "green" : "red");">@message</p>
+}
+
+@code {
+    private string username;
+    private string password;
+    private string currency;
+    private string message;
+    private bool isLoading = false;
+    private bool isSuccess = false;
+
+    private async Task RegisterUser()
+    {
+        if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(currency))
+        {
+            message = "All fields are required.";
+            isSuccess = false;
+            return;
+        }
+
+
+        try
+        {
+            var user = new User
+                {
+                    Username = username,
+                    Password = password,
+                    PreferredCurrency = currency
+                };
+
+            bool success = UserService.RegisterUser(user);
+
+            if (success)
+            {
+                message = "Registration successful!";
+                isSuccess = true;
+
+                username = string.Empty;
+                password = string.Empty;
+                currency = string.Empty;
+
+                await Task.Delay(100); 
+                NavigationManager.NavigateTo("/overview");
+            }
+            else
+            {
+                message = "Username already exists. Please choose a different username.";
+                isSuccess = false;
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"An error occurred: {ex.Message}";
+            isSuccess = false;
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+}

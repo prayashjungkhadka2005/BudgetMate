@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,11 @@ namespace BudgetMate.Components.Models
 {
     public class User
     {
-        public string? Username { get; set; }
-        public string? Password { get; set; }
-        public string? Currency { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string PreferredCurrency { get; set; }
     }
 
 }

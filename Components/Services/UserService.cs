@@ -1,44 +1,51 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.Json;
+using SQLite;
 using BudgetMate.Components.Models;
 
 namespace BudgetMate.Components.Services
 {
     public class UserService
     {
-        private const string FilePath = "users.json";
+        private SQLiteConnection _database;
+        private string _dbPath;
 
-        public List<User> LoadUsers()
+        public UserService()
         {
-            if (!File.Exists(FilePath))
-                return new List<User>();
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); //desktop path
+            string folderPath = Path.Combine(desktopPath, "Test");
 
-            var json = File.ReadAllText(FilePath);
-            return JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath); 
+            }
+
+            _dbPath = Path.Combine(folderPath, "BudgetMate.db3"); //database path
+
+            _database = new SQLiteConnection(_dbPath); //creating connection
+
+            _database.CreateTable<User>(); //creating user table
+
+            Debug.WriteLine($"Database path: {_dbPath}");
+            Console.WriteLine($"Database path: {_dbPath}"); 
         }
 
-        public void SaveUsers(List<User> users)
+        public bool RegisterUser(User user)
         {
-            var json = JsonSerializer.Serialize(users, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(FilePath, json);
+            var existingUser = _database.Table<User>().FirstOrDefault(u => u.Username == user.Username); //checking if username exists
+            if (existingUser != null)
+            {
+                return false; 
+            }
+
+            _database.Insert(user); //inserting user
+            return true;
         }
 
-        public string HashPassword(string password)
+        public User LoginUser(string username, string password)
         {
-            using var sha256 = SHA256.Create();
-            var bytes = Encoding.UTF8.GetBytes(password);
-            var hash = sha256.ComputeHash(bytes);
-            return Convert.ToBase64String(hash);
-        }
-
-        public bool ValidatePassword(string inputPassword, string storedPassword)
-        {
-            var hashedInputPassword = HashPassword(inputPassword);
-            return hashedInputPassword == storedPassword;
+            return _database.Table<User>().FirstOrDefault(u => u.Username == username && u.Password == password); //validating username and password 
         }
     }
 }
