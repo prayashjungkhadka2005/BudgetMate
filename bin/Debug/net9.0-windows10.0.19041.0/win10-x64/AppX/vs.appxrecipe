@@ -30,7 +30,7 @@
     <AppXManifest Include="C:\Users\User\source\repos\BudgetMate\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-01-02T11:43:13.916</Modified>
+      <Modified>2025-01-02T11:59:41.921</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\BudgetMate.dll">
       <PackagePath>BudgetMate.dll</PackagePath>
-      <Modified>2025-01-02T11:43:13.233</Modified>
+      <Modified>2025-01-02T11:59:41.453</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>BudgetMate.exe</PackagePath>
-      <Modified>2025-01-02T11:43:13.317</Modified>
+      <Modified>2025-01-02T11:59:41.463</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
