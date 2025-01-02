@@ -65,63 +65,64 @@
 </div>
 
 <script>
-       const transactionTypeSelect = document.getElementById('transaction-type');
-    const tagsRow = document.getElementById('tags-row');
-    const tagsContainer = document.getElementById('tags-container');
-    const customTagInput = document.querySelector('.custom-tag-input');
-    const customTagInputField = document.getElementById('custom-tag-input');
-    const dueDateRow = document.getElementById('due-date-row');
-    const sourceOfDebtRow = document.getElementById('source-of-debt-row');
+    (function () {
+        const transactionTypeSelect = document.getElementById('transaction-type');
+        const tagsRow = document.getElementById('tags-row');
+        const tagsContainer = document.getElementById('tags-container');
+        const customTagInput = document.querySelector('.custom-tag-input');
+        const customTagInputField = document.getElementById('custom-tag-input');
+        const dueDateRow = document.getElementById('due-date-row');
+        const sourceOfDebtRow = document.getElementById('source-of-debt-row');
 
-    function updateFormFields() {
-        const selectedType = transactionTypeSelect.value;
+        function updateFormFields() {
+            const selectedType = transactionTypeSelect.value;
 
-        tagsContainer.innerHTML = '';
-        customTagInput.style.display = 'none';
-        dueDateRow.style.display = selectedType === 'debt' ? 'block' : 'none';
-        sourceOfDebtRow.style.display = selectedType === 'debt' ? 'block' : 'none';
-        tagsRow.style.display = selectedType === 'debt' ? 'none' : 'block'; 
+            tagsContainer.innerHTML = '';
+            customTagInput.style.display = 'none';
+            dueDateRow.style.display = selectedType === 'debt' ? 'block' : 'none';
+            sourceOfDebtRow.style.display = selectedType === 'debt' ? 'block' : 'none';
+            tagsRow.style.display = selectedType === 'debt' ? 'none' : 'block';
 
-        let tags = [];
-        if (selectedType === 'expense') {
-            tags = ['Clothes', 'Rent', 'Groceries'];
-        } else if (selectedType === 'income') {
-            tags = ['Salary', 'Gifts', 'Savings', 'Refunds'];
+            let tags = [];
+            if (selectedType === 'expense') {
+                tags = ['Clothes', 'Rent', 'Groceries'];
+            } else if (selectedType === 'income') {
+                tags = ['Salary', 'Gifts', 'Savings', 'Refunds'];
+            }
+
+            tags.forEach(tag => {
+                const tagButton = document.createElement('div');
+                tagButton.classList.add('tag-button');
+                tagButton.textContent = tag;
+                tagButton.onclick = () => toggleTag(tagButton);
+                tagsContainer.appendChild(tagButton);
+            });
+
+            if (selectedType !== 'debt') {
+                const customTagButton = document.createElement('div');
+                customTagButton.classList.add('tag-button');
+                customTagButton.textContent = 'Custom Tag';
+                customTagButton.onclick = () => toggleTag(customTagButton, true);
+                tagsContainer.appendChild(customTagButton);
+            }
         }
 
-        tags.forEach(tag => {
-            const tagButton = document.createElement('div');
-            tagButton.classList.add('tag-button');
-            tagButton.textContent = tag;
-            tagButton.onclick = () => toggleTag(tagButton);
-            tagsContainer.appendChild(tagButton);
-        });
+        function toggleTag(button, isCustom) {
+            const allTags = document.querySelectorAll('.tag-button');
+            allTags.forEach(tag => tag.classList.remove('selected'));
 
-        if (selectedType !== 'debt') {
-            const customTagButton = document.createElement('div');
-            customTagButton.classList.add('tag-button');
-            customTagButton.textContent = 'Custom Tag';
-            customTagButton.onclick = () => toggleTag(customTagButton, true);
-            tagsContainer.appendChild(customTagButton);
+            button.classList.toggle('selected');
+
+            customTagInput.style.display = isCustom && button.classList.contains('selected') ? 'block' : 'none';
+
+            if (!isCustom || !button.classList.contains('selected')) {
+                customTagInputField.value = '';
+            }
         }
-    }
 
-    function toggleTag(button, isCustom) {
-        const allTags = document.querySelectorAll('.tag-button');
-        allTags.forEach(tag => tag.classList.remove('selected'));
-
-        button.classList.toggle('selected');
-
-        customTagInput.style.display = isCustom && button.classList.contains('selected') ? 'block' : 'none';
-
-        if (!isCustom || !button.classList.contains('selected')) {
-            customTagInputField.value = '';
-        }
-    }
-
-    updateFormFields();
-    transactionTypeSelect.addEventListener('change', updateFormFields);
-
+        updateFormFields();
+        transactionTypeSelect.addEventListener('change', updateFormFields);
+    })();
 </script>
 
 <style>
