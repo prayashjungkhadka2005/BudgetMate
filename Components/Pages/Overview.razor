@@ -1,4 +1,7 @@
 ﻿@page "/overview"
+@using BudgetMate.Components.Services
+@using BudgetMate.Components.Layout
+@using BudgetMate.Components.Models
 @inject BudgetMate.Components.Services.UserService UserService
 
 <h1>Dashboard</h1>
@@ -20,12 +23,12 @@
 
     <div class="col">
         <div class="title">Cleared debt</div>
-        <div class="value">$180</div>
+        <div class="value">$@ClearedDebts</div>
     </div>
 
     <div class="col">
         <div class="title">Remaining debt</div>
-        <div class="value">$10</div>
+        <div class="value">@RemainingDebts</div>
     </div>
 </div>
 
@@ -70,7 +73,8 @@
                     <td>@debt.SourceOfDebt</td>
                     <td>$@debt.DebtAmount</td>
                     <td>
-                        <button class="clear-btn">Clear</button>
+                        <button class="clear-btn" @onclick="() => ClearDebt(debt.DebtId)">Clear</button>
+
                     </td>
                 </tr>
             }
@@ -86,10 +90,12 @@
     private int TotalInflows { get; set; }
     private int TotalOutflows { get; set; }
     private int TotalDebt { get; set; }
+    private int RemainingDebts { get; set; }
+    private int ClearedDebts { get; set; }
     private int TotalNumberOfTransactions { get; set; }
     private int TotalAmountOfTransactions { get; set; }
 
-
+    private List<Debt> pendingDebts { get; set; }
 
     protected override void OnInitialized()
     {
@@ -98,7 +104,53 @@
         TotalDebt = UserService.GetTotalDebt();
         TotalNumberOfTransactions = UserService.GetTotalNumberOfTransactions();
         TotalAmountOfTransactions = UserService.GetTotalTransactionsAmount();
+        pendingDebts = UserService.GetPendingDebts();
+        RemainingDebts = UserService.GetRemainingDebt();
+        ClearedDebts = UserService.GetClearedDebt();
     }
+
+    private void ClearDebt(int debtId)
+    {
+        // Find the debt from the list
+        var debtToClear = pendingDebts.FirstOrDefault(debt => debt.DebtId == debtId);
+
+        if (debtToClear != null && TotalInflows >= debtToClear.DebtAmount)
+        {
+            // Deduct debt amount from TotalInflows
+            TotalInflows -= debtToClear.DebtAmount;
+
+            // Deduct debt from TotalDebt
+            TotalDebt -= debtToClear.DebtAmount;
+
+            // Mark the debt as cleared in the database
+            bool isCleared = UserService.ClearDebt(debtId); // This method will update the IsCleared property
+
+            if (isCleared)
+            {
+                // After successfully marking the debt as cleared, remove it from the list
+                debtToClear.isCleared = true;
+                pendingDebts.Remove(debtToClear);
+
+                // Refresh the list of pending debts (updated after clearing)
+                pendingDebts = UserService.GetPendingDebts();
+
+                // Successfully cleared, re-render page
+                StateHasChanged();
+            }
+            else
+            {
+                Console.WriteLine("Failed to clear debt.");
+            }
+        }
+        else
+        {
+            // Handle case when no sufficient inflow or debt not found
+            Console.WriteLine("Not enough inflows to clear the debt or debt not found.");
+        }
+    }
+
+
+
 }
 
 <style>

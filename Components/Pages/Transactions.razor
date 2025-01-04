@@ -153,6 +153,7 @@
         else if (transactiontype == "debt")
         {
             var date = DateTime.Now;
+            bool isCleared = false;
             var newDebt = new Debt
                 {
                     DebtTransactionTitle = transactiontitle,
@@ -160,6 +161,7 @@
                     DebtDueDate = debtduedate.ToString("yyyy-MM-dd"),
                     SourceOfDebt = sourceofdebt,
                     DebtTransactionDate = date.ToString("yyyy-MM-dd"),
+                    isCleared = isCleared,
                 };
             success = UserService.AddDebtTransaction(newDebt);
         }

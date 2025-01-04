@@ -1,120 +1,182 @@
 ﻿@page "/debitmanagement"
+@using BudgetMate.Components.Services
+@using BudgetMate.Components.Layout
+@using BudgetMate.Components.Models
+@inject NavigationManager NavigationManager
+@using Microsoft.AspNetCore.Components.Forms
+@inject BudgetMate.Components.Services.UserService UserService
 
-<h3>Debit Management</h3>
+
+<h3>Transaction Management</h3>
+<table class="transactions-table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Tags/Source</th>
+            <th>Note</th>
+            <th>Type</th> <!-- New column added -->
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transaction in transactions)
+        {
+            <tr>
+                <td>@transaction.TransactionDate</td>
+                <td>$@transaction.Amount</td>
+                <td>@string.Join(", ", string.IsNullOrEmpty(transaction.Tags) ? new List<string>() : transaction.Tags.Split(',').ToList())</td>
+                <td>@(transaction.Note ?? "No note added")</td>
+                <td>@transaction.Type</td> <!-- Assuming 'Type' is a property of the 'Transaction' model -->
+                <td>
+                    <button class="add-note-btn" @onclick="() => OpenNoteModal(transaction)">Add/Update Note</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (isNoteModalOpen)
+{
+    <div class="modal">
+        <div class="modal-content">
+            <h4>Add or Update Note</h4>
+            <textarea @bind="selectedTransaction.Note" placeholder="Enter a note..."></textarea>
+            <div class="modal-actions">
+                <button @onclick="SaveNote">Save</button>
+                <button @onclick="CloseNoteModal">Cancel</button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private List<Transaction> transactions = new();
+    private Transaction selectedTransaction;
+    private bool isNoteModalOpen = false;
+
+    protected override void OnInitialized()
+    {
+        transactions = UserService.GetAllTransactions(); // Fetch all transactions
+    }
 
 
+    private void OpenNoteModal(Transaction transaction)
+    {
+        selectedTransaction = transaction;
+        isNoteModalOpen = true;
+    }
+
+    private void CloseNoteModal()
+    {
+        isNoteModalOpen = false;
+        selectedTransaction = null;
+    }
+
+    private void SaveNote()
+    {
+        if (selectedTransaction != null)
+        {
+            UserService.UpdateNote(selectedTransaction.TransactionID, selectedTransaction.Note);
+        }
+        isNoteModalOpen = false;
+        selectedTransaction = null;
+        StateHasChanged(); // Refresh the UI
+    }
+
+}
 
 <style>
-    .login-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .login-header {
+    h3 {
         text-align: center;
-        margin-bottom: 1.5rem;
+        margin: 20px 0;
+    }
+
+    .transactions-table {
         width: 100%;
-        max-width: 28rem;
+        border-collapse: collapse;
+        margin: 20px auto;
+    }
+
+        .transactions-table th, .transactions-table td {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .transactions-table th {
+            background-color: #f8f8f8;
+        }
+
+    .add-note-btn {
+        background-color: #007bff;
         color: white;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
     }
 
-
-        .login-header h1 {
-            font-size: 1.875rem;
-            font-weight: 700;
+        .add-note-btn:hover {
+            background-color: #0056b3;
         }
 
-    .login-form-container {
-        background-color: #ffffff;
-        padding: 3rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+    .modal-content {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
         width: 400px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .form-group {
-        margin-bottom: 1rem;
-    }
-
-        .form-group label {
-            display: block;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #4a5568;
+        .modal-content h4 {
+            margin-bottom: 15px;
         }
 
-        .form-group input,
-        .form-group select {
+        .modal-content textarea {
             width: 100%;
-            border: 1px solid #d1d5db;
-            border-radius: 0.375rem;
-            padding: 0.5rem;
-            margin-top: 0.25rem;
-            outline: none;
-            transition: border-color 0.3s, box-shadow 0.3s;
+            height: 100px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
         }
 
-            .form-group input:focus,
-            .form-group select:focus {
-                border-color: #FE6C05;
-                box-shadow: 0 0 0 3px rgba(254, 108, 5, 0.3);
+    .modal-actions {
+        text-align: right;
+    }
+
+        .modal-actions button {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+            .modal-actions button:hover {
+                background-color: #0056b3;
             }
 
-    .login-button {
-        width: 100%;
-        background-color: #FE6C05;
-        color: #ffffff;
-        font-size: 18px;
-        font-weight: 300;
-        border-radius: 0.375rem;
-        padding: 0.75rem;
-        margin-top: 1rem;
-        cursor: pointer;
-        border: none;
-    }
+            .modal-actions button:last-child {
+                background-color: #6c757d;
+            }
 
-    .signup {
-        text-align: center;
-        margin-top: 1rem;
-    }
-
-        .signup span {
-            color: darkblue;
-            font-weight: bold;
-            cursor: pointer;
-        }
+                .modal-actions button:last-child:hover {
+                    background-color: #5a6268;
+                }
 </style>
-
-<div class="login-container">
-    <div class="login-header">
-        <h1>Login to BudgetMate</h1>
-    </div>
-
-    <div class="login-form-container">
-        <form>
-
-           
-
-            <div class="form-group">
-                <label for="Username">Username</label>
-                <input type="text"  id="Username" name="Username" placeholder="Enter your username" />
-            </div>
-
-            <div class="form-group">
-                <label for="Password">Password</label>
-                <input type="password"  id="Password" name="Password" placeholder="Enter your password" />
-            </div>
-
-            <button type="button" class="login-button" >Login</button>
-
-
-            <div class="signup">
-                Not registered yet? <span> <a href="/register" style="text-decoration: none"> Signup Now</a></span>
-            </div>
-        </form>
-    </div>
-</div>
-
-
