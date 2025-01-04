@@ -125,7 +125,7 @@
             var success = UserService.AddDebitTransaction(newDebit);
             if (success)
             {
-                message = "Transaction added successfully!";
+                message = "Debit Transaction added successfully!";
                 isSuccess = true;
                 transactiontitle = string.Empty;
                 transactionamount = 0;
@@ -133,10 +133,36 @@
             }
             else
             {
-                message = "Failed to add transaction.";
+                message = "Failed to add debit transaction.";
                 isSuccess = false;
             }
         }
+
+        else if (transactiontype == "income") 
+        {
+            var newCredit = new Credit
+                {
+                    CreditTransactionTitle = transactiontitle,
+                    CreditAmount = transactionamount,
+                    CreditTags = transactionTags
+                };
+
+            var success = UserService.AddCreditTransaction(newCredit);
+            if (success)
+            {
+                message = "Credit Transaction added successfully!";
+                isSuccess = true;
+                transactiontitle = string.Empty;
+                transactionamount = 0;
+                customtag = string.Empty;
+            }
+            else
+            {
+                message = "Failed to add credit transaction.";
+                isSuccess = false;
+            }
+        }
+
     }
 }
 

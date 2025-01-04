@@ -99,13 +99,11 @@ namespace BudgetMate.Components.Services
 
             try
             {
-                // Begin transaction
+               
                 _database.BeginTransaction();
 
-                // Insert debit transaction into the database
                 _database.Insert(debit);
 
-                // Commit the transaction
                 _database.Commit();
 
                 Debug.WriteLine("Debit transaction inserted successfully.");
@@ -113,7 +111,7 @@ namespace BudgetMate.Components.Services
             }
             catch (SQLiteException ex)
             {
-                _database.Rollback(); // Roll back the transaction in case of an error
+                _database.Rollback(); 
                 Debug.WriteLine($"Error inserting debit transaction: {ex.Message}");
                 return false;
             }
@@ -123,5 +121,41 @@ namespace BudgetMate.Components.Services
                 return false;
             }
         }
+
+        public bool AddCreditTransaction(Credit credit)
+        {
+            Debug.WriteLine($"Credit transaction: Title={credit.CreditTransactionTitle}, Amount={credit.CreditAmount}, Tag={credit.CreditTags}");
+
+            if (credit == null|| string.IsNullOrEmpty(credit.CreditTransactionTitle) || credit.CreditAmount <= 0)
+            {
+                Debug.WriteLine("Invalid credit transaction data");
+                return false;
+            }
+
+            try
+            {
+                
+                _database.BeginTransaction();
+
+                _database.Insert(credit);
+
+                _database.Commit();
+
+                Debug.WriteLine("Credit transaction inserted successfully");
+                return true;
+            }
+            catch (SQLiteException ex)
+            {
+                _database.Rollback(); 
+                Debug.WriteLine($"Error inserting credit transaction: {ex.Message}");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Unexpected error: {ex.Message}");
+                return false;
+            }
+        }
+
     }
 }
