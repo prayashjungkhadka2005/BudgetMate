@@ -86,12 +86,12 @@
     private string customtag;
     private string message;
     private bool isSuccess = false;
-    private static string selectedTag;  // Make it static
+    private static string selectedTag; 
 
     [JSInvokable]
     public static void SetSelectedTag(string tag)
     {
-        selectedTag = tag;  // Now it's valid to access static fields in a static method
+        selectedTag = tag;  
     }
 
 
@@ -104,8 +104,7 @@
             return;
         }
 
-        // Check if a tag has been selected
-        string transactionTags = selectedTag ?? customtag;
+       string transactionTags = !string.IsNullOrEmpty(customtag) ? customtag : selectedTag;
 
         if (string.IsNullOrEmpty(transactionTags)) 
         {
@@ -114,7 +113,7 @@
             return;
         }
 
-        if (transactiontype == "expense") // Only handle debit for now
+        if (transactiontype == "expense") 
         {
             var newDebit = new Debit
                 {
@@ -158,7 +157,7 @@
     function updateFormFields() {
         const selectedType = transactionTypeSelect.value;
 
-        tagsContainer.innerHTML = '';  // Clear existing tags
+        tagsContainer.innerHTML = '';  // clear existing tags
         customTagInput.style.display = 'none';
         dueDateRow.style.display = selectedType === 'debt' ? 'block' : 'none';
         sourceOfDebtRow.style.display = selectedType === 'debt' ? 'block' : 'none';
@@ -200,19 +199,19 @@
             customTagInputField.value = '';
         }
 
-        // Update the selectedTag or custom tag
-        if (!isCustom) {
-            selectedTag = button.textContent; // Store the tag name like 'Rent', 'Groceries'
-        } else if (isCustom && customTagInputField.value) {
-            selectedTag = customTagInputField.value; // Store the custom tag
-        }
+       
+    if (isCustom && customTagInputField.value) {  // update the custom tag if the custom input field is filled
+        selectedTag = customTagInputField.value; // store the custom tag
+    } else if (!isCustom) {
+        selectedTag = button.textContent; // store the predefined tag
+    }
 
-        // Use JS Interop to send the selectedTag back to Blazor
-       DotNet.invokeMethodAsync('BudgetMate', 'SetSelectedTag', selectedTag);
+   
+       DotNet.invokeMethodAsync('BudgetMate', 'SetSelectedTag', selectedTag);      // uses JS Interop to send the selectedTag back to Blazor
 
     }
 
-    updateFormFields();  // Render the initial tags
+    updateFormFields();  // rendering the initial tags
     transactionTypeSelect.addEventListener('change', updateFormFields);
 })();
 
