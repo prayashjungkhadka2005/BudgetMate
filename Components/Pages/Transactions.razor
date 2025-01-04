@@ -77,43 +77,49 @@
 </div>
 
 @code {
-    @code {
     private string transactiontype;
     private string transactiontitle;
     private int transactionamount;
-    private DateTime debtduedate;
+    private DateTime debtduedate = DateTime.MinValue;
     private string sourceofdebt;
     private string customtag;
     private string message;
     private bool isSuccess = false;
-    private static string selectedTag; 
+    private static string selectedTag;
 
     [JSInvokable]
     public static void SetSelectedTag(string tag)
     {
-        selectedTag = tag;  
+        selectedTag = tag;
     }
-
 
     private async Task HandleSubmit()
     {
         if (string.IsNullOrEmpty(transactiontitle) || transactionamount <= 0)
         {
-            message = "Please provide valid transaction details.";
+            message = "Transaction title and amount are required.";
             isSuccess = false;
             return;
         }
 
-       string transactionTags = !string.IsNullOrEmpty(customtag) ? customtag : selectedTag;
+        if (transactiontype == "debt" && debtduedate == DateTime.MinValue)
+        {
+            message = "Please select a valid due date for debt.";
+            isSuccess = false;
+            return;
+        }
 
-        if (string.IsNullOrEmpty(transactionTags)) 
+        string transactionTags = !string.IsNullOrEmpty(customtag) ? customtag : selectedTag;
+
+        if (string.IsNullOrEmpty(transactionTags))
         {
             message = "Please select or enter a tag.";
             isSuccess = false;
             return;
         }
 
-        if (transactiontype == "expense") 
+        var success = false;
+        if (transactiontype == "expense")
         {
             var newDebit = new Debit
                 {
@@ -121,24 +127,9 @@
                     DebitAmount = transactionamount,
                     DebitTags = transactionTags
                 };
-
-            var success = UserService.AddDebitTransaction(newDebit);
-            if (success)
-            {
-                message = "Debit Transaction added successfully!";
-                isSuccess = true;
-                transactiontitle = string.Empty;
-                transactionamount = 0;
-                customtag = string.Empty;
-            }
-            else
-            {
-                message = "Failed to add debit transaction.";
-                isSuccess = false;
-            }
+            success = UserService.AddDebitTransaction(newDebit);
         }
-
-        else if (transactiontype == "income") 
+        else if (transactiontype == "income")
         {
             var newCredit = new Credit
                 {
@@ -146,33 +137,47 @@
                     CreditAmount = transactionamount,
                     CreditTags = transactionTags
                 };
-
-            var success = UserService.AddCreditTransaction(newCredit);
-            if (success)
-            {
-                message = "Credit Transaction added successfully!";
-                isSuccess = true;
-                transactiontitle = string.Empty;
-                transactionamount = 0;
-                customtag = string.Empty;
-            }
-            else
-            {
-                message = "Failed to add credit transaction.";
-                isSuccess = false;
-            }
+            success = UserService.AddCreditTransaction(newCredit);
+        }
+        else if (transactiontype == "debt")
+        {
+            var newDebt = new Debt
+                {
+                    DebtTransactionTitle = transactiontitle,
+                    DebtAmount = transactionamount,
+                    DebtDueDate = debtduedate.ToString("yyyy-MM-dd"),
+                    SourceOfDebt = sourceofdebt,
+                };
+            success = UserService.AddDebtTransaction(newDebt);
         }
 
+        if (success)
+        {
+            message = $"{transactiontype} transaction added successfully!";
+            isSuccess = true;
+            ClearForm();
+        }
+        else
+        {
+            message = $"Failed to add {transactiontype} transaction.";
+            isSuccess = false;
+        }
+    }
+
+    private void ClearForm()
+    {
+        transactiontitle = string.Empty;
+        transactionamount = 0;
+        customtag = string.Empty;
+        sourceofdebt = string.Empty;
+        debtduedate = DateTime.MinValue;
     }
 }
 
-
-}
-
-
 <script>
  (function () {
-    const transactionTypeSelect = document.getElementById('transaction-type');
+         let selectedTag;
+        const transactionTypeSelect = document.getElementById('transaction-type');
     const tagsRow = document.getElementById('tags-row');
     const tagsContainer = document.getElementById('tags-container');
     const customTagInput = document.querySelector('.custom-tag-input');
@@ -196,21 +201,22 @@
             tags = ['Salary', 'Gifts', 'Savings', 'Refunds'];
         }
 
-        tags.forEach(tag => {
-            const tagButton = document.createElement('div');
-            tagButton.classList.add('tag-button');
-            tagButton.textContent = tag;
-            tagButton.onclick = () => toggleTag(tagButton);
-            tagsContainer.appendChild(tagButton);
-        });
+            tags.forEach(tag => {
+        const tagButton = document.createElement('div');
+        tagButton.classList.add('tag-button');
+        tagButton.textContent = tag;
+        tagButton.onclick = () => toggleTag(tagButton);
+        tagsContainer.appendChild(tagButton);
+    });
 
-        if (selectedType !== 'debt') {
-            const customTagButton = document.createElement('div');
-            customTagButton.classList.add('tag-button');
-            customTagButton.textContent = 'Custom Tag';
-            customTagButton.onclick = () => toggleTag(customTagButton, true);
-            tagsContainer.appendChild(customTagButton);
-        }
+    if (selectedType !== 'debt') {
+        const customTagButton = document.createElement('div');
+        customTagButton.classList.add('tag-button');
+        customTagButton.textContent = 'Custom Tag';
+        customTagButton.onclick = () => toggleTag(customTagButton, true);
+        tagsContainer.appendChild(customTagButton);
+    }
+
     }
 
     function toggleTag(button, isCustom) {

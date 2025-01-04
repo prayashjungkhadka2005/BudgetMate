@@ -21,7 +21,7 @@ namespace BudgetMate.Components.Services
                 Directory.CreateDirectory(folderPath);
             }
 
-            _dbPath = Path.Combine(folderPath, "BudgetMateDatabase.db3"); //database path
+            _dbPath = Path.Combine(folderPath, "BudgetMate.db3"); //database path
 
             _database = new SQLiteConnection(_dbPath); //creating connection
 
@@ -89,9 +89,16 @@ namespace BudgetMate.Components.Services
 
         public bool AddDebitTransaction(Debit debit)
         {
+
+            if (debit == null)
+            {
+                Debug.WriteLine("Debit transaction data is null");
+                return false;
+            }
+
             Debug.WriteLine($"Debit transaction: Title={debit.DebitTransactionTitle}, Amount={debit.DebitAmount}, Tag={debit.DebitTags}");
 
-            if (debit == null || string.IsNullOrEmpty(debit.DebitTransactionTitle) || debit.DebitAmount <= 0)
+            if (string.IsNullOrEmpty(debit.DebitTransactionTitle) || debit.DebitAmount <= 0)
             {
                 Debug.WriteLine("Invalid debit transaction data");
                 return false;
@@ -124,9 +131,16 @@ namespace BudgetMate.Components.Services
 
         public bool AddCreditTransaction(Credit credit)
         {
+
+            if (credit == null)
+            {
+                Debug.WriteLine("Credit transaction data is null");
+                return false;
+            }
+
             Debug.WriteLine($"Credit transaction: Title={credit.CreditTransactionTitle}, Amount={credit.CreditAmount}, Tag={credit.CreditTags}");
 
-            if (credit == null|| string.IsNullOrEmpty(credit.CreditTransactionTitle) || credit.CreditAmount <= 0)
+            if ( string.IsNullOrEmpty(credit.CreditTransactionTitle) || credit.CreditAmount <= 0)
             {
                 Debug.WriteLine("Invalid credit transaction data");
                 return false;
@@ -156,6 +170,48 @@ namespace BudgetMate.Components.Services
                 return false;
             }
         }
+
+        public bool AddDebtTransaction(Debt debt)
+        {
+            if (debt == null)
+            {
+                Debug.WriteLine("Debt transaction data is null");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(debt.DebtTransactionTitle) || debt.DebtAmount <= 0 || debt.DebtDueDate == default)
+            {
+                Debug.WriteLine("Invalid debt transaction data");
+                return false;
+            }
+
+            Debug.WriteLine($"Debt transaction: Title={debt.DebtTransactionTitle}, Amount={debt.DebtAmount}, DueDate={debt.DebtDueDate}, SourceOfDebt={debt.SourceOfDebt}");
+
+            try
+            {
+                _database.BeginTransaction();
+
+                _database.Insert(debt);
+
+                _database.Commit();
+
+                Debug.WriteLine("Debt transaction inserted successfully.");
+                return true;
+            }
+            catch (SQLiteException ex)
+            {
+                _database.Rollback();
+                Debug.WriteLine($"Error inserting debt transaction: {ex.Message}");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Unexpected error: {ex.Message}");
+                return false;
+            }
+            
+        }
+
 
     }
 }

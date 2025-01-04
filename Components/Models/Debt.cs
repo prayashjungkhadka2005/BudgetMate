@@ -12,7 +12,7 @@ namespace BudgetMate.Components.Models
         [AutoIncrement, PrimaryKey]
         public int DebID { get; set; }
         public string DebtTransactionTitle { get; set; }
-        public DateTime DebtDueDate { get; set; }
+        public string DebtDueDate { get; set; }
         public int DebtAmount { get; set; }
         public string SourceOfDebt { get; set; }
 

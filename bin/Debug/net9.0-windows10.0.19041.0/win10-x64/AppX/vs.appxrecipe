@@ -30,7 +30,7 @@
     <AppXManifest Include="C:\Users\User\source\repos\BudgetMate\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-01-04T09:30:02.745</Modified>
+      <Modified>2025-01-04T10:35:59.689</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\BudgetMate.dll">
       <PackagePath>BudgetMate.dll</PackagePath>
-      <Modified>2025-01-04T09:30:00.357</Modified>
+      <Modified>2025-01-04T10:35:59.154</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>BudgetMate.exe</PackagePath>
-      <Modified>2025-01-04T09:30:00.435</Modified>
+      <Modified>2025-01-04T10:35:59.170</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -134,208 +134,208 @@
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
       <Modified>2024-12-17T03:43:15.064</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
-      <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
+      <PackagePath>appicon.ico</PackagePath>
+      <Modified>2025-01-04T09:29:59.528</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
-      <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
-      <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
+      <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
       <Modified>2025-01-04T09:29:59.513</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
       <Modified>2025-01-04T09:29:59.513</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
-      <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
+      <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
       <Modified>2025-01-04T09:29:59.513</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
-      <PackagePath>appiconWideTile.scale-400.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
+      <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
       <Modified>2025-01-04T09:29:59.513</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
-      <PackagePath>appiconWideTile.scale-200.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
+      <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
       <Modified>2025-01-04T09:29:59.513</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
-      <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
-      <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
-      <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
-      <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
-      <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
-      <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
-      <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
-      <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
-      <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
-      <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
-      <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
-      <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
-      <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
-      <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
-      <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
-      <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
-      <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
-      <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
-      <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
-      <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.513</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
-      <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
+      <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
       <Modified>2025-01-04T09:29:59.528</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
       <Modified>2025-01-04T09:29:59.528</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
-      <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
+      <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
+      <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
       <Modified>2025-01-04T09:29:59.528</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
-      <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.528</Modified>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
+      <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
-      <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.528</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
-      <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
+      <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
       <Modified>2025-01-04T09:29:59.528</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
       <Modified>2025-01-04T09:29:59.528</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
-      <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
+      <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
       <Modified>2025-01-04T09:29:59.528</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
-      <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
+      <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
       <Modified>2025-01-04T09:29:59.528</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
-      <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.528</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
-      <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.528</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
-      <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.528</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
-      <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.528</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
-      <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.528</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
-      <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.528</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
-      <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2025-01-04T09:29:59.528</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
-      <PackagePath>appiconLogo.scale-125.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
+      <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
       <Modified>2025-01-04T09:29:59.528</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
       <Modified>2025-01-04T09:29:59.528</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
-      <PackagePath>appicon.ico</PackagePath>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
+      <PackagePath>appiconLogo.scale-125.png</PackagePath>
       <Modified>2025-01-04T09:29:59.528</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
-      <PackagePath>dotnet_bot.scale-400.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
+      <PackagePath>appiconLogo.scale-150.png</PackagePath>
       <Modified>2025-01-04T09:29:59.528</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
-      <PackagePath>dotnet_bot.scale-200.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
+      <PackagePath>appiconLogo.scale-200.png</PackagePath>
       <Modified>2025-01-04T09:29:59.528</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
-      <PackagePath>dotnet_bot.scale-150.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
+      <PackagePath>appiconLogo.scale-400.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.528</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
+      <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.528</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
+      <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.528</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
+      <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.528</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
+      <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.528</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
+      <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.528</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
+      <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
+      <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
+      <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
+      <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
+      <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
+      <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
+      <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
+      <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
+      <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
+      <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
+      <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
+      <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
+      <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
+      <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
+      <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
+      <PackagePath>appiconWideTile.scale-100.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
+      <PackagePath>appiconWideTile.scale-125.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
+      <PackagePath>appiconWideTile.scale-150.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
+      <PackagePath>appiconWideTile.scale-200.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
+      <PackagePath>appiconWideTile.scale-400.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
+      <PackagePath>dotnet_bot.scale-100.png</PackagePath>
       <Modified>2025-01-04T09:29:59.528</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
       <Modified>2025-01-04T09:29:59.528</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
-      <PackagePath>dotnet_bot.scale-100.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
+      <PackagePath>dotnet_bot.scale-150.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.528</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
+      <PackagePath>dotnet_bot.scale-200.png</PackagePath>
+      <Modified>2025-01-04T09:29:59.528</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
+      <PackagePath>dotnet_bot.scale-400.png</PackagePath>
       <Modified>2025-01-04T09:29:59.528</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\.nuget\packages\microsoft.web.webview2\1.0.2792.45\runtimes\win-x64\native\WebView2Loader.dll">
