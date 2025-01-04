@@ -20,7 +20,7 @@
                 <div class="trow-title">Transaction Type</div>
                 <div class="trow-field">
                     <select name="transaction-type" id="transaction-type" @bind="transactiontype">
-                         <option value="" disabled selected>Select your transaction type</option>
+                        <option value="" disabled selected>Select your transaction type</option>
                         <option value="expense">Debit</option>
                         <option value="income">Credit</option>
                         <option value="debt">Debt</option>
@@ -87,6 +87,12 @@
     private bool isSuccess = false;
     private static string selectedTag;
 
+    protected override void OnInitialized()
+    {
+        var now = DateTime.Now;
+        debtduedate = new DateTime(now.Year, now.Month, 1); //default to current month
+    }
+
     [JSInvokable]
     public static void SetSelectedTag(string tag)
     {
@@ -121,32 +127,39 @@
         var success = false;
         if (transactiontype == "expense")
         {
+            var date = DateTime.Now;
+
             var newDebit = new Debit
                 {
                     DebitTransactionTitle = transactiontitle,
                     DebitAmount = transactionamount,
-                    DebitTags = transactionTags
+                    DebitTags = transactionTags,
+                    DebitTransactionDate = date.ToString("yyyy-MM-dd"),
                 };
             success = UserService.AddDebitTransaction(newDebit);
         }
         else if (transactiontype == "income")
         {
+            var date = DateTime.Now;
             var newCredit = new Credit
                 {
                     CreditTransactionTitle = transactiontitle,
                     CreditAmount = transactionamount,
-                    CreditTags = transactionTags
+                    CreditTags = transactionTags,
+                    CreditTransactionDate = date.ToString("yyyy-MM-dd"),
                 };
             success = UserService.AddCreditTransaction(newCredit);
         }
         else if (transactiontype == "debt")
         {
+            var date = DateTime.Now;
             var newDebt = new Debt
                 {
                     DebtTransactionTitle = transactiontitle,
                     DebtAmount = transactionamount,
                     DebtDueDate = debtduedate.ToString("yyyy-MM-dd"),
                     SourceOfDebt = sourceofdebt,
+                    DebtTransactionDate = date.ToString("yyyy-MM-dd"),
                 };
             success = UserService.AddDebtTransaction(newDebt);
         }

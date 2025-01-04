@@ -212,6 +212,80 @@ namespace BudgetMate.Components.Services
             
         }
 
+        public int GetTotalInflows()
+        {
+            try
+            {
+                return _database.Table<Credit>().Sum(c => c.CreditAmount);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error calculating total inflows: {ex.Message}");
+                return 0; 
+            }
+        }
+
+        public int GetTotalOutflow()
+        {
+            try
+            {
+                return _database.Table<Debit>().Sum(d => d.DebitAmount);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error calculating total outflows: {ex.Message}");
+                return 0;
+            }
+           
+        }
+
+        public int GetTotalDebt()
+        {
+            try
+            {
+                return _database.Table<Debt>().Sum(d => d.DebtAmount);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error calculating total debt: {ex.Message}");
+                return 0;
+            }
+
+        }
+
+        public int GetTotalNumberOfTransactions()
+        {
+            int debitCount = _database.Table<Debit>().Count();
+
+            int creditCount = _database.Table<Credit>().Count();
+
+            int debtCount = _database.Table<Debt>().Count();
+
+            //int clearedDebtCount = _database.Table<Debt>().Where(debt => debt.IsCleared).Count();
+
+            return debitCount + creditCount + debtCount;
+        }
+
+       
+            public int GetTotalTransactionsAmount()
+        {
+            int totalInflow = _database.Table<Credit>().Sum(credit => credit.CreditAmount);
+
+            int totalOutflow = _database.Table<Debit>().Sum(debit => debit.DebitAmount);
+
+            int totalDebt = _database.Table<Debt>().Sum(debt => debt.DebtAmount);
+
+            return totalInflow + totalDebt - totalOutflow;
+        
+
+    }
+
+        public List<Debt> GetPendingDebts()
+        {
+            return _database.Table<Debt>().ToList();
+        }
+
+
 
     }
 }

@@ -14,6 +14,7 @@ namespace BudgetMate.Components.Models
         public string DebitTransactionTitle { get; set; }
         public int DebitAmount { get; set; }
         public string DebitTags {get; set;}
+        public string DebitTransactionDate { get; set; }
 
     }
 }

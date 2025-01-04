@@ -14,5 +14,6 @@ namespace BudgetMate.Components.Models
         public string CreditTransactionTitle { get; set; }
         public int CreditAmount { get; set; }
         public string CreditTags { get; set; }
+        public string CreditTransactionDate { get; set; }
     }
 }
