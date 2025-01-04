@@ -6,6 +6,8 @@
 @using Microsoft.AspNetCore.Components.Forms
 @using BudgetMate.Components.Services
 @inject BudgetMate.Components.Services.UserService UserService
+@inject IJSRuntime JSRuntime
+
 
 
 <h3>Transactions</h3>
@@ -18,6 +20,7 @@
                 <div class="trow-title">Transaction Type</div>
                 <div class="trow-field">
                     <select name="transaction-type" id="transaction-type" @bind="transactiontype">
+                         <option value="" disabled selected>Select your transaction type</option>
                         <option value="expense">Debit</option>
                         <option value="income">Credit</option>
                         <option value="debt">Debt</option>
@@ -74,6 +77,7 @@
 </div>
 
 @code {
+    @code {
     private string transactiontype;
     private string transactiontitle;
     private int transactionamount;
@@ -82,6 +86,13 @@
     private string customtag;
     private string message;
     private bool isSuccess = false;
+    private static string selectedTag;  // Make it static
+
+    [JSInvokable]
+    public static void SetSelectedTag(string tag)
+    {
+        selectedTag = tag;  // Now it's valid to access static fields in a static method
+    }
 
 
     private async Task HandleSubmit()
@@ -93,7 +104,15 @@
             return;
         }
 
-        
+        // Check if a tag has been selected
+        string transactionTags = selectedTag ?? customtag;
+
+        if (string.IsNullOrEmpty(transactionTags)) 
+        {
+            message = "Please select or enter a tag.";
+            isSuccess = false;
+            return;
+        }
 
         if (transactiontype == "expense") // Only handle debit for now
         {
@@ -101,7 +120,7 @@
                 {
                     DebitTransactionTitle = transactiontitle,
                     DebitAmount = transactionamount,
-                    DebitTags = customtag
+                    DebitTags = transactionTags
                 };
 
             var success = UserService.AddDebitTransaction(newDebit);
@@ -123,65 +142,82 @@
 }
 
 
+}
+
+
 <script>
-    (function () {
-        const transactionTypeSelect = document.getElementById('transaction-type');
-        const tagsRow = document.getElementById('tags-row');
-        const tagsContainer = document.getElementById('tags-container');
-        const customTagInput = document.querySelector('.custom-tag-input');
-        const customTagInputField = document.getElementById('custom-tag-input');
-        const dueDateRow = document.getElementById('due-date-row');
-        const sourceOfDebtRow = document.getElementById('source-of-debt-row');
+ (function () {
+    const transactionTypeSelect = document.getElementById('transaction-type');
+    const tagsRow = document.getElementById('tags-row');
+    const tagsContainer = document.getElementById('tags-container');
+    const customTagInput = document.querySelector('.custom-tag-input');
+    const customTagInputField = document.getElementById('custom-tag-input');
+    const dueDateRow = document.getElementById('due-date-row');
+    const sourceOfDebtRow = document.getElementById('source-of-debt-row');
 
-        function updateFormFields() {
-            const selectedType = transactionTypeSelect.value;
+    function updateFormFields() {
+        const selectedType = transactionTypeSelect.value;
 
-            tagsContainer.innerHTML = '';
-            customTagInput.style.display = 'none';
-            dueDateRow.style.display = selectedType === 'debt' ? 'block' : 'none';
-            sourceOfDebtRow.style.display = selectedType === 'debt' ? 'block' : 'none';
-            tagsRow.style.display = selectedType === 'debt' ? 'none' : 'block';
+        tagsContainer.innerHTML = '';  // Clear existing tags
+        customTagInput.style.display = 'none';
+        dueDateRow.style.display = selectedType === 'debt' ? 'block' : 'none';
+        sourceOfDebtRow.style.display = selectedType === 'debt' ? 'block' : 'none';
+        tagsRow.style.display = selectedType === 'debt' ? 'none' : 'block';
 
-            let tags = [];
-            if (selectedType === 'expense') {
-                tags = ['Clothes', 'Rent', 'Groceries'];
-            } else if (selectedType === 'income') {
-                tags = ['Salary', 'Gifts', 'Savings', 'Refunds'];
-            }
-
-            tags.forEach(tag => {
-                const tagButton = document.createElement('div');
-                tagButton.classList.add('tag-button');
-                tagButton.textContent = tag;
-                tagButton.onclick = () => toggleTag(tagButton);
-                tagsContainer.appendChild(tagButton);
-            });
-
-            if (selectedType !== 'debt') {
-                const customTagButton = document.createElement('div');
-                customTagButton.classList.add('tag-button');
-                customTagButton.textContent = 'Custom Tag';
-                customTagButton.onclick = () => toggleTag(customTagButton, true);
-                tagsContainer.appendChild(customTagButton);
-            }
+        let tags = [];
+        if (selectedType === 'expense') {
+            tags = ['Clothes', 'Rent', 'Groceries'];
+        } else if (selectedType === 'income') {
+            tags = ['Salary', 'Gifts', 'Savings', 'Refunds'];
         }
 
-        function toggleTag(button, isCustom) {
-            const allTags = document.querySelectorAll('.tag-button');
-            allTags.forEach(tag => tag.classList.remove('selected'));
+        tags.forEach(tag => {
+            const tagButton = document.createElement('div');
+            tagButton.classList.add('tag-button');
+            tagButton.textContent = tag;
+            tagButton.onclick = () => toggleTag(tagButton);
+            tagsContainer.appendChild(tagButton);
+        });
 
-            button.classList.toggle('selected');
+        if (selectedType !== 'debt') {
+            const customTagButton = document.createElement('div');
+            customTagButton.classList.add('tag-button');
+            customTagButton.textContent = 'Custom Tag';
+            customTagButton.onclick = () => toggleTag(customTagButton, true);
+            tagsContainer.appendChild(customTagButton);
+        }
+    }
 
-            customTagInput.style.display = isCustom && button.classList.contains('selected') ? 'block' : 'none';
+    function toggleTag(button, isCustom) {
+        const allTags = document.querySelectorAll('.tag-button');
+        allTags.forEach(tag => tag.classList.remove('selected'));
 
-            if (!isCustom || !button.classList.contains('selected')) {
-                customTagInputField.value = '';
-            }
+        button.classList.toggle('selected');
+
+        customTagInput.style.display = isCustom && button.classList.contains('selected') ? 'block' : 'none';
+
+        if (!isCustom || !button.classList.contains('selected')) {
+            customTagInputField.value = '';
         }
 
-        updateFormFields();
-        transactionTypeSelect.addEventListener('change', updateFormFields);
-    })();
+        // Update the selectedTag or custom tag
+        if (!isCustom) {
+            selectedTag = button.textContent; // Store the tag name like 'Rent', 'Groceries'
+        } else if (isCustom && customTagInputField.value) {
+            selectedTag = customTagInputField.value; // Store the custom tag
+        }
+
+        // Use JS Interop to send the selectedTag back to Blazor
+       DotNet.invokeMethodAsync('BudgetMate', 'SetSelectedTag', selectedTag);
+
+    }
+
+    updateFormFields();  // Render the initial tags
+    transactionTypeSelect.addEventListener('change', updateFormFields);
+})();
+
+
+
 </script>
 
 <style>

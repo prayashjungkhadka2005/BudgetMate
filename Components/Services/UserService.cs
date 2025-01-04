@@ -89,7 +89,7 @@ namespace BudgetMate.Components.Services
 
         public bool AddDebitTransaction(Debit debit)
         {
-            Debug.WriteLine($"Debit transaction: Title={debit.DebitTransactionTitle}, Amount={debit.DebitAmount}");
+            Debug.WriteLine($"Debit transaction: Title={debit.DebitTransactionTitle}, Amount={debit.DebitAmount}, Tag={debit.DebitTags}");
 
             if (debit == null || string.IsNullOrEmpty(debit.DebitTransactionTitle) || debit.DebitAmount <= 0)
             {
