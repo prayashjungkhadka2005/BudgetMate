@@ -15,6 +15,15 @@
 <div class="transaction-container">
     <div class="transaction-box">
         <form>
+            <div class="transaction-row">
+                <div class="trow-field">
+                    @if (!string.IsNullOrEmpty(message))
+                    {
+                        <div class="@((isSuccess ? "success" : "error"))">@message</div>
+                    }
+                </div>
+            </div>
+
 
             <div class="transaction-row">
                 <div class="trow-title">Transaction Type</div>
@@ -77,7 +86,7 @@
 </div>
 
 @code {
-    private string transactiontype;
+    private string transactiontype = "expense"; // Or set the default to "debt" if you want it to show by default
     private string transactiontitle;
     private int transactionamount;
     private DateTime debtduedate = DateTime.MinValue;
@@ -86,11 +95,12 @@
     private string message;
     private bool isSuccess = false;
     private static string selectedTag;
-
+    private int currentBalance;
     protected override void OnInitialized()
     {
         var now = DateTime.Now;
         debtduedate = new DateTime(now.Year, now.Month, 1); //default to current month
+        currentBalance = UserService.GetTotalBalance();
     }
 
     [JSInvokable]
@@ -123,7 +133,15 @@
             isSuccess = false;
             return;
         }
-
+        if (transactiontype == "expense")
+        {
+            if (transactionamount > currentBalance)
+            {
+                message = "Debit amount cannot exceed your available balance.";
+                isSuccess = false;
+                return;
+            }
+        }
         var success = false;
         if (transactiontype == "expense")
         {
@@ -267,6 +285,16 @@
 </script>
 
 <style>
+    .success {
+    color: green;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
     .tag-button {
         border: 0.5px solid #293198;
         display: inline-block;

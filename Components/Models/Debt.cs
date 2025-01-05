@@ -15,7 +15,7 @@ namespace BudgetMate.Components.Models
         public string DebtDueDate { get; set; }
         public int DebtAmount { get; set; }
         public string SourceOfDebt { get; set; }
-        public string DebtTransactionDate { get; set; }
+        public string DebtTransactionDate { get; set; }  
         public bool isCleared { get; set; }
 
     }

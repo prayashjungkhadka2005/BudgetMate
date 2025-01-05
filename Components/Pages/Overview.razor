@@ -1,4 +1,5 @@
 ﻿@page "/overview"
+@inject IJSRuntime JSRuntime
 @using BudgetMate.Components.Services
 @using BudgetMate.Components.Layout
 @using BudgetMate.Components.Models
@@ -6,6 +7,10 @@
 
 <h1>Dashboard</h1>
 <div class="overview-container">
+    <div class="col">
+        <div class="title">Total Balance</div>
+        <div class="value">$@TotalBalance</div>
+    </div>
     <div class="col">
         <div class="title">Total inflows</div>
         <div class="value">$@TotalInflows</div>
@@ -54,8 +59,58 @@
     </div>
 </div>
 
-<div class="pendingdebts">
-    <h3>Dashboard</h3>
+<div>
+    <h3>Top 5 Highest Transactions</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>SN</th>
+                <th>Amount</th>
+                <th>Transaction Type</th>
+                <th>Tags/Source</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var transaction in HighestTransactions.Select((value, index) => new { value, index }))
+            {
+                <tr>
+                    <td>@(transaction.index + 1)</td>
+                    <td>$@transaction.value.Amount</td>
+                    <td>@transaction.value.Type</td>
+                    <td>@string.Join(", ", string.IsNullOrEmpty(transaction.value.Tags) ? new List<string>() : transaction.value.Tags.Split(',').ToList())</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <h3>Top 5 Lowest Transactions</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>SN</th>
+                <th>Amount</th>
+                <th>Transaction Type</th>
+                <th>Tags/Source</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var transaction in LowestTransactions.Select((value, index) => new { value, index }))
+            {
+                <tr>
+                    <td>@(transaction.index + 1)</td>
+                    <td>$@transaction.value.Amount</td>
+                    <td>@transaction.value.Type</td>
+                    <td>@string.Join(", ", string.IsNullOrEmpty(transaction.value.Tags) ? new List<string>() : transaction.value.Tags.Split(',').ToList())</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <h3>Pending Debts</h3>
     <table class="pending-debts-table">
         <thead>
             <tr>
@@ -73,20 +128,35 @@
                     <td>@debt.SourceOfDebt</td>
                     <td>$@debt.DebtAmount</td>
                     <td>
-                        <button class="clear-btn" @onclick="() => ClearDebt(debt.DebtId)">Clear</button>
-
+                        <button class="clear-btn" @onclick="() => ShowConfirmationModal(debt.DebtId)">Clear</button>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-
 </div>
 
+<!-- Modal -->
+@if (isModalVisible)
+{
+    <div class="modal-overlay" @onclick="CloseModal">
+        <div class="modal-container" @onclick:stopPropagation="true">
+            <div class="modal-header">
+                <h3>Confirm Debt Clearance</h3>
+                <button class="close-btn" @onclick="CloseModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to clear this debt?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" @onclick="CloseModal">Cancel</button>
+                <button class="confirm-btn" @onclick="() => ClearDebt(debtToClearId)">Confirm</button>
+            </div>
+        </div>
+    </div>
+}
 
 @code {
-
-
     private int TotalInflows { get; set; }
     private int TotalOutflows { get; set; }
     private int TotalDebt { get; set; }
@@ -94,8 +164,13 @@
     private int ClearedDebts { get; set; }
     private int TotalNumberOfTransactions { get; set; }
     private int TotalAmountOfTransactions { get; set; }
+    private List<Transaction> HighestTransactions { get; set; }
+    private List<Transaction> LowestTransactions { get; set; }
+    private int TotalBalance { get; set; }
 
     private List<Debt> pendingDebts { get; set; }
+    private bool isModalVisible { get; set; }
+    private int debtToClearId { get; set; }
 
     protected override void OnInitialized()
     {
@@ -107,53 +182,57 @@
         pendingDebts = UserService.GetPendingDebts();
         RemainingDebts = UserService.GetRemainingDebt();
         ClearedDebts = UserService.GetClearedDebt();
+        TotalBalance = UserService.GetTotalBalance();
+
+        var allTransactions = UserService.GetAllTransactions();
+        HighestTransactions = allTransactions.OrderByDescending(t => t.Amount).Take(5).ToList();
+        LowestTransactions = allTransactions.OrderBy(t => t.Amount).Take(5).ToList();
     }
 
-    private void ClearDebt(int debtId)
+    private void ShowConfirmationModal(int debtId)
     {
-        // Find the debt from the list
-        var debtToClear = pendingDebts.FirstOrDefault(debt => debt.DebtId == debtId);
-
-        if (debtToClear != null && TotalInflows >= debtToClear.DebtAmount)
-        {
-            // Deduct debt amount from TotalInflows
-            TotalInflows -= debtToClear.DebtAmount;
-
-            // Deduct debt from TotalDebt
-            TotalDebt -= debtToClear.DebtAmount;
-
-            // Mark the debt as cleared in the database
-            bool isCleared = UserService.ClearDebt(debtId); // This method will update the IsCleared property
-
-            if (isCleared)
-            {
-                // After successfully marking the debt as cleared, remove it from the list
-                debtToClear.isCleared = true;
-                pendingDebts.Remove(debtToClear);
-
-                // Refresh the list of pending debts (updated after clearing)
-                pendingDebts = UserService.GetPendingDebts();
-
-                // Successfully cleared, re-render page
-                StateHasChanged();
-            }
-            else
-            {
-                Console.WriteLine("Failed to clear debt.");
-            }
-        }
-        else
-        {
-            // Handle case when no sufficient inflow or debt not found
-            Console.WriteLine("Not enough inflows to clear the debt or debt not found.");
-        }
+        debtToClearId = debtId;
+        isModalVisible = true;
     }
 
+    private void CloseModal()
+    {
+        isModalVisible = false;
+    }
+
+    private async Task ClearDebt(int debtId)
+    {
+        if (await JSRuntime.InvokeAsync<bool>("confirm", new object[] { "Are you sure you want to clear this debt?" }))
+        {
+            // Clear the debt if confirmed
+            var debtToClear = pendingDebts.FirstOrDefault(debt => debt.DebtId == debtId);
+            if (debtToClear != null && TotalInflows >= debtToClear.DebtAmount)
+            {
+                TotalInflows -= debtToClear.DebtAmount;
+                TotalDebt -= debtToClear.DebtAmount;
+
+                bool isCleared = UserService.ClearDebt(debtId);
+                if (isCleared)
+                {
+                    debtToClear.isCleared = true;
+                    pendingDebts.Remove(debtToClear);
+                    pendingDebts = UserService.GetPendingDebts();
+                    StateHasChanged();
+                }
+            }
+        }
+        CloseModal();
+    }
+}
 
 
 }
 
 <style>
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
 
     table {
         width: 100%;
@@ -200,6 +279,79 @@
         color: #333;
         margin-top: 16px;
     }
+
+    /* Modal styles */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    .modal-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 400px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .close-btn {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .modal-body {
+        margin-top: 15px;
+        font-size: 16px;
+        color: #333;
+    }
+
+    .modal-footer {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .cancel-btn, .confirm-btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .cancel-btn {
+        background-color: #f44336;
+        color: white;
+        border: none;
+    }
+
+        .cancel-btn:hover {
+            background-color: #d32f2f;
+        }
+
+    .confirm-btn {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+    }
+
+        .confirm-btn:hover {
+            background-color: #45a049;
+        }
 
     /* Overview Section */
     .overview-container {
@@ -279,5 +431,7 @@
         color: #4caf50;
     }
 
-   
+    
+
+    
 </style>

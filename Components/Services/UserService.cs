@@ -16,13 +16,13 @@
             {
                 string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); //desktop path
                 string folderPath = Path.Combine(desktopPath, "Test");
-
+             
                 if (!Directory.Exists(folderPath))
                 {
                     Directory.CreateDirectory(folderPath);
                 }
 
-                _dbPath = Path.Combine(folderPath, "BudgetMateDatabases.db3"); //database path
+                _dbPath = Path.Combine(folderPath, "BudgetMateFinals.db3"); //database path
 
                 _database = new SQLiteConnection(_dbPath); //creating connection
 
@@ -31,10 +31,11 @@
                 _database.CreateTable<Debit>();
                 _database.CreateTable<Credit>();
                 _database.CreateTable<Transaction>();
+            _database.CreateTable<Balance>();
 
 
 
-                Debug.WriteLine($"Database path: {_dbPath}");
+            Debug.WriteLine($"Database path: {_dbPath}");
                 Console.WriteLine($"Database path: {_dbPath}");
             }
 
@@ -143,60 +144,86 @@
                 }
             }
 
-            public bool AddCreditTransaction(Credit credit)
+        public void AutoClearDebts()
+        {
+            try
             {
+                var pendingDebts = GetPendingDebts().OrderBy(debt => debt.DebtDueDate).ToList();
+                int totalBalance = GetTotalBalance();
 
-                if (credit == null)
+                foreach (var debt in pendingDebts)
                 {
-                    Debug.WriteLine("Credit transaction data is null");
-                    return false;
-                }
-
-                Debug.WriteLine($"Credit transaction: Title={credit.CreditTransactionTitle}, Amount={credit.CreditAmount}, Tag={credit.CreditTags}");
-
-                if (string.IsNullOrEmpty(credit.CreditTransactionTitle) || credit.CreditAmount <= 0)
-                {
-                    Debug.WriteLine("Invalid credit transaction data");
-                    return false;
-                }
-
-                try
-                {
-
-                    _database.BeginTransaction();
-
-                    _database.Insert(credit);
-
-                    var transaction = new Transaction
+                    // Check if the balance is sufficient to clear the debt
+                    if (debt.DebtAmount <= totalBalance)
                     {
-                        TransactionID = credit.CreditID,
-                        TransactionDate = credit.CreditTransactionDate,
-                        Amount = credit.CreditAmount,
-                        Type = "Credit",
-                        Tags = credit.CreditTags,
-                        Note = "" // If you need a note field, you can modify accordingly
-                    };
-                    _database.Insert(transaction); // Insert into Transaction table
+                        debt.isCleared = true;
+                        _database.Update(debt);
 
-                    _database.Commit();
+                        // Deduct the cleared debt amount from the current balance
+                        totalBalance -= debt.DebtAmount;
 
-                    Debug.WriteLine("Credit transaction inserted successfully");
-                    return true;
+
+                        Debug.WriteLine($"Cleared Debt: {debt.DebtAmount}, Remaining Balance: {totalBalance}");
+                    }
+                    else
+                    {
+                        break; // Stop processing if balance is insufficient
+                    }
                 }
-                catch (SQLiteException ex)
-                {
-                    _database.Rollback();
-                    Debug.WriteLine($"Error inserting credit transaction: {ex.Message}");
-                    return false;
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine($"Unexpected error: {ex.Message}");
-                    return false;
-                }
+
+                // Recalculate balance after processing debts
+                RecalculateBalance();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error auto-clearing debts: {ex.Message}");
+            }
+        }
+
+
+        public bool AddCreditTransaction(Credit credit)
+        {
+            if (credit == null || string.IsNullOrEmpty(credit.CreditTransactionTitle) || credit.CreditAmount <= 0)
+            {
+                Debug.WriteLine("Invalid credit transaction data");
+                return false;
             }
 
-            public bool AddDebtTransaction(Debt debt)
+            try
+            {
+                _database.BeginTransaction();
+
+                _database.Insert(credit);
+
+                var transaction = new Transaction
+                {
+                    TransactionID = credit.CreditID,
+                    TransactionDate = credit.CreditTransactionDate,
+                    Amount = credit.CreditAmount,
+                    Type = "Credit",
+                    Tags = credit.CreditTags
+                };
+                _database.Insert(transaction);
+
+                _database.Commit();
+
+                // Update balance and clear debts if possible
+                RecalculateBalance();
+                AutoClearDebts();
+
+                Debug.WriteLine("Credit transaction inserted successfully");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _database.Rollback();
+                Debug.WriteLine($"Error inserting credit transaction: {ex.Message}");
+                return false;
+            }
+        }
+
+
+        public bool AddDebtTransaction(Debt debt)
             {
                 if (debt == null)
                 {
@@ -292,31 +319,28 @@
 
                 if (debt != null)
                 {
-                    // Get the total inflow amount (credit)
-                    int totalInflows = GetTotalInflows();
+                    // Get the total balance
+                    int totalBalance = GetTotalBalance();
 
-                    // Check if debt amount is less than or equal to the total inflows
-                    if (debt.DebtAmount <= totalInflows)
+                    // Check if debt amount is less than or equal to the total balance
+                    if (debt.DebtAmount <= totalBalance)
                     {
                         // Mark the debt as cleared
                         debt.isCleared = true;
 
-                        // Deduct the debt amount from the available inflows (total inflows)
-                        totalInflows -= debt.DebtAmount;
-
                         // Update the debt in the database
                         _database.Update(debt);
 
-                        // Optionally, you can update the available inflows in your database (if needed)
+                        // Recalculate the total balance
+                        RecalculateBalance();
 
-                        Debug.WriteLine($"Debt of amount {debt.DebtAmount} cleared, remaining inflows: {totalInflows}");
+                        Debug.WriteLine($"Debt of amount {debt.DebtAmount} cleared. Total balance updated.");
                         return true;
                     }
                     else
                     {
-                        // If the debt is greater than the available inflows, you can handle it here if needed
-                        Debug.WriteLine("Not enough inflows to clear the debt.");
-                        return false; // Not enough inflows to clear the debt
+                        Debug.WriteLine("Not enough balance to clear the debt.");
+                        return false; // Not enough balance to clear the debt
                     }
                 }
 
@@ -341,6 +365,47 @@
                 return 0;
             }
         }
+
+        public int GetTotalBalance()
+        {
+            var balance = _database.Table<Balance>().FirstOrDefault();
+            return balance?.TotalBalance ?? 0; // Return 0 if balance record doesn't exist
+        }
+
+
+        public void RecalculateBalance()
+        {
+            try
+            {
+                // Calculate total inflows, outflows, and remaining debts
+                int totalInflows = GetTotalInflows();
+                int totalOutflows = GetTotalOutflow();
+                int remainingDebt = GetRemainingDebt();
+
+                // Calculate the balance
+                int totalBalance = totalInflows - remainingDebt;
+
+                var balance = _database.Table<Balance>().FirstOrDefault();
+                if (balance == null)
+                {
+                    balance = new Balance { TotalBalance = totalBalance };
+                    _database.Insert(balance);
+                }
+                else
+                {
+                    balance.TotalBalance = totalBalance;
+                    _database.Update(balance);
+                }
+
+
+                Debug.WriteLine($"Recalculated Balance: {totalBalance}");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error recalculating balance: {ex.Message}");
+            }
+        }
+
 
         public int GetTotalOutflow()
         {
@@ -408,9 +473,9 @@
 
             int debtCount = _database.Table<Debt>().Count();
 
-            //int clearedDebtCount = _database.Table<Debt>().Where(debt => debt.IsCleared).Count();
+            int clearedDebtCount = _database.Table<Debt>().Where(debt => debt.isCleared).Count();
 
-            return debitCount + creditCount + debtCount;
+            return debitCount + creditCount + debtCount + clearedDebtCount;
         }
 
 

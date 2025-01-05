@@ -8,6 +8,10 @@
 
 
 <h3>Transaction Management</h3>
+<div style="text-align: right; margin: 10px;">
+    <button @onclick="SortByDate" class="sort-btn">Sort by Date</button>
+</div>
+
 <table class="transactions-table">
     <thead>
         <tr>
@@ -54,12 +58,12 @@
     private List<Transaction> transactions = new();
     private Transaction selectedTransaction;
     private bool isNoteModalOpen = false;
+    private bool isSortedAscending = true; // Tracks the current sorting order
 
     protected override void OnInitialized()
     {
         transactions = UserService.GetAllTransactions(); // Fetch all transactions
     }
-
 
     private void OpenNoteModal(Transaction transaction)
     {
@@ -84,9 +88,37 @@
         StateHasChanged(); // Refresh the UI
     }
 
+    private void SortByDate()
+    {
+        if (isSortedAscending)
+        {
+            transactions = transactions.OrderBy(t => t.TransactionDate).ToList(); // Sort by ascending
+        }
+        else
+        {
+            transactions = transactions.OrderByDescending(t => t.TransactionDate).ToList(); // Sort by descending
+        }
+
+        isSortedAscending = !isSortedAscending; // Toggle sorting order for next click
+        StateHasChanged(); // Refresh the UI
+    }
 }
 
+
 <style>
+    .sort-btn {
+        background-color: #28a745;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .sort-btn:hover {
+            background-color: #218838;
+        }
+
     h3 {
         text-align: center;
         margin: 20px 0;
