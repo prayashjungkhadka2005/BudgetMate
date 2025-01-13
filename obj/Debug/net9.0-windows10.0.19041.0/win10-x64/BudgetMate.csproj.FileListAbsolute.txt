@@ -234,7 +234,7 @@ C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10
 C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\scopedcss\Components\Pages\DebitManagement.razor.rz.scp.css
 C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\scopedcss\Components\Pages\ExpensesHistory.razor.rz.scp.css
 C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\scopedcss\Components\Pages\DebtManagement.razor.rz.scp.css
-C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\s2nq3vjt16-z6ry9jat4l.gz
-C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\g9f1ckn6yb-z6ry9jat4l.gz
-C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\s2nq3vjt16-z6ry9jat4l.br
-C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\g9f1ckn6yb-z6ry9jat4l.br
+C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\s2nq3vjt16-nugh156yjs.gz
+C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\g9f1ckn6yb-nugh156yjs.gz
+C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\s2nq3vjt16-nugh156yjs.br
+C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\g9f1ckn6yb-nugh156yjs.br

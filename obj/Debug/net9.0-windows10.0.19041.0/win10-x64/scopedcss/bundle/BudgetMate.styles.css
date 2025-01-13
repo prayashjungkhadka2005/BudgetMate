@@ -215,6 +215,11 @@ h3[b-juz39syoi9] {
     margin-bottom: 15px;
 }
 
+
+h1[b-juz39syoi9] {
+    font-weight: bold;
+    font-size: 25px;
+}
 .dash-title[b-juz39syoi9] {
     display: flex;
     justify-content: space-between;
@@ -661,7 +666,10 @@ h3[b-v5hdeoumal] {
 }
 /* /Components/Pages/Home.razor.rz.scp.css */
 /* /Components/Pages/Overview.razor.rz.scp.css */
-
+h1[b-hjwq8akmqr] {
+    font-weight: bold;
+    font-size: 25px;
+}
 
 h3[b-hjwq8akmqr] {
     font-weight: bold;

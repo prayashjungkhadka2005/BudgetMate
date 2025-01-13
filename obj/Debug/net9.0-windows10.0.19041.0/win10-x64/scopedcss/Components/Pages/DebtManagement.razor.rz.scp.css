@@ -4,6 +4,11 @@ h3[b-juz39syoi9] {
     margin-bottom: 15px;
 }
 
+
+h1[b-juz39syoi9] {
+    font-weight: bold;
+    font-size: 25px;
+}
 .dash-title[b-juz39syoi9] {
     display: flex;
     justify-content: space-between;

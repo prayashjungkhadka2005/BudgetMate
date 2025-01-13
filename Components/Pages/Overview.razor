@@ -16,6 +16,7 @@
         <input type="date" @bind-value="endDate" />
 
         <button class="apply-btn" @onclick="ApplyDateFilter">Apply Filter</button>
+        <button class="apply-btn" @onclick="ApplyAll">All</button>
     </div>
 </div>
 
@@ -255,6 +256,8 @@
     {
         if (!startDate.HasValue || !endDate.HasValue)
         {
+            
+
             TotalInflows = UserService.GetTotalInflows();
             TotalOutflows = UserService.GetTotalOutflow();
             TotalDebt = UserService.GetTotalDebt();
@@ -289,6 +292,25 @@
 
 
         }
+    }
+
+    private void ApplyAll()
+    {
+
+        TotalInflows = UserService.GetTotalInflows();
+        TotalOutflows = UserService.GetTotalOutflow();
+        TotalDebt = UserService.GetTotalDebt();
+        TotalNumberOfTransactions = UserService.GetTotalNumberOfTransactions();
+        TotalAmountOfTransactions = UserService.GetTotalTransactionsAmount();
+        pendingDebts = UserService.GetPendingDebts();
+        RemainingDebts = UserService.GetRemainingDebt();
+        ClearedDebts = UserService.GetClearedDebt();
+        TotalBalance = UserService.GetTotalBalance();
+
+        var allTransactions = UserService.GetAllTransactions();
+        HighestTransactions = allTransactions.OrderByDescending(t => t.Amount).Take(5).ToList();
+        LowestTransactions = allTransactions.OrderBy(t => t.Amount).Take(5).ToList();
+        
     }
 
     private void ApplyDateFilter()

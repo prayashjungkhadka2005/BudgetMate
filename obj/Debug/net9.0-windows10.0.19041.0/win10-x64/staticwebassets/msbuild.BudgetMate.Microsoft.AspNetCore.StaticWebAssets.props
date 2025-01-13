@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ApplicationBundle</AssetTraitValue>
-      <Fingerprint>z6ry9jat4l</Fingerprint>
-      <Integrity>1YyqNWm+34D3pxn7ozSKhnUf7zikULIE8QRZoez9K2Y=</Integrity>
+      <Fingerprint>nugh156yjs</Fingerprint>
+      <Integrity>cdviLgYafxmoxnqinprBQ5ehjDS8TQtZM1zU2Q53fuY=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\BudgetMate.styles.css'))</OriginalItemSpec>

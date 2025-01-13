@@ -4,6 +4,11 @@
     margin-bottom: 15px;
 }
 
+
+h1 {
+    font-weight: bold;
+    font-size: 25px;
+}
 .dash-title {
     display: flex;
     justify-content: space-between;

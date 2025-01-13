@@ -8,7 +8,7 @@
 
 <div class="pending-debts-container">
     <div class="dash-title">
-        <h1>Dashboard</h1>
+        <h1>Debit Management</h1>
         <div class="filter-container">
             <label class="date-label">From:</label>
             <input type="date" @bind-value="startDate" />
@@ -17,6 +17,7 @@
             <input type="date" @bind-value="endDate" />
 
             <button class="apply-btn" @onclick="ApplyDateFilter">Apply Filter</button>
+            <button class="apply-btn" @onclick="ApplyAll">All</button>
         </div>
     </div>
 
@@ -39,22 +40,22 @@
         <tbody>
             @if (pendingDebts == null || !pendingDebts.Any())
             {
-                    <tr>
-                        <td colspan="4" class="no-debts-message">No debts to clear.</td>
-                    </tr>
+                <tr>
+                    <td colspan="4" class="no-debts-message">No debts to clear.</td>
+                </tr>
             }
             else
             {
                 @foreach (var debt in pendingDebts)
                 {
-                            <tr>
-                                <td>@debt.DebtDueDate</td>
-                                <td>@debt.SourceOfDebt</td>
-                                <td>$@debt.DebtAmount</td>
-                                <td>
-                                    <button class="clear-btn" @onclick="() => ShowConfirmationModal(debt.DebtId)">Clear</button>
-                                </td>
-                            </tr>
+                    <tr>
+                        <td>@debt.DebtDueDate</td>
+                        <td>@debt.SourceOfDebt</td>
+                        <td>$@debt.DebtAmount</td>
+                        <td>
+                            <button class="clear-btn" @onclick="() => ShowConfirmationModal(debt.DebtId)">Clear</button>
+                        </td>
+                    </tr>
                 }
             }
         </tbody>
@@ -77,22 +78,22 @@
         <tbody>
             @if (overdueDebts == null || !overdueDebts.Any())
             {
-                    <tr>
-                        <td colspan="4" class="no-debts-message">No overdue debts.</td>
-                    </tr>
+                <tr>
+                    <td colspan="4" class="no-debts-message">No overdue debts.</td>
+                </tr>
             }
             else
             {
                 @foreach (var debt in overdueDebts)
                 {
-                            <tr>
-                                <td>@debt.DebtDueDate</td>
-                                <td>@debt.SourceOfDebt</td>
-                                <td>$@debt.DebtAmount</td>
-                                <td>
-                                    <button class="clear-btn" @onclick="() => ShowConfirmationModal(debt.DebtId)">Clear</button>
-                                </td>
-                            </tr>
+                    <tr>
+                        <td>@debt.DebtDueDate</td>
+                        <td>@debt.SourceOfDebt</td>
+                        <td>$@debt.DebtAmount</td>
+                        <td>
+                            <button class="clear-btn" @onclick="() => ShowConfirmationModal(debt.DebtId)">Clear</button>
+                        </td>
+                    </tr>
                 }
             }
         </tbody>
@@ -115,20 +116,20 @@
         <tbody>
             @if (clearedDebts == null || !clearedDebts.Any())
             {
-                    <tr>
-                        <td colspan="4" class="no-debts-message">No cleared debts.</td>
-                    </tr>
+                <tr>
+                    <td colspan="4" class="no-debts-message">No cleared debts.</td>
+                </tr>
             }
             else
             {
                 @foreach (var debt in clearedDebts)
                 {
-                            <tr>
-                                <td>@debt.DebtDueDate</td>
-                                <td>@debt.SourceOfDebt</td>
-                                <td>$@debt.DebtAmount</td>
-                                <td><span class="paid-status">Paid</span></td>
-                            </tr>
+                    <tr>
+                        <td>@debt.DebtDueDate</td>
+                        <td>@debt.SourceOfDebt</td>
+                        <td>$@debt.DebtAmount</td>
+                        <td><span class="paid-status">Paid</span></td>
+                    </tr>
                 }
             }
         </tbody>
@@ -137,21 +138,21 @@
 
 @if (isModalVisible)
 {
-        <div class="modal-overlay" @onclick="CloseModal">
-            <div class="modal-container" @onclick:stopPropagation="true">
-                <div class="modal-header">
-                    <h3>Confirm Debt Clearance</h3>
-                    <button class="close-btn" @onclick="CloseModal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <p>Are you sure you want to clear this debt?</p>
-                </div>
-                <div class="modal-footer">
-                    <button class="cancel-btn" @onclick="CloseModal">Cancel</button>
-                    <button class="confirm-btn" @onclick="() => ClearDebt(debtToClearId)">Confirm</button>
-                </div>
+    <div class="modal-overlay" @onclick="CloseModal">
+        <div class="modal-container" @onclick:stopPropagation="true">
+            <div class="modal-header">
+                <h3>Confirm Debt Clearance</h3>
+                <button class="close-btn" @onclick="CloseModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to clear this debt?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" @onclick="CloseModal">Cancel</button>
+                <button class="confirm-btn" @onclick="() => ClearDebt(debtToClearId)">Confirm</button>
             </div>
         </div>
+    </div>
 }
 
 @code {
@@ -191,6 +192,14 @@
             overdueDebts = UserService.GetOverdueDebts();
 
         }
+    }
+
+    private void ApplyAll()
+    {
+        pendingDebts = UserService.GetPendingDebts();
+        overdueDebts = UserService.GetOverdueDebts();
+        clearedDebts = UserService.GetClearedDebts(); // Fetch cleared debts
+        
     }
 
     private void ApplyDateFilter()
