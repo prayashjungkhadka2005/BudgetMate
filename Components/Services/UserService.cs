@@ -13,6 +13,9 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
         private SQLiteConnection _database;
         private string _dbPath;
 
+        // Store the logged-in user (for session tracking)
+        private static User _currentUser = null;
+
         public UserService()
         {
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -37,59 +40,88 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
             Debug.WriteLine($"Database path: {_dbPath}");
         }
 
+        // User Login Function
+        public User LoginUser(string username, string password)
+        {
+            var user = _database.Table<User>().FirstOrDefault(u => u.Username == username && u.Password == password);
+            if (user != null)
+            {
+                _currentUser = user;  // Store user session
+            }
+            return user;
+        }
+
+        // Logout Function
+        public void Logout()
+        {
+            _currentUser = null; // Clear session
+            Debug.WriteLine("User logged out successfully.");
+        }
+
+        // Check if user is logged in
+        public bool IsUserLoggedIn()
+        {
+            return _currentUser != null;
+        }
+
+        // Get current logged-in user
+        public User GetCurrentUser()
+        {
+            return _currentUser;
+        }
+
         public bool RegisterUser(User user)
+        {
+            var existingUser = _database.Table<User>().FirstOrDefault(u => u.Username == user.Username); //checking if username exists
+            if (existingUser != null)
             {
-                var existingUser = _database.Table<User>().FirstOrDefault(u => u.Username == user.Username); //checking if username exists
-                if (existingUser != null)
-                {
-                    return false;
-                }
-
-                _database.Insert(user); //inserting user
-                return true;
+                return false;
             }
 
-            public User LoginUser(string username, string password)
-            {
-                return _database.Table<User>().FirstOrDefault(u => u.Username == username && u.Password == password); //validating username and password 
-            }
-
-            //        public bool AddDebitTransaction(Debit debit)
-            //        {
-            //            Debug.WriteLine($"Debit transaction: {debit}");
-
-            //            if (debit == null)
-            //            {
-            //                Debug.WriteLine("Debit transaction is null");
-            //                return false;
-            //            }
-
-            //            if (string.IsNullOrEmpty(debit.DebitTransactionTitle) || debit.DebitAmount <= 0)
-            //            {
-            //                Debug.WriteLine("Invalid debit transaction data: Title or Amount is missing");
-            //                return false;
-            //            }
-
-            //            try
-            //            {
-            //                _database.Insert(debit);  // Insert debit transaction into database
-            //                Debug.WriteLine("Debit transaction inserted successfully.");
-            //                return true;
-            //            }
-            //            catch (Exception ex)
-            //            {
-            //                Debug.WriteLine($"Error inserting debit transaction: {ex.Message}");
-            //                return false;
-            //            }
-            //        }
+            _database.Insert(user); //inserting user
+            return true;
+        }
 
 
 
 
-            //    }
-            //}
 
-            public bool AddDebitTransaction(Debit debit)
+        //        public bool AddDebitTransaction(Debit debit)
+        //        {
+        //            Debug.WriteLine($"Debit transaction: {debit}");
+
+        //            if (debit == null)
+        //            {
+        //                Debug.WriteLine("Debit transaction is null");
+        //                return false;
+        //            }
+
+        //            if (string.IsNullOrEmpty(debit.DebitTransactionTitle) || debit.DebitAmount <= 0)
+        //            {
+        //                Debug.WriteLine("Invalid debit transaction data: Title or Amount is missing");
+        //                return false;
+        //            }
+
+        //            try
+        //            {
+        //                _database.Insert(debit);  // Insert debit transaction into database
+        //                Debug.WriteLine("Debit transaction inserted successfully.");
+        //                return true;
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                Debug.WriteLine($"Error inserting debit transaction: {ex.Message}");
+        //                return false;
+        //            }
+        //        }
+
+
+
+
+        //    }
+        //}
+
+        public bool AddDebitTransaction(Debit debit)
             {
 
                 if (debit == null)

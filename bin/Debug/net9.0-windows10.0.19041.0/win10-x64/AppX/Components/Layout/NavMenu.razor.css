@@ -82,9 +82,11 @@
         }
 
 .nav-scrollable {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 3.5rem); /* Adjust based on navbar height */
+    overflow-y: auto;
 }
-
 .navbar-toggler:checked ~ .nav-scrollable {
     display: block;
 }
@@ -101,13 +103,49 @@
     gap: 0.5rem; 
 }
 
+.nav-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Ensures it takes available space */
+}
+
+/* Spacer pushes the logout button down */
+.nav-spacer {
+    flex-grow: 1;
+}
+
+.logout-button-container {
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.logout-button {
+    background-color: #dc3545; /* Red Logout Button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+    .logout-button:hover {
+        background-color: #c82333; /* Darker red on hover */
+    }
+
 @media (min-width: 641px) {
     .navbar-toggler {
         display: none;
     }
 
     .nav-scrollable {
-        display: block;
+        display: flex;
+        flex-direction: column;
         height: calc(100vh - 3.5rem);
         overflow-y: auto;
     }
