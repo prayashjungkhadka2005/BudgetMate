@@ -444,7 +444,7 @@ h3[b-efmrok9j39] {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 .no-transactions-message[b-hjwq8akmqr] {
@@ -456,6 +456,38 @@ h3[b-efmrok9j39] {
     font-weight: bold;
 }
 
+.col:nth-child(1)[b-hjwq8akmqr] {
+    background-color: #087F23;
+    color: white;
+}
+
+.col:nth-child(2)[b-hjwq8akmqr] {
+    background-color: #C62828;
+    color: white;
+}
+
+.col:nth-child(3)[b-hjwq8akmqr] {
+    background-color: #E65100;
+    color: white;
+}
+
+.col:nth-child(4)[b-hjwq8akmqr] {
+    background-color: #1A237E;
+    color: white;
+}
+
+.col:nth-child(5)[b-hjwq8akmqr] {
+    background-color: #FF8F00;
+    color: white;
+}
+
+.tran-col:nth-child(1)[b-hjwq8akmqr] {
+    background-color: #0D47A1;
+}
+
+.tran-col:nth-child(2)[b-hjwq8akmqr] {
+    background-color: #512DA8;
+}
 
 @media (min-width: 768px) {
     .grid-container[b-hjwq8akmqr] {
@@ -496,8 +528,7 @@ h3[b-efmrok9j39] {
         background-color: #f1f1f1;
     }
 
-
-.pending-debts-container[b-hjwq8akmqr]{
+.pending-debts-container[b-hjwq8akmqr] {
     margin-top: 1.5rem;
     margin-bottom: 2rem;
 }
@@ -574,37 +605,30 @@ h3[b-efmrok9j39] {
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Ensures alignment inside each column */
 .col-content[b-hjwq8akmqr] {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align everything to the left */
+    align-items: flex-start;
     gap: 6px;
 }
 
-/* Font Awesome Icons */
 .icon[b-hjwq8akmqr] {
     font-size: 24px;
-    color: black;
+    color: white;
 }
 
-/* Title styling */
 .title[b-hjwq8akmqr] {
+    padding-top: 8px;
     font-size: 16px;
     font-weight: bold;
-    color: #555;
 }
 
-/* Value styling */
 .value[b-hjwq8akmqr] {
     font-size: 20px;
-    color: black;
     font-weight: bold;
 }
 
-
 .tran-details[b-hjwq8akmqr] {
-    
     display: flex;
     gap: 16px;
     justify-content: center;
@@ -616,33 +640,31 @@ h3[b-efmrok9j39] {
     padding: 16px;
     flex: 1;
     max-width: 100%;
-    align-items: center; /* Ensures vertical alignment */
-    gap: 12px; /* Space between icon, title, and value */
+    align-items: center;
+    gap: 12px;
     border-radius: 8px;
     padding: 22px;
-    margin-top: 1.5rem;
+    margin-top: 1.8rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    text-align: left; /* Align text content */
-
+    text-align: left;
+    color: white;
 }
 
 .tran-icon[b-hjwq8akmqr] {
     font-size: 24px;
-    color: black;
+    color: white;
 }
 
 .tran-title[b-hjwq8akmqr] {
+    padding-top: 8px;
     font-size: 18px;
     font-weight: bold;
-    color: #333;
 }
 
 .tran-value[b-hjwq8akmqr] {
     font-size: 20px;
     font-weight: bold;
-    color: #4caf50;
 }
-
 
 .modal-overlay[b-hjwq8akmqr] {
     position: fixed;
