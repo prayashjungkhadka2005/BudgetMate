@@ -26,7 +26,7 @@
 
 
     <div class="col">
-        <div class="col-content">   
+        <div class="col-content">
             <i class="fas fa-arrow-down icon"></i>
             <div class="title">Total Inflows</div>
             <div class="value">$@TotalInflows</div>
@@ -67,27 +67,21 @@
 </div>
 
 
+
 <div class="tran-details">
     <div class="tran-col">
+        <i class="fas fa-list-alt tran-icon"></i>
         <div class="tran-title">Total Number of Transactions</div>
-        <div class="number">
-            <div class="icon">
-                <span class="fas fa-umbrella-beach" aria-hidden="true"></span>
-            </div>
-            <div class="num-value">@TotalNumberOfTransactions</div>
-        </div>
+        <div class="tran-value">@TotalNumberOfTransactions</div>
     </div>
 
     <div class="tran-col">
+        <i class="fas fa-coins tran-icon"></i>
         <div class="tran-title">Total Transactions</div>
-        <div class="number">
-            <div class="icon">
-                <span class="fas fa-coins" aria-hidden="true"></span>
-            </div>
-            <div class="num-value">$@TotalAmountOfTransactions</div>
-        </div>
+        <div class="tran-value">$@TotalAmountOfTransactions</div>
     </div>
 </div>
+
 
 <div class="grid-container">
     <div>
@@ -293,7 +287,7 @@
             HighestTransactions = allTransactions.OrderByDescending(t => t.Amount).Take(5).ToList();
             LowestTransactions = allTransactions.OrderBy(t => t.Amount).Take(5).ToList();
 
-            
+
         }
     }
 
@@ -337,36 +331,36 @@
     //     CloseModal();
     // }
 
-//     private async Task ClearDebt(int debtId)
-// {
-//     bool confirmClear = await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to clear this debt?");
-    
-//     if (!confirmClear) return; Exit if user cancels
-    
-//     var debtToClear = pendingDebts.FirstOrDefault(debt => debt.DebtId == debtId);
-//     if (debtToClear == null) return; Exit if debt is not found
-    
-//     Call UserService to handle the clearing logic
-//     bool isCleared = UserService.ClearDebt(debtId);
-    
-//     if (isCleared)
-//     {
-//         Update UI state only if debt was successfully cleared
-//         pendingDebts = UserService.GetPendingDebts(); Refresh pending debts list
-//         StateHasChanged();
-//     }
-//     else
-//     {
-//         Show an error message if debt cannot be cleared due to insufficient balance
-//         await JSRuntime.InvokeVoidAsync("alert", "Not enough balance to clear the debt.");
-//     }
-    
-//     CloseModal();
-// }
+    //     private async Task ClearDebt(int debtId)
+    // {
+    //     bool confirmClear = await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to clear this debt?");
+
+    //     if (!confirmClear) return; Exit if user cancels
+
+    //     var debtToClear = pendingDebts.FirstOrDefault(debt => debt.DebtId == debtId);
+    //     if (debtToClear == null) return; Exit if debt is not found
+
+    //     Call UserService to handle the clearing logic
+    //     bool isCleared = UserService.ClearDebt(debtId);
+
+    //     if (isCleared)
+    //     {
+    //         Update UI state only if debt was successfully cleared
+    //         pendingDebts = UserService.GetPendingDebts(); Refresh pending debts list
+    //         StateHasChanged();
+    //     }
+    //     else
+    //     {
+    //         Show an error message if debt cannot be cleared due to insufficient balance
+    //         await JSRuntime.InvokeVoidAsync("alert", "Not enough balance to clear the debt.");
+    //     }
+
+    //     CloseModal();
+    // }
 
     private async Task ClearDebt(int debtId)
     {
-      
+
 
         bool isCleared = UserService.ClearDebt(debtId);
 
@@ -386,8 +380,8 @@
         else
         {
             message = "Not enough balance to clear the debt";
-            
-             // JSRuntime.InvokeVoidAsync("alert", "Not enough balance to clear the debt.");
+
+            // JSRuntime.InvokeVoidAsync("alert", "Not enough balance to clear the debt.");
         }
 
         CloseModal();
@@ -397,50 +391,49 @@
 }
 
 <style>
-   .dash-title {
-    display: flex;
-    justify-content: space-between; /* Align heading and filters on opposite sides */
-    align-items: center; /* Align items vertically in the center */
-    margin-bottom: 20px; /* Add some spacing below the title section */
-}
+    .dash-title {
+        display: flex;
+        justify-content: space-between; /* Align heading and filters on opposite sides */
+        align-items: center; /* Align items vertically in the center */
+        margin-bottom: 20px; /* Add some spacing below the title section */
+    }
 
-.dash-title h1 {
-      font-weight: bold;
-    font-size: 25px;
-}
+        .dash-title h1 {
+            font-weight: bold;
+            font-size: 25px;
+        }
 
-.filter-container {
-    display: flex;
-    align-items: center; /* Align filter inputs vertically */
-    gap: 10px; /* Add spacing between filter elements */
-}
+    .filter-container {
+        display: flex;
+        align-items: center; /* Align filter inputs vertically */
+        gap: 10px; /* Add spacing between filter elements */
+    }
 
-.filter-container .date-label {
-    font-size: 1rem;
-    margin-right: 5px;
-}
+        .filter-container .date-label {
+            font-size: 1rem;
+            margin-right: 5px;
+        }
 
-.filter-container input[type="date"] {
-    padding: 5px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+        .filter-container input[type="date"] {
+            padding: 5px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-.filter-container .apply-btn {
-    background-color: #2A329C;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 15px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
+        .filter-container .apply-btn {
+            background-color: #2A329C;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
 
-.filter-container .apply-btn:hover {
-    background-color: #22287D;
-}
-
+            .filter-container .apply-btn:hover {
+                background-color: #22287D;
+            }
 
 </style>

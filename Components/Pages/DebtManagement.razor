@@ -1,4 +1,4 @@
-﻿@page "/debtmanagement"
+﻿ @page "/debtmanagement"
 @using BudgetMate.Components.Services
 @using BudgetMate.Components.Layout
 @using BudgetMate.Components.Models
@@ -7,18 +7,25 @@
 @inject BudgetMate.Components.Services.UserService UserService
 
 <div class="pending-debts-container">
-    <h3 class="table-title">Pending Debts</h3>
+    <div class="dash-title">
+        <h1>Dashboard</h1>
+        <div class="filter-container">
+            <label class="date-label">From:</label>
+            <input type="date" @bind-value="startDate" />
 
-    <div class="filter-buttons">
-        <button class="filter-btn">This Week</button>
-        <button class="filter-btn">This Month</button>
-        <button class="filter-btn">Custom</button>
+            <label class="date-label">To:</label>
+            <input type="date" @bind-value="endDate" />
+
+            <button class="apply-btn" @onclick="ApplyDateFilter">Apply Filter</button>
+        </div>
     </div>
+
 
     @if (!string.IsNullOrEmpty(message))
     {
-            <div class="@((isSuccess ? "success" : "error"))">@message</div>
+        <div class="@((isSuccess ? "success" : "error"))">@message</div>
     }
+
 
     <table class="styled-table">
         <thead>
@@ -148,6 +155,11 @@
 }
 
 @code {
+
+    private DateTime? startDate;
+    private DateTime? endDate;
+
+
     private List<Debt> pendingDebts { get; set; }
     private List<Debt> overdueDebts { get; set; }
     private List<Debt> clearedDebts { get; set; }
@@ -161,6 +173,29 @@
         pendingDebts = UserService.GetPendingDebts();
         overdueDebts = UserService.GetOverdueDebts();
         clearedDebts = UserService.GetClearedDebts(); // Fetch cleared debts
+    }
+
+    public void LoadDashboardData()
+    {
+        if (!startDate.HasValue || !endDate.HasValue)
+        {
+            pendingDebts = UserService.GetPendingDebts();
+            overdueDebts = UserService.GetOverdueDebts();
+            clearedDebts = UserService.GetClearedDebts(); // Fetch cleared debts
+        }
+        else
+        {
+            pendingDebts = UserService.GetPendingDebtsListForDateRange(startDate.Value, endDate.Value);
+            clearedDebts = UserService.GetClearedDebtsListForDateRange(startDate.Value, endDate.Value);
+
+            overdueDebts = UserService.GetOverdueDebts();
+
+        }
+    }
+
+    private void ApplyDateFilter()
+    {
+        LoadDashboardData();
     }
 
     private void ShowConfirmationModal(int debtId)

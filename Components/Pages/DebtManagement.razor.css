@@ -4,6 +4,51 @@
     margin-bottom: 15px;
 }
 
+.dash-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    .dash-title h1 {
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+    .filter-container .date-label {
+        font-size: 1rem;
+        margin-right: 5px;
+    }
+
+    .filter-container input[type="date"] {
+        padding: 5px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .filter-container .apply-btn {
+        background-color: #2A329C;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 15px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+        .filter-container .apply-btn:hover {
+            background-color: #22287D;
+        }
+
 
 .pending-debts-container, .overdue-debts-container, .cleared-debts-container {
     margin-bottom: 1rem;

@@ -352,3 +352,7 @@ C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-maccatalyst\maccatalyst-x
 C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BudgetMate.pdb
 C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\BudgetMate.genruntimeconfig.cache
 C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\ref\BudgetMate.dll
+C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\s2nq3vjt16-dvjbqp6hvw.gz
+C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\g9f1ckn6yb-dvjbqp6hvw.gz
+C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\publish\s2nq3vjt16-dvjbqp6hvw.br
+C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\compressed\publish\g9f1ckn6yb-dvjbqp6hvw.br

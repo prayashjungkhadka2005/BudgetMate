@@ -533,6 +533,8 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
                 .ToList();
         }
 
+      
+
         public List<Debt> GetClearedDebts()
         {
             try
@@ -545,6 +547,9 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
                 return new List<Debt>(); // Return an empty list if there's an error
             }
         }
+
+      
+
 
         public int GetTotalInflowsForDateRange(DateTime startDate, DateTime endDate)
         {
@@ -627,6 +632,28 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
             }
         }
 
+        public List<Debt> GetClearedDebtsListForDateRange(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                // Fetch all cleared debts
+                var allClearedDebts = _database.Table<Debt>().Where(debt => debt.isCleared).ToList();
+
+                // Filter debts by due date range after fetching
+                return allClearedDebts
+                    .Where(debt => DateTime.TryParse(debt.DebtDueDate, out DateTime dueDate) &&
+                                   dueDate >= startDate &&
+                                   dueDate <= endDate)
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error retrieving cleared debts for date range based on due date: {ex.Message}");
+                return new List<Debt>(); // Return an empty list if there's an error
+            }
+        }
+
+
         public int GetTotalNumberOfTransactionsForDateRange(DateTime startDate, DateTime endDate)
         {
             try
@@ -688,6 +715,24 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
                 return new List<Debt>();
             }
         }
+
+        public List<Debt> GetPendingDebtsListForDateRange(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                return _database.Table<Debt>().ToList()
+                    .Where(debt => !debt.isCleared &&
+                                   DateTime.TryParse(debt.DebtDueDate, out DateTime dueDate) &&
+                                   dueDate >= startDate && dueDate <= endDate)
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error filtering pending debts by due date: {ex.Message}");
+                return new List<Debt>();
+            }
+        }
+
 
         public List<Transaction> GetAllTransactionsForDateRange(DateTime startDate, DateTime endDate)
         {
