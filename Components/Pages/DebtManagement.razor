@@ -1,0 +1,315 @@
+﻿@page "/debtmanagement"
+@using BudgetMate.Components.Services
+@using BudgetMate.Components.Layout
+@using BudgetMate.Components.Models
+@inject NavigationManager NavigationManager
+@using Microsoft.AspNetCore.Components.Forms
+@inject BudgetMate.Components.Services.UserService UserService
+
+
+
+
+<div class="pending-debts-container">
+    <h3 class="table-title">Pending Debts</h3>
+
+    <div class="filter-buttons">
+        <button class="filter-btn">This Week</button>
+        <button class="filter-btn">This Month</button>
+        <button class="filter-btn">Custom</button>
+    </div>
+
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <div class="@((isSuccess ? "success" : "error"))">@message</div>
+    }
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Due Date</th>
+                <th>Source</th>
+                <th>Amount</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (pendingDebts == null || !pendingDebts.Any())
+            {
+                <tr>
+                    <td colspan="4" class="no-debts-message">No debts to clear.</td>
+                </tr>
+            }
+            else
+            {
+                @foreach (var debt in pendingDebts)
+                {
+                    <tr>
+                        <td>@debt.DebtDueDate</td>
+                        <td>@debt.SourceOfDebt</td>
+                        <td>$@debt.DebtAmount</td>
+                        <td>
+                            <button class="clear-btn" @onclick="() => ShowConfirmationModal(debt.DebtId)">Clear</button>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+
+@if (isModalVisible)
+{
+    <div class="modal-overlay" @onclick="CloseModal">
+        <div class="modal-container" @onclick:stopPropagation="true">
+            <div class="modal-header">
+                <h3>Confirm Debt Clearance</h3>
+                <button class="close-btn" @onclick="CloseModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to clear this debt?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" @onclick="CloseModal">Cancel</button>
+                <button class="confirm-btn" @onclick="() => ClearDebt(debtToClearId)">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+
+    @code {
+    private int TotalInflows { get; set; }
+    private int TotalOutflows { get; set; }
+    private int TotalDebt { get; set; }
+    private int RemainingDebts { get; set; }
+    private int ClearedDebts { get; set; }
+    private List<Debt> pendingDebts { get; set; }
+    private bool isModalVisible { get; set; }
+    private int debtToClearId { get; set; }
+    private string message;
+    private bool isSuccess = false;
+    private int TotalBalance { get; set; }
+
+    protected override void OnInitialized()
+    {
+       
+        pendingDebts = UserService.GetPendingDebts();
+        RemainingDebts = UserService.GetRemainingDebt();
+        ClearedDebts = UserService.GetClearedDebt();
+        TotalBalance = UserService.GetTotalBalance();
+
+       
+    }
+
+    private void ShowConfirmationModal(int debtId)
+    {
+        debtToClearId = debtId;
+        isModalVisible = true;
+    }
+
+    private void CloseModal()
+    {
+        isModalVisible = false;
+    }
+
+
+    private async Task ClearDebt(int debtId)
+    {
+
+
+        bool isCleared = UserService.ClearDebt(debtId);
+
+        if (isCleared)
+        {
+            // Refresh UI Data
+            TotalInflows = UserService.GetTotalInflows();
+            TotalOutflows = UserService.GetTotalOutflow();
+            TotalDebt = UserService.GetTotalDebt();
+            RemainingDebts = UserService.GetRemainingDebt();
+            ClearedDebts = UserService.GetClearedDebt();
+            TotalBalance = UserService.GetTotalBalance();
+            pendingDebts = UserService.GetPendingDebts();
+
+            StateHasChanged();
+        }
+        else
+        {
+            message = "Not enough balance to clear the debt";
+
+            // JSRuntime.InvokeVoidAsync("alert", "Not enough balance to clear the debt.");
+        }
+
+        CloseModal();
+    }
+
+
+}
+
+
+
+
+
+}
+
+<style>
+    .pending-debts-container {
+        margin-bottom: 2rem;
+    }
+
+    .no-debts-message {
+        text-align: center;
+        font-size: 18px;
+        color: #555;
+        background: #f9f9f9;
+        padding: 12px;
+        font-weight: bold;
+    }
+
+    .filter-buttons {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .filter-btn {
+        background-color: #2A329C;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+        .filter-btn:hover {
+            background-color: #22287D;
+        }
+
+    .clear-btn {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 12px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+        .clear-btn:hover {
+            background-color: #45a049;
+        }
+
+    .success {
+        text-align: center;
+        color: green;
+        font-weight: bold;
+    }
+
+    .error {
+        color: red;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .styled-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .styled-table thead {
+            background-color: #2A329C;
+            color: white;
+            text-align: center;
+        }
+
+        .styled-table th {
+            padding: 12px;
+        }
+
+        .styled-table td {
+            text-align: center;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .styled-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .styled-table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    .modal-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 400px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .close-btn {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .modal-footer {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .cancel-btn, .confirm-btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .cancel-btn {
+        background-color: #f44336;
+        color: white;
+        border: none;
+    }
+
+        .cancel-btn:hover {
+            background-color: #d32f2f;
+        }
+
+    .confirm-btn {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+    }
+
+        .confirm-btn:hover {
+            background-color: #45a049;
+        }
+
+</style>

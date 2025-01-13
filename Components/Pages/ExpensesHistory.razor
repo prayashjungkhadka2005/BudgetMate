@@ -1,0 +1,180 @@
+﻿@page "/expenseshistory"
+@using BudgetMate.Components.Services
+@using BudgetMate.Components.Layout
+@using BudgetMate.Components.Models
+@inject NavigationManager NavigationManager
+@using Microsoft.AspNetCore.Components.Forms
+@inject BudgetMate.Components.Services.UserService UserService
+
+
+
+<h3>Transaction Management</h3>
+
+<div class="filters">
+    <select @bind="selectedType">
+        <option value="">All Types</option>
+        <option value="Credit">Credit</option>
+        <option value="Debit">Debit</option>
+        <option value="Debt">Debt</option>
+    </select>
+
+    <select @bind="selectedTag">
+        <option value="">All Tags</option>
+        @foreach (var tag in GetUniqueTags())
+        {
+            <option value="@tag">@tag</option>
+        }
+    </select>
+
+    <label class="date-label">From:</label>
+    <input type="date" @bind="fromDate" />
+
+    <label class="date-label">To:</label>
+    <input type="date" @bind="toDate" />
+
+    <input type="text" @bind="searchQuery" placeholder="Search transactions..." />
+
+    <select @bind="sortOrder">
+        <option value="desc">Newest First</option>
+        <option value="asc">Oldest First</option>
+    </select>
+
+    <button @onclick="ApplyFilters">Apply Filters</button>
+</div>
+
+
+
+<table class="transactions-table">
+    <thead>
+        <tr>
+            <th>Date <button @onclick="SortByDate">⇅</button></th>
+            <th>Amount</th>
+            <th>Tags/Source</th>
+            <th>Note</th>
+            <th>Type</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transaction in filteredTransactions)
+        {
+            <tr>
+                <td>@transaction.TransactionDate</td>
+                <td>$@transaction.Amount</td>
+                <td>@string.Join(", ", string.IsNullOrEmpty(transaction.Tags) ? new List<string>() : transaction.Tags.Split(',').ToList())</td>
+                <td>@(transaction.Note ?? "No note added")</td>
+                <td>@transaction.Type</td>
+                <td>
+                    <button class="add-note-btn" @onclick="() => OpenNoteModal(transaction)">Add/Update Note</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (isNoteModalOpen)
+{
+    <div class="modal">
+        <div class="modal-content">
+            <h4>Add or Update Note</h4>
+            <textarea @bind="selectedTransaction.Note" placeholder="Enter a note..."></textarea>
+            <div class="modal-actions">
+                <button class="save-btn" @onclick="SaveNote">Save</button>
+                <button class="cancel-btn" @onclick="CloseNoteModal">Cancel</button>
+            </div>
+
+        </div>
+    </div>
+}
+
+
+
+
+
+@code {
+    private string selectedType = "";
+    private string selectedTag = "";
+    private DateTime? fromDate;
+    private DateTime? toDate;
+    private string searchQuery = "";
+    private string sortOrder = "desc";
+    private List<Transaction> allTransactions = new();
+    private List<Transaction> filteredTransactions = new();
+    private Transaction selectedTransaction;
+    private bool isNoteModalOpen = false;
+    private bool isSortedAscending = true;
+
+    protected override void OnInitialized()
+    {
+        LoadTransactions();
+    }
+
+    private void LoadTransactions()
+    {
+        allTransactions = UserService.GetAllTransactions();
+        ApplyFilters();
+    }
+
+    private void ApplyFilters()
+    {
+        filteredTransactions = allTransactions
+            .Where(t => (string.IsNullOrEmpty(selectedType) || t.Type == selectedType)
+                        && (string.IsNullOrEmpty(selectedTag) || (t.Tags ?? "").Contains(selectedTag))
+                        && (!fromDate.HasValue || DateTime.Parse(t.TransactionDate) >= fromDate.Value)
+                        && (!toDate.HasValue || DateTime.Parse(t.TransactionDate) <= toDate.Value)
+                        && (string.IsNullOrEmpty(searchQuery) || (t.Note ?? "").Contains(searchQuery, StringComparison.OrdinalIgnoreCase)))
+            .OrderByDescending(t => DateTime.Parse(t.TransactionDate)) // Fix sorting
+            .ToList();
+    }
+
+
+
+
+    private void SortByDate()
+    {
+        if (isSortedAscending)
+        {
+            filteredTransactions = filteredTransactions.OrderBy(t => DateTime.Parse(t.TransactionDate)).ToList();
+        }
+        else
+        {
+            filteredTransactions = filteredTransactions.OrderByDescending(t => DateTime.Parse(t.TransactionDate)).ToList();
+        }
+        isSortedAscending = !isSortedAscending;
+        StateHasChanged();
+    }
+
+    private void OpenNoteModal(Transaction transaction)
+    {
+        selectedTransaction = transaction;
+        isNoteModalOpen = true;
+        StateHasChanged();
+    }
+
+    private void CloseNoteModal()
+    {
+        isNoteModalOpen = false;
+        selectedTransaction = null;
+        StateHasChanged();
+    }
+
+
+    private void SaveNote()
+    {
+        if (selectedTransaction != null)
+        {
+            UserService.UpdateNote(selectedTransaction.TransactionID, selectedTransaction.Note);
+        }
+        isNoteModalOpen = false;
+        selectedTransaction = null;
+        StateHasChanged();
+    }
+
+    private List<string> GetUniqueTags()
+    {
+        return allTransactions
+            .SelectMany(t => t.Tags?.Split(',') ?? Array.Empty<string>())
+            .Distinct()
+            .ToList();
+    }
+}
