@@ -133,15 +133,7 @@
             isSuccess = false;
             return;
         }
-        if (transactiontype == "expense")
-        {
-            if (transactionamount > currentBalance)
-            {
-                message = "Debit amount cannot exceed your available balance.";
-                isSuccess = false;
-                return;
-            }
-        }
+        
         var success = false;
         if (transactiontype == "expense")
         {
@@ -155,6 +147,12 @@
                     DebitTransactionDate = date.ToString("yyyy-MM-dd"),
                 };
             success = UserService.AddDebitTransaction(newDebit);
+            if (!success)
+            {
+                message = "Insufficient balance";
+                isSuccess = false;
+                return;
+            }
         }
         else if (transactiontype == "income")
         {

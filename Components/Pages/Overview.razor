@@ -111,6 +111,12 @@
 
 <div>
     <h3>Pending Debts</h3>
+      <div>
+                    @if (!string.IsNullOrEmpty(message))
+                    {
+                        <div class="@((isSuccess ? "success" : "error"))">@message</div>
+                    }
+                </div>
     <table class="pending-debts-table">
         <thead>
             <tr>
@@ -121,7 +127,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var debt in UserService.GetPendingDebts())
+            @foreach (var debt in pendingDebts)
             {
                 <tr>
                     <td>@debt.DebtDueDate</td>
@@ -135,6 +141,7 @@
         </tbody>
     </table>
 </div>
+
 
 <!-- Modal -->
 @if (isModalVisible)
@@ -154,7 +161,7 @@
             </div>
         </div>
     </div>
-}
+
 
 @code {
     private int TotalInflows { get; set; }
@@ -171,6 +178,8 @@
     private List<Debt> pendingDebts { get; set; }
     private bool isModalVisible { get; set; }
     private int debtToClearId { get; set; }
+    private string message;
+    private bool isSuccess = false;
 
     protected override void OnInitialized()
     {
@@ -200,35 +209,105 @@
         isModalVisible = false;
     }
 
+    // private async Task ClearDebt(int debtId)
+    // {
+    //     if (await JSRuntime.InvokeAsync<bool>("confirm", new object[] { "Are you sure you want to clear this debt?" }))
+    //     {
+    //         Clear the debt if confirmed
+    //         var debtToClear = pendingDebts.FirstOrDefault(debt => debt.DebtId == debtId);
+    //         if (debtToClear != null && TotalInflows >= debtToClear.DebtAmount)
+    //         {
+    //             TotalInflows -= debtToClear.DebtAmount;
+    //             TotalDebt -= debtToClear.DebtAmount;
+
+    //             bool isCleared = UserService.ClearDebt(debtId);
+    //             if (isCleared)
+    //             {
+    //                 debtToClear.isCleared = true;
+    //                 pendingDebts.Remove(debtToClear);
+    //                 pendingDebts = UserService.GetPendingDebts();
+    //                 StateHasChanged();
+    //             }
+    //         }
+    //     }
+    //     CloseModal();
+    // }
+
+//     private async Task ClearDebt(int debtId)
+// {
+//     bool confirmClear = await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to clear this debt?");
+    
+//     if (!confirmClear) return; Exit if user cancels
+    
+//     var debtToClear = pendingDebts.FirstOrDefault(debt => debt.DebtId == debtId);
+//     if (debtToClear == null) return; Exit if debt is not found
+    
+//     Call UserService to handle the clearing logic
+//     bool isCleared = UserService.ClearDebt(debtId);
+    
+//     if (isCleared)
+//     {
+//         Update UI state only if debt was successfully cleared
+//         pendingDebts = UserService.GetPendingDebts(); Refresh pending debts list
+//         StateHasChanged();
+//     }
+//     else
+//     {
+//         Show an error message if debt cannot be cleared due to insufficient balance
+//         await JSRuntime.InvokeVoidAsync("alert", "Not enough balance to clear the debt.");
+//     }
+    
+//     CloseModal();
+// }
+
     private async Task ClearDebt(int debtId)
     {
-        if (await JSRuntime.InvokeAsync<bool>("confirm", new object[] { "Are you sure you want to clear this debt?" }))
-        {
-            // Clear the debt if confirmed
-            var debtToClear = pendingDebts.FirstOrDefault(debt => debt.DebtId == debtId);
-            if (debtToClear != null && TotalInflows >= debtToClear.DebtAmount)
-            {
-                TotalInflows -= debtToClear.DebtAmount;
-                TotalDebt -= debtToClear.DebtAmount;
+      
 
-                bool isCleared = UserService.ClearDebt(debtId);
-                if (isCleared)
-                {
-                    debtToClear.isCleared = true;
-                    pendingDebts.Remove(debtToClear);
-                    pendingDebts = UserService.GetPendingDebts();
-                    StateHasChanged();
-                }
-            }
+        bool isCleared = UserService.ClearDebt(debtId);
+
+        if (isCleared)
+        {
+            // Refresh UI Data
+            TotalInflows = UserService.GetTotalInflows();
+            TotalOutflows = UserService.GetTotalOutflow();
+            TotalDebt = UserService.GetTotalDebt();
+            RemainingDebts = UserService.GetRemainingDebt();
+            ClearedDebts = UserService.GetClearedDebt();
+            TotalBalance = UserService.GetTotalBalance();
+            pendingDebts = UserService.GetPendingDebts();
+
+            StateHasChanged();
         }
+        else
+        {
+            message = "Not enough balance to clear the debt";
+            
+             // JSRuntime.InvokeVoidAsync("alert", "Not enough balance to clear the debt.");
+        }
+
         CloseModal();
     }
+
+
 }
 
 
 }
 
 <style>
+    .success {
+        text-align: center;
+        color: green;
+        font-weight: bold;
+    }
+
+    .error {
+        color: red;
+        text-align: center;
+        font-weight: bold;
+    }
+
     tr:hover {
         background-color: #f1f1f1;
     }
@@ -245,6 +324,7 @@
         padding: 12px;
         border: 1px solid #ddd;
     }
+
 
     th {
         background-color: #f4f4f4;
