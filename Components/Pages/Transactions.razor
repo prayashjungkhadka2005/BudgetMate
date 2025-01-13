@@ -40,7 +40,7 @@
             <div class="transaction-row">
                 <div class="trow-title">Transaction Title</div>
                 <div class="trow-field">
-                    <input type="text" @bind="transactiontitle" placeholder="Office Rent" id="transaction-title">
+                    <input type="text" @bind="transactiontitle" id="transaction-title">
                 </div>
             </div>
 
@@ -54,14 +54,14 @@
             <div class="transaction-row">
                 <div class="trow-title">Amount</div>
                 <div class="trow-field">
-                    <input @bind="transactionamount" type="text" placeholder="$100" id="transaction-amount">
+                    <input @bind="transactionamount" type="text"  id="transaction-amount">
                 </div>
             </div>
 
             <div id="source-of-debt-row" class="transaction-row" style="display: none;">
                 <div class="trow-title">Source of Debt</div>
                 <div class="trow-field">
-                    <input @bind="sourceofdebt" type="text" placeholder="Enter Source of Debt" id="source-of-debt">
+                    <input @bind="sourceofdebt" type="text"  id="source-of-debt">
                 </div>
             </div>
 
@@ -125,20 +125,20 @@
             return;
         }
 
+        // Only check for tag selection if NOT debt
         string transactionTags = !string.IsNullOrEmpty(customtag) ? customtag : selectedTag;
 
-        if (string.IsNullOrEmpty(transactionTags))
+        if (transactiontype != "debt" && string.IsNullOrEmpty(transactionTags))
         {
             message = "Please select or enter a tag.";
             isSuccess = false;
             return;
         }
-        
+
         var success = false;
         if (transactiontype == "expense")
         {
             var date = DateTime.Now;
-
             var newDebit = new Debit
                 {
                     DebitTransactionTitle = transactiontitle,
@@ -195,6 +195,7 @@
         }
     }
 
+
     private void ClearForm()
     {
         transactiontitle = string.Empty;
@@ -208,6 +209,7 @@
 <script>
  (function () {
          let selectedTag;
+
         const transactionTypeSelect = document.getElementById('transaction-type');
     const tagsRow = document.getElementById('tags-row');
     const tagsContainer = document.getElementById('tags-container');
@@ -254,6 +256,11 @@
         customTagButton.textContent = 'Custom Tag';
         customTagButton.onclick = () => toggleTag(customTagButton, true);
         tagsContainer.appendChild(customTagButton);
+    }
+
+     if (selectedType === 'debt') {
+        selectedTag = "Debt";
+        DotNet.invokeMethodAsync('BudgetMate', 'SetSelectedTag', selectedTag);
     }
 
     }
