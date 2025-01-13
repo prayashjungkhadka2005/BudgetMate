@@ -1,5 +1,12 @@
-﻿.pending-debts-container {
-    margin-bottom: 2rem;
+﻿h3 {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+
+.pending-debts-container, .overdue-debts-container, .cleared-debts-container {
+    margin-bottom: 1rem;
 }
 
 .no-debts-message {
@@ -32,7 +39,7 @@
     }
 
 .clear-btn {
-    background-color: #4CAF50;
+    background-color: #293198;
     color: white;
     border: none;
     border-radius: 5px;
@@ -89,6 +96,16 @@
     .styled-table tbody tr:hover {
         background-color: #f1f1f1;
     }
+
+.overdue-table thead {
+    background-color: #B71C1C;
+    color: white;
+}
+
+.paid-status {
+    font-weight: bold;
+    color: green;
+}
 
 .modal-overlay {
     position: fixed;

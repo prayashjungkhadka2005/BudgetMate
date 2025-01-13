@@ -1,4 +1,16 @@
-﻿.grid-container {
+﻿h1 {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.grid-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
@@ -100,28 +112,10 @@
     font-weight: bold;
 }
 
-.filter-buttons {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-}
 
-.filter-btn {
-    background-color: #2A329C;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-    .filter-btn:hover {
-        background-color: #22287D;
-    }
 
 .clear-btn {
-    background-color: #4CAF50;
+    background-color: #293198;
     color: white;
     border: none;
     border-radius: 5px;
@@ -217,6 +211,8 @@
     padding-top: 8px;
     font-size: 18px;
     font-weight: bold;
+
+
 }
 
 .tran-value {

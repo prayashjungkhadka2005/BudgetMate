@@ -54,18 +54,25 @@
 
 <div class="tran-details">
     <div class="tran-col">
-        <i class="fas fa-list-alt tran-icon"></i>
         <div class="tran-title">Total Number of Transactions</div>
-        <div class="tran-value">@TotalNumberOfTransactions</div>
+        <div class="number">
+            <div class="icon">
+                <span class="fas fa-umbrella-beach" aria-hidden="true"></span>
+            </div>
+            <div class="num-value">@TotalNumberOfTransactions</div>
+        </div>
     </div>
 
     <div class="tran-col">
-        <i class="fas fa-coins tran-icon"></i>
         <div class="tran-title">Total Transactions</div>
-        <div class="tran-value">$@TotalAmountOfTransactions</div>
+        <div class="number">
+            <div class="icon">
+                <span class="fas fa-coins" aria-hidden="true"></span>
+            </div>
+            <div class="num-value">$@TotalAmountOfTransactions</div>
+        </div>
     </div>
 </div>
-
 
 <div class="grid-container">
     <div>
@@ -141,12 +148,7 @@
 <div class="pending-debts-container">
     <h3 class="table-title">Pending Debts</h3>
 
-    <div class="filter-buttons">
-        <button class="filter-btn">This Week</button>
-        <button class="filter-btn">This Month</button>
-        <button class="filter-btn">Custom</button>
-    </div>
-
+   
     @if (!string.IsNullOrEmpty(message))
     {
         <div class="@((isSuccess ? "success" : "error"))">@message</div>

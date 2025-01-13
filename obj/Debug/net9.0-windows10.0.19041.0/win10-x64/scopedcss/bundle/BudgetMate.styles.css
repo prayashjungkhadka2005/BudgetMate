@@ -209,8 +209,15 @@ main[b-btdjf3oo18] {
 }
 /* /Components/Pages/DebitManagement.razor.rz.scp.css */
 /* /Components/Pages/DebtManagement.razor.rz.scp.css */
-.pending-debts-container[b-juz39syoi9] {
-    margin-bottom: 2rem;
+h3[b-juz39syoi9] {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+
+.pending-debts-container[b-juz39syoi9], .overdue-debts-container[b-juz39syoi9], .cleared-debts-container[b-juz39syoi9] {
+    margin-bottom: 1rem;
 }
 
 .no-debts-message[b-juz39syoi9] {
@@ -243,7 +250,7 @@ main[b-btdjf3oo18] {
     }
 
 .clear-btn[b-juz39syoi9] {
-    background-color: #4CAF50;
+    background-color: #293198;
     color: white;
     border: none;
     border-radius: 5px;
@@ -300,6 +307,16 @@ main[b-btdjf3oo18] {
     .styled-table tbody tr:hover[b-juz39syoi9] {
         background-color: #f1f1f1;
     }
+
+.overdue-table thead[b-juz39syoi9] {
+    background-color: #B71C1C;
+    color: white;
+}
+
+.paid-status[b-juz39syoi9] {
+    font-weight: bold;
+    color: green;
+}
 
 .modal-overlay[b-juz39syoi9] {
     position: fixed;
@@ -599,6 +616,18 @@ h3[b-v5hdeoumal] {
 }
 /* /Components/Pages/Home.razor.rz.scp.css */
 /* /Components/Pages/Overview.razor.rz.scp.css */
+h1[b-hjwq8akmqr] {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+h3[b-hjwq8akmqr] {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
 .grid-container[b-hjwq8akmqr] {
     display: grid;
     grid-template-columns: 1fr;
@@ -701,28 +730,10 @@ h3[b-v5hdeoumal] {
     font-weight: bold;
 }
 
-.filter-buttons[b-hjwq8akmqr] {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-}
 
-.filter-btn[b-hjwq8akmqr] {
-    background-color: #2A329C;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-    .filter-btn:hover[b-hjwq8akmqr] {
-        background-color: #22287D;
-    }
 
 .clear-btn[b-hjwq8akmqr] {
-    background-color: #4CAF50;
+    background-color: #293198;
     color: white;
     border: none;
     border-radius: 5px;
@@ -818,6 +829,8 @@ h3[b-v5hdeoumal] {
     padding-top: 8px;
     font-size: 18px;
     font-weight: bold;
+
+
 }
 
 .tran-value[b-hjwq8akmqr] {

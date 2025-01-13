@@ -523,6 +523,28 @@
             }
         }
 
+        public List<Debt> GetOverdueDebts()
+        {
+            var allDebts = _database.Table<Debt>().Where(debt => !debt.isCleared).ToList();
+
+            return allDebts
+                .Where(debt => DateTime.TryParse(debt.DebtDueDate, out DateTime dueDate) && dueDate < DateTime.Now)
+                .ToList();
+        }
+
+        public List<Debt> GetClearedDebts()
+        {
+            try
+            {
+                return _database.Table<Debt>().Where(debt => debt.isCleared).ToList();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error retrieving cleared debts: {ex.Message}");
+                return new List<Debt>(); // Return an empty list if there's an error
+            }
+        }
+
 
 
 

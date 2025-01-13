@@ -1,5 +1,12 @@
-.pending-debts-container[b-juz39syoi9] {
-    margin-bottom: 2rem;
+h3[b-juz39syoi9] {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+
+.pending-debts-container[b-juz39syoi9], .overdue-debts-container[b-juz39syoi9], .cleared-debts-container[b-juz39syoi9] {
+    margin-bottom: 1rem;
 }
 
 .no-debts-message[b-juz39syoi9] {
@@ -32,7 +39,7 @@
     }
 
 .clear-btn[b-juz39syoi9] {
-    background-color: #4CAF50;
+    background-color: #293198;
     color: white;
     border: none;
     border-radius: 5px;
@@ -89,6 +96,16 @@
     .styled-table tbody tr:hover[b-juz39syoi9] {
         background-color: #f1f1f1;
     }
+
+.overdue-table thead[b-juz39syoi9] {
+    background-color: #B71C1C;
+    color: white;
+}
+
+.paid-status[b-juz39syoi9] {
+    font-weight: bold;
+    color: green;
+}
 
 .modal-overlay[b-juz39syoi9] {
     position: fixed;

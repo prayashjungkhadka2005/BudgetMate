@@ -1,3 +1,15 @@
+h1[b-hjwq8akmqr] {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+h3[b-hjwq8akmqr] {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
 .grid-container[b-hjwq8akmqr] {
     display: grid;
     grid-template-columns: 1fr;
@@ -100,28 +112,10 @@
     font-weight: bold;
 }
 
-.filter-buttons[b-hjwq8akmqr] {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-}
 
-.filter-btn[b-hjwq8akmqr] {
-    background-color: #2A329C;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-    .filter-btn:hover[b-hjwq8akmqr] {
-        background-color: #22287D;
-    }
 
 .clear-btn[b-hjwq8akmqr] {
-    background-color: #4CAF50;
+    background-color: #293198;
     color: white;
     border: none;
     border-radius: 5px;
@@ -217,6 +211,8 @@
     padding-top: 8px;
     font-size: 18px;
     font-weight: bold;
+
+
 }
 
 .tran-value[b-hjwq8akmqr] {
