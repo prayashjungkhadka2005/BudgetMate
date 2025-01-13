@@ -59,65 +59,92 @@
     </div>
 </div>
 
-<div>
-    <h3>Top 5 Highest Transactions</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>SN</th>
-                <th>Amount</th>
-                <th>Transaction Type</th>
-                <th>Tags/Source</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var transaction in HighestTransactions.Select((value, index) => new { value, index }))
-            {
+<div class="grid-container">
+    <div>
+        <h3 class="table-title">Highest Transactions</h3>
+        <table class="styled-table">
+            <thead>
                 <tr>
-                    <td>@(transaction.index + 1)</td>
-                    <td>$@transaction.value.Amount</td>
-                    <td>@transaction.value.Type</td>
-                    <td>@string.Join(", ", string.IsNullOrEmpty(transaction.value.Tags) ? new List<string>() : transaction.value.Tags.Split(',').ToList())</td>
+                    <th>S.N</th>
+                    <th>Amount</th>
+                    <th>Transaction Type</th>
+                    <th>Tags</th>
                 </tr>
-            }
-        </tbody>
-    </table>
-</div>
-
-<div>
-    <h3>Top 5 Lowest Transactions</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>SN</th>
-                <th>Amount</th>
-                <th>Transaction Type</th>
-                <th>Tags/Source</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var transaction in LowestTransactions.Select((value, index) => new { value, index }))
-            {
-                <tr>
-                    <td>@(transaction.index + 1)</td>
-                    <td>$@transaction.value.Amount</td>
-                    <td>@transaction.value.Type</td>
-                    <td>@string.Join(", ", string.IsNullOrEmpty(transaction.value.Tags) ? new List<string>() : transaction.value.Tags.Split(',').ToList())</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</div>
-
-<div>
-    <h3>Pending Debts</h3>
-      <div>
-                    @if (!string.IsNullOrEmpty(message))
+            </thead>
+            <tbody>
+                @if (HighestTransactions == null || !HighestTransactions.Any())
+                {
+                    <tr>
+                        <td colspan="4" class="no-transactions-message">No transactions available.</td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var transaction in HighestTransactions.Select((value, index) => new { value, index }))
                     {
-                        <div class="@((isSuccess ? "success" : "error"))">@message</div>
+                        <tr>
+                            <td>@(transaction.index + 1)</td>
+                            <td>$@transaction.value.Amount</td>
+                            <td>@transaction.value.Type</td>
+                            <td>@string.Join(", ", string.IsNullOrEmpty(transaction.value.Tags) ? new List<string>() : transaction.value.Tags.Split(',').ToList())</td>
+                        </tr>
                     }
-                </div>
-    <table class="pending-debts-table">
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h3 class="table-title">Lowest Transactions</h3>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>Amount</th>
+                    <th>Transaction Type</th>
+                    <th>Tags</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (LowestTransactions == null || !LowestTransactions.Any())
+                {
+                    <tr>
+                        <td colspan="4" class="no-transactions-message">No transactions available.</td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var transaction in LowestTransactions.Select((value, index) => new { value, index }))
+                    {
+                        <tr>
+                            <td>@(transaction.index + 1)</td>
+                            <td>$@transaction.value.Amount</td>
+                            <td>@transaction.value.Type</td>
+                            <td>@string.Join(", ", string.IsNullOrEmpty(transaction.value.Tags) ? new List<string>() : transaction.value.Tags.Split(',').ToList())</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="pending-debts-container">
+    <h3 class="table-title">Pending Debts</h3>
+
+    <div class="filter-buttons">
+        <button class="filter-btn">This Week</button>
+        <button class="filter-btn">This Month</button>
+        <button class="filter-btn">Custom</button>
+    </div>
+
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <div class="@((isSuccess ? "success" : "error"))">@message</div>
+    }
+
+    <table class="styled-table">
         <thead>
             <tr>
                 <th>Due Date</th>
@@ -127,23 +154,33 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var debt in pendingDebts)
+            @if (pendingDebts == null || !pendingDebts.Any())
             {
                 <tr>
-                    <td>@debt.DebtDueDate</td>
-                    <td>@debt.SourceOfDebt</td>
-                    <td>$@debt.DebtAmount</td>
-                    <td>
-                        <button class="clear-btn" @onclick="() => ShowConfirmationModal(debt.DebtId)">Clear</button>
-                    </td>
+                    <td colspan="4" class="no-debts-message">No debts to clear.</td>
                 </tr>
+            }
+            else
+            {
+                @foreach (var debt in pendingDebts)
+                {
+                    <tr>
+                        <td>@debt.DebtDueDate</td>
+                        <td>@debt.SourceOfDebt</td>
+                        <td>$@debt.DebtAmount</td>
+                        <td>
+                            <button class="clear-btn" @onclick="() => ShowConfirmationModal(debt.DebtId)">Clear</button>
+                        </td>
+                    </tr>
+                }
             }
         </tbody>
     </table>
 </div>
 
 
-<!-- Modal -->
+
+
 @if (isModalVisible)
 {
     <div class="modal-overlay" @onclick="CloseModal">
@@ -296,222 +333,7 @@
 }
 
 <style>
-    .success {
-        text-align: center;
-        color: green;
-        font-weight: bold;
-    }
 
-    .error {
-        color: red;
-        text-align: center;
-        font-weight: bold;
-    }
-
-    tr:hover {
-        background-color: #f1f1f1;
-    }
-
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 20px auto;
-    }
-
-    th, td {
-        text-align: center;
-        padding: 12px;
-        border: 1px solid #ddd;
-    }
-
-
-    th {
-        background-color: #f4f4f4;
-        font-weight: bold;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f9f9f9;
-    }
-
-    .clear-btn {
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 8px 12px;
-        cursor: pointer;
-    }
-
-        .clear-btn:hover {
-            background-color: #45a049;
-        }
    
-    .icon span {
-        margin-right: 0.5rem;
-        font-size: 1.25rem;
-        color: black;
-    }
-    h3 {
-        text-align: center;
-        font-size: 24px;
-        color: #333;
-        margin-top: 16px;
-    }
-
-    /* Modal styles */
-    .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-    }
-
-    .modal-container {
-        background-color: white;
-        padding: 20px;
-        border-radius: 8px;
-        width: 400px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .modal-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .close-btn {
-        background: none;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-    }
-
-    .modal-body {
-        margin-top: 15px;
-        font-size: 16px;
-        color: #333;
-    }
-
-    .modal-footer {
-        margin-top: 20px;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .cancel-btn, .confirm-btn {
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .cancel-btn {
-        background-color: #f44336;
-        color: white;
-        border: none;
-    }
-
-        .cancel-btn:hover {
-            background-color: #d32f2f;
-        }
-
-    .confirm-btn {
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-    }
-
-        .confirm-btn:hover {
-            background-color: #45a049;
-        }
-
-    /* Overview Section */
-    .overview-container {
-        display: flex;
-        gap: 16px;
-        padding: 16px;
-        justify-content: center;
-        flex-wrap: wrap; 
-    }
-
-    .col {
-        background: #e9e9e9;
-        border-radius: 8px;
-        padding: 16px;
-        flex: 1;
-        max-width: 200px;
-        text-align: center;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .title {
-        font-size: 16px;
-        font-weight: bold;
-        margin-bottom: 8px;
-        color: #555;
-    }
-
-    .value {
-        font-size: 20px;
-        color: #4caf50;
-        font-weight: bold;
-    }
-
-    .tran-details {
-        display: flex;
-        gap: 24px;
-        padding: 16px;
-        justify-content: center; 
-        flex-wrap: wrap; 
-    }
-
-    .tran-col {
-        
-        border-radius: 8px;
-        padding: 16px;
-        width: 100%;
-        max-width: 350px; 
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
-
-    .tran-title {
-        font-size: 18px;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 12px;
-    }
-
-    .number {
-        
-        align-items: center;
-        justify-content: center;
-        background: #f0f0f0;
-        border-radius: 4px;
-        padding: 12px;
-    }
-
-    .submission-img img {
-        height: 40px;
-        width: 40px;
-        margin-right: 12px;
-    }
-
-    .num-value {
-        font-size: 24px;
-        font-weight: bold;
-        color: #4caf50;
-    }
-
-    
-
     
 </style>

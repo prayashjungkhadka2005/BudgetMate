@@ -7,31 +7,63 @@
 @inject BudgetMate.Components.Services.UserService UserService
 
 
+
 <h3>Transaction Management</h3>
-<div style="text-align: right; margin: 10px;">
-    <button @onclick="SortByDate" class="sort-btn">Sort by Date</button>
+
+<div class="filters">
+    <select @bind="selectedType">
+        <option value="">All Types</option>
+        <option value="Credit">Credit</option>
+        <option value="Debit">Debit</option>
+        <option value="Debt">Debt</option>
+    </select>
+
+    <select @bind="selectedTag">
+        <option value="">All Tags</option>
+        @foreach (var tag in GetUniqueTags())
+        {
+            <option value="@tag">@tag</option>
+        }
+    </select>
+
+    <label class="date-label">From:</label>
+    <input type="date" @bind="fromDate" />
+    
+    <label class="date-label">To:</label>
+    <input type="date" @bind="toDate" />
+
+    <input type="text" @bind="searchQuery" placeholder="Search transactions..." />
+
+    <select @bind="sortOrder">
+        <option value="desc">Newest First</option>
+        <option value="asc">Oldest First</option>
+    </select>
+
+    <button @onclick="ApplyFilters">Apply Filters</button>
 </div>
+
+
 
 <table class="transactions-table">
     <thead>
         <tr>
-            <th>Date</th>
+            <th>Date <button @onclick="SortByDate">⇅</button></th>
             <th>Amount</th>
             <th>Tags/Source</th>
             <th>Note</th>
-            <th>Type</th> <!-- New column added -->
+            <th>Type</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var transaction in transactions)
+        @foreach (var transaction in filteredTransactions)
         {
             <tr>
                 <td>@transaction.TransactionDate</td>
                 <td>$@transaction.Amount</td>
                 <td>@string.Join(", ", string.IsNullOrEmpty(transaction.Tags) ? new List<string>() : transaction.Tags.Split(',').ToList())</td>
                 <td>@(transaction.Note ?? "No note added")</td>
-                <td>@transaction.Type</td> <!-- Assuming 'Type' is a property of the 'Transaction' model -->
+                <td>@transaction.Type</td>
                 <td>
                     <button class="add-note-btn" @onclick="() => OpenNoteModal(transaction)">Add/Update Note</button>
                 </td>
@@ -47,35 +79,85 @@
             <h4>Add or Update Note</h4>
             <textarea @bind="selectedTransaction.Note" placeholder="Enter a note..."></textarea>
             <div class="modal-actions">
-                <button @onclick="SaveNote">Save</button>
-                <button @onclick="CloseNoteModal">Cancel</button>
+                <button class="save-btn" @onclick="SaveNote">Save</button>
+                <button class="cancel-btn" @onclick="CloseNoteModal">Cancel</button>
             </div>
+
         </div>
     </div>
 }
 
+
+
+
+
 @code {
-    private List<Transaction> transactions = new();
+    private string selectedType = ""; // Default: Show All
+    private string selectedTag = ""; // Default: Show All
+    private DateTime? fromDate;
+    private DateTime? toDate;
+    private string searchQuery = "";
+    private string sortOrder = "desc"; // Default: Newest First
+    private List<Transaction> allTransactions = new();
+    private List<Transaction> filteredTransactions = new();
     private Transaction selectedTransaction;
     private bool isNoteModalOpen = false;
-    private bool isSortedAscending = true; // Tracks the current sorting order
+    private bool isSortedAscending = true;
 
     protected override void OnInitialized()
     {
-        transactions = UserService.GetAllTransactions(); // Fetch all transactions
+        LoadTransactions();
+    }
+
+    private void LoadTransactions()
+    {
+        allTransactions = UserService.GetAllTransactions();
+        ApplyFilters();
+    }
+
+    private void ApplyFilters()
+    {
+        filteredTransactions = allTransactions
+            .Where(t => (string.IsNullOrEmpty(selectedType) || t.Type == selectedType)
+                        && (string.IsNullOrEmpty(selectedTag) || (t.Tags ?? "").Contains(selectedTag))
+                        && (!fromDate.HasValue || DateTime.Parse(t.TransactionDate) >= fromDate.Value)
+                        && (!toDate.HasValue || DateTime.Parse(t.TransactionDate) <= toDate.Value)
+                        && (string.IsNullOrEmpty(searchQuery) || (t.Note ?? "").Contains(searchQuery, StringComparison.OrdinalIgnoreCase)))
+            .OrderByDescending(t => DateTime.Parse(t.TransactionDate)) // Fix sorting
+            .ToList();
+    }
+
+
+
+
+    private void SortByDate()
+    {
+        if (isSortedAscending)
+        {
+            filteredTransactions = filteredTransactions.OrderBy(t => DateTime.Parse(t.TransactionDate)).ToList();
+        }
+        else
+        {
+            filteredTransactions = filteredTransactions.OrderByDescending(t => DateTime.Parse(t.TransactionDate)).ToList();
+        }
+        isSortedAscending = !isSortedAscending;
+        StateHasChanged();
     }
 
     private void OpenNoteModal(Transaction transaction)
     {
         selectedTransaction = transaction;
         isNoteModalOpen = true;
+        StateHasChanged(); 
     }
 
     private void CloseNoteModal()
     {
         isNoteModalOpen = false;
         selectedTransaction = null;
+        StateHasChanged(); 
     }
+
 
     private void SaveNote()
     {
@@ -85,130 +167,22 @@
         }
         isNoteModalOpen = false;
         selectedTransaction = null;
-        StateHasChanged(); // Refresh the UI
+        StateHasChanged();
     }
 
-    private void SortByDate()
+    private List<string> GetUniqueTags()
     {
-        if (isSortedAscending)
-        {
-            transactions = transactions.OrderBy(t => t.TransactionDate).ToList(); // Sort by ascending
-        }
-        else
-        {
-            transactions = transactions.OrderByDescending(t => t.TransactionDate).ToList(); // Sort by descending
-        }
-
-        isSortedAscending = !isSortedAscending; // Toggle sorting order for next click
-        StateHasChanged(); // Refresh the UI
+        return allTransactions
+            .SelectMany(t => t.Tags?.Split(',') ?? Array.Empty<string>())
+            .Distinct()
+            .ToList();
     }
 }
 
 
 <style>
-    .sort-btn {
-        background-color: #28a745;
-        color: white;
-        padding: 8px 12px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+    
 
-        .sort-btn:hover {
-            background-color: #218838;
-        }
-
-    h3 {
-        text-align: center;
-        margin: 20px 0;
-    }
-
-    .transactions-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 20px auto;
-    }
-
-        .transactions-table th, .transactions-table td {
-            text-align: center;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
-
-        .transactions-table th {
-            background-color: #f8f8f8;
-        }
-
-    .add-note-btn {
-        background-color: #007bff;
-        color: white;
-        padding: 5px 10px;
-        border: none;
-        cursor: pointer;
-    }
-
-        .add-note-btn:hover {
-            background-color: #0056b3;
-        }
-
-    .modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
-    }
-
-    .modal-content {
-        background: white;
-        padding: 20px;
-        border-radius: 8px;
-        width: 400px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-        .modal-content h4 {
-            margin-bottom: 15px;
-        }
-
-        .modal-content textarea {
-            width: 100%;
-            height: 100px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-        }
-
-    .modal-actions {
-        text-align: right;
-    }
-
-        .modal-actions button {
-            background-color: #007bff;
-            color: white;
-            padding: 8px 12px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-
-            .modal-actions button:hover {
-                background-color: #0056b3;
-            }
-
-            .modal-actions button:last-child {
-                background-color: #6c757d;
-            }
-
-                .modal-actions button:last-child:hover {
-                    background-color: #5a6268;
-                }
+  
+   
 </style>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mD7H6HBM5NnMhJwm6TgG6jlIngbripICnZ51Iig5hPQ=",
+  "Hash": "/yncz8V3AyqerwIgYIJVfdLERyJmYg2ZmIkbdr3YBLY=",
   "Source": "BudgetMate",
   "BasePath": "/",
   "Mode": "Root",
@@ -80,12 +80,12 @@
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\g9f1ckn6yb-ihvxgaycsh.gz",
+      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\g9f1ckn6yb-qk11oxu47z.gz",
       "SourceId": "BudgetMate",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "BudgetMate#[.{fingerprint=ihvxgaycsh}]!.bundle.scp.css.gz",
+      "RelativePath": "BudgetMate#[.{fingerprint=qk11oxu47z}]!.bundle.scp.css.gz",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Alternative",
@@ -94,8 +94,8 @@
       "RelatedAsset": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "jchu7ipnn8",
-      "Integrity": "rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=",
+      "Fingerprint": "u52eqhzxhr",
+      "Integrity": "crAbuuAR4XUt8yAZLcsZe/IGBSb2EJIyQwY5+1v/LZQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css"
@@ -164,12 +164,12 @@
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\g9f1ckn6yb-ihvxgaycsh.br",
+      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\g9f1ckn6yb-qk11oxu47z.br",
       "SourceId": "BudgetMate",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\",
       "BasePath": "/",
-      "RelativePath": "BudgetMate#[.{fingerprint=ihvxgaycsh}]!.bundle.scp.css.br",
+      "RelativePath": "BudgetMate#[.{fingerprint=qk11oxu47z}]!.bundle.scp.css.br",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Alternative",
@@ -178,19 +178,19 @@
       "RelatedAsset": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "br",
-      "Fingerprint": "npiz4pzsmr",
-      "Integrity": "hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=",
+      "Fingerprint": "jpam8zpeur",
+      "Integrity": "SZz0oB63BNeTwwxOxsqhXZ1v8Ef2762k1MU93B8Sf9s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\s2nq3vjt16-ihvxgaycsh.br",
+      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\s2nq3vjt16-qk11oxu47z.br",
       "SourceId": "BudgetMate",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\",
       "BasePath": "/",
-      "RelativePath": "BudgetMate#[.{fingerprint=ihvxgaycsh}]?.styles.css.br",
+      "RelativePath": "BudgetMate#[.{fingerprint=qk11oxu47z}]?.styles.css.br",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Alternative",
@@ -199,8 +199,8 @@
       "RelatedAsset": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\scopedcss\\bundle\\BudgetMate.styles.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "br",
-      "Fingerprint": "npiz4pzsmr",
-      "Integrity": "hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=",
+      "Fingerprint": "jpam8zpeur",
+      "Integrity": "SZz0oB63BNeTwwxOxsqhXZ1v8Ef2762k1MU93B8Sf9s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\scopedcss\\bundle\\BudgetMate.styles.css"
@@ -227,12 +227,12 @@
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\wwwroot\\index.html"
     },
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\s2nq3vjt16-ihvxgaycsh.gz",
+      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\s2nq3vjt16-qk11oxu47z.gz",
       "SourceId": "BudgetMate",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "BudgetMate#[.{fingerprint=ihvxgaycsh}]?.styles.css.gz",
+      "RelativePath": "BudgetMate#[.{fingerprint=qk11oxu47z}]?.styles.css.gz",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Alternative",
@@ -241,8 +241,8 @@
       "RelatedAsset": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\scopedcss\\bundle\\BudgetMate.styles.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "jchu7ipnn8",
-      "Integrity": "rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=",
+      "Fingerprint": "u52eqhzxhr",
+      "Integrity": "crAbuuAR4XUt8yAZLcsZe/IGBSb2EJIyQwY5+1v/LZQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\scopedcss\\bundle\\BudgetMate.styles.css"
@@ -283,8 +283,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "ihvxgaycsh",
-      "Integrity": "Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=",
+      "Fingerprint": "qk11oxu47z",
+      "Integrity": "OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\scopedcss\\bundle\\BudgetMate.styles.css"
@@ -304,8 +304,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "ihvxgaycsh",
-      "Integrity": "Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=",
+      "Fingerprint": "qk11oxu47z",
+      "Integrity": "OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css"
@@ -522,12 +522,12 @@
     },
     {
       "Route": "BudgetMate.bundle.scp.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\g9f1ckn6yb-ihvxgaycsh.gz",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\g9f1ckn6yb-qk11oxu47z.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000479616307"
+          "Quality": "0.000474608448"
         }
       ],
       "ResponseHeaders": [
@@ -537,15 +537,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2084"
+          "Value": "2106"
         },
         {
           "Name": "ETag",
-          "Value": "\"rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=\""
+          "Value": "\"crAbuuAR4XUt8yAZLcsZe/IGBSb2EJIyQwY5+1v/LZQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -565,24 +565,24 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "W/\"OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA="
         }
       ]
     },
     {
       "Route": "BudgetMate.bundle.scp.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\g9f1ckn6yb-ihvxgaycsh.br",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\g9f1ckn6yb-qk11oxu47z.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "br",
-          "Quality": "0.000579374276"
+          "Quality": "0.000573394495"
         }
       ],
       "ResponseHeaders": [
@@ -592,15 +592,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1725"
+          "Value": "1743"
         },
         {
           "Name": "ETag",
-          "Value": "\"hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=\""
+          "Value": "\"SZz0oB63BNeTwwxOxsqhXZ1v8Ef2762k1MU93B8Sf9s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -620,13 +620,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "W/\"OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA="
         }
       ]
     },
@@ -641,7 +641,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8489"
+          "Value": "8572"
         },
         {
           "Name": "Content-Type",
@@ -649,11 +649,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "\"OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -663,13 +663,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA="
         }
       ]
     },
     {
       "Route": "BudgetMate.bundle.scp.css.br",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\g9f1ckn6yb-ihvxgaycsh.br",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\g9f1ckn6yb-qk11oxu47z.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -678,7 +678,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1725"
+          "Value": "1743"
         },
         {
           "Name": "Content-Type",
@@ -686,11 +686,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=\""
+          "Value": "\"SZz0oB63BNeTwwxOxsqhXZ1v8Ef2762k1MU93B8Sf9s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -708,13 +708,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ="
+          "Value": "sha256-SZz0oB63BNeTwwxOxsqhXZ1v8Ef2762k1MU93B8Sf9s="
         }
       ]
     },
     {
       "Route": "BudgetMate.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\g9f1ckn6yb-ihvxgaycsh.gz",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\g9f1ckn6yb-qk11oxu47z.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -723,7 +723,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2084"
+          "Value": "2106"
         },
         {
           "Name": "Content-Type",
@@ -731,11 +731,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=\""
+          "Value": "\"crAbuuAR4XUt8yAZLcsZe/IGBSb2EJIyQwY5+1v/LZQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -753,18 +753,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps="
+          "Value": "sha256-crAbuuAR4XUt8yAZLcsZe/IGBSb2EJIyQwY5+1v/LZQ="
         }
       ]
     },
     {
-      "Route": "BudgetMate.ihvxgaycsh.bundle.scp.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\g9f1ckn6yb-ihvxgaycsh.gz",
+      "Route": "BudgetMate.qk11oxu47z.bundle.scp.css",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\g9f1ckn6yb-qk11oxu47z.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000479616307"
+          "Quality": "0.000474608448"
         }
       ],
       "ResponseHeaders": [
@@ -774,15 +774,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2084"
+          "Value": "2106"
         },
         {
           "Name": "ETag",
-          "Value": "\"rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=\""
+          "Value": "\"crAbuuAR4XUt8yAZLcsZe/IGBSb2EJIyQwY5+1v/LZQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -802,13 +802,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "W/\"OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
+          "Value": "qk11oxu47z"
         },
         {
           "Name": "label",
@@ -816,18 +816,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA="
         }
       ]
     },
     {
-      "Route": "BudgetMate.ihvxgaycsh.bundle.scp.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\g9f1ckn6yb-ihvxgaycsh.br",
+      "Route": "BudgetMate.qk11oxu47z.bundle.scp.css",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\g9f1ckn6yb-qk11oxu47z.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "br",
-          "Quality": "0.000579374276"
+          "Quality": "0.000573394495"
         }
       ],
       "ResponseHeaders": [
@@ -837,15 +837,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1725"
+          "Value": "1743"
         },
         {
           "Name": "ETag",
-          "Value": "\"hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=\""
+          "Value": "\"SZz0oB63BNeTwwxOxsqhXZ1v8Ef2762k1MU93B8Sf9s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -865,13 +865,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "W/\"OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
+          "Value": "qk11oxu47z"
         },
         {
           "Name": "label",
@@ -879,12 +879,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA="
         }
       ]
     },
     {
-      "Route": "BudgetMate.ihvxgaycsh.bundle.scp.css",
+      "Route": "BudgetMate.qk11oxu47z.bundle.scp.css",
       "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -894,7 +894,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8489"
+          "Value": "8572"
         },
         {
           "Name": "Content-Type",
@@ -902,11 +902,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "\"OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -916,7 +916,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
+          "Value": "qk11oxu47z"
         },
         {
           "Name": "label",
@@ -924,13 +924,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA="
         }
       ]
     },
     {
-      "Route": "BudgetMate.ihvxgaycsh.bundle.scp.css.br",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\g9f1ckn6yb-ihvxgaycsh.br",
+      "Route": "BudgetMate.qk11oxu47z.bundle.scp.css.br",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\g9f1ckn6yb-qk11oxu47z.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -939,7 +939,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1725"
+          "Value": "1743"
         },
         {
           "Name": "Content-Type",
@@ -947,11 +947,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=\""
+          "Value": "\"SZz0oB63BNeTwwxOxsqhXZ1v8Ef2762k1MU93B8Sf9s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -969,7 +969,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
+          "Value": "qk11oxu47z"
         },
         {
           "Name": "label",
@@ -977,13 +977,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ="
+          "Value": "sha256-SZz0oB63BNeTwwxOxsqhXZ1v8Ef2762k1MU93B8Sf9s="
         }
       ]
     },
     {
-      "Route": "BudgetMate.ihvxgaycsh.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\g9f1ckn6yb-ihvxgaycsh.gz",
+      "Route": "BudgetMate.qk11oxu47z.bundle.scp.css.gz",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\g9f1ckn6yb-qk11oxu47z.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -992,7 +992,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2084"
+          "Value": "2106"
         },
         {
           "Name": "Content-Type",
@@ -1000,11 +1000,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=\""
+          "Value": "\"crAbuuAR4XUt8yAZLcsZe/IGBSb2EJIyQwY5+1v/LZQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1022,7 +1022,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
+          "Value": "qk11oxu47z"
         },
         {
           "Name": "label",
@@ -1030,18 +1030,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps="
+          "Value": "sha256-crAbuuAR4XUt8yAZLcsZe/IGBSb2EJIyQwY5+1v/LZQ="
         }
       ]
     },
     {
-      "Route": "BudgetMate.ihvxgaycsh.styles.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\s2nq3vjt16-ihvxgaycsh.br",
+      "Route": "BudgetMate.qk11oxu47z.styles.css",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\s2nq3vjt16-qk11oxu47z.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "br",
-          "Quality": "0.000579374276"
+          "Quality": "0.000573394495"
         }
       ],
       "ResponseHeaders": [
@@ -1051,15 +1051,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1725"
+          "Value": "1743"
         },
         {
           "Name": "ETag",
-          "Value": "\"hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=\""
+          "Value": "\"SZz0oB63BNeTwwxOxsqhXZ1v8Ef2762k1MU93B8Sf9s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1079,13 +1079,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "W/\"OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
+          "Value": "qk11oxu47z"
         },
         {
           "Name": "label",
@@ -1093,18 +1093,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA="
         }
       ]
     },
     {
-      "Route": "BudgetMate.ihvxgaycsh.styles.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\s2nq3vjt16-ihvxgaycsh.gz",
+      "Route": "BudgetMate.qk11oxu47z.styles.css",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\s2nq3vjt16-qk11oxu47z.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000479616307"
+          "Quality": "0.000474608448"
         }
       ],
       "ResponseHeaders": [
@@ -1114,15 +1114,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2084"
+          "Value": "2106"
         },
         {
           "Name": "ETag",
-          "Value": "\"rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=\""
+          "Value": "\"crAbuuAR4XUt8yAZLcsZe/IGBSb2EJIyQwY5+1v/LZQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1142,13 +1142,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "W/\"OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
+          "Value": "qk11oxu47z"
         },
         {
           "Name": "label",
@@ -1156,12 +1156,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA="
         }
       ]
     },
     {
-      "Route": "BudgetMate.ihvxgaycsh.styles.css",
+      "Route": "BudgetMate.qk11oxu47z.styles.css",
       "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\scopedcss\\bundle\\BudgetMate.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1171,7 +1171,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8489"
+          "Value": "8572"
         },
         {
           "Name": "Content-Type",
@@ -1179,11 +1179,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "\"OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1193,7 +1193,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
+          "Value": "qk11oxu47z"
         },
         {
           "Name": "label",
@@ -1201,13 +1201,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA="
         }
       ]
     },
     {
-      "Route": "BudgetMate.ihvxgaycsh.styles.css.br",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\s2nq3vjt16-ihvxgaycsh.br",
+      "Route": "BudgetMate.qk11oxu47z.styles.css.br",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\s2nq3vjt16-qk11oxu47z.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1216,7 +1216,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1725"
+          "Value": "1743"
         },
         {
           "Name": "Content-Type",
@@ -1224,11 +1224,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=\""
+          "Value": "\"SZz0oB63BNeTwwxOxsqhXZ1v8Ef2762k1MU93B8Sf9s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1246,7 +1246,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
+          "Value": "qk11oxu47z"
         },
         {
           "Name": "label",
@@ -1254,13 +1254,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ="
+          "Value": "sha256-SZz0oB63BNeTwwxOxsqhXZ1v8Ef2762k1MU93B8Sf9s="
         }
       ]
     },
     {
-      "Route": "BudgetMate.ihvxgaycsh.styles.css.gz",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\s2nq3vjt16-ihvxgaycsh.gz",
+      "Route": "BudgetMate.qk11oxu47z.styles.css.gz",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\s2nq3vjt16-qk11oxu47z.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1269,7 +1269,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2084"
+          "Value": "2106"
         },
         {
           "Name": "Content-Type",
@@ -1277,11 +1277,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=\""
+          "Value": "\"crAbuuAR4XUt8yAZLcsZe/IGBSb2EJIyQwY5+1v/LZQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1299,7 +1299,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
+          "Value": "qk11oxu47z"
         },
         {
           "Name": "label",
@@ -1307,18 +1307,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps="
+          "Value": "sha256-crAbuuAR4XUt8yAZLcsZe/IGBSb2EJIyQwY5+1v/LZQ="
         }
       ]
     },
     {
       "Route": "BudgetMate.styles.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\s2nq3vjt16-ihvxgaycsh.br",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\s2nq3vjt16-qk11oxu47z.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "br",
-          "Quality": "0.000579374276"
+          "Quality": "0.000573394495"
         }
       ],
       "ResponseHeaders": [
@@ -1328,15 +1328,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1725"
+          "Value": "1743"
         },
         {
           "Name": "ETag",
-          "Value": "\"hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=\""
+          "Value": "\"SZz0oB63BNeTwwxOxsqhXZ1v8Ef2762k1MU93B8Sf9s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1356,24 +1356,24 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "W/\"OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA="
         }
       ]
     },
     {
       "Route": "BudgetMate.styles.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\s2nq3vjt16-ihvxgaycsh.gz",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\s2nq3vjt16-qk11oxu47z.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000479616307"
+          "Quality": "0.000474608448"
         }
       ],
       "ResponseHeaders": [
@@ -1383,15 +1383,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2084"
+          "Value": "2106"
         },
         {
           "Name": "ETag",
-          "Value": "\"rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=\""
+          "Value": "\"crAbuuAR4XUt8yAZLcsZe/IGBSb2EJIyQwY5+1v/LZQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1411,13 +1411,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "W/\"OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA="
         }
       ]
     },
@@ -1432,7 +1432,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8489"
+          "Value": "8572"
         },
         {
           "Name": "Content-Type",
@@ -1440,11 +1440,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "\"OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1454,13 +1454,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-OtoW1wpIFN4Izf8aTRzs9qi5A6Ej9z0bQQ/OImtsqKA="
         }
       ]
     },
     {
       "Route": "BudgetMate.styles.css.br",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\s2nq3vjt16-ihvxgaycsh.br",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\publish\\s2nq3vjt16-qk11oxu47z.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1469,7 +1469,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1725"
+          "Value": "1743"
         },
         {
           "Name": "Content-Type",
@@ -1477,11 +1477,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=\""
+          "Value": "\"SZz0oB63BNeTwwxOxsqhXZ1v8Ef2762k1MU93B8Sf9s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1499,13 +1499,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ="
+          "Value": "sha256-SZz0oB63BNeTwwxOxsqhXZ1v8Ef2762k1MU93B8Sf9s="
         }
       ]
     },
     {
       "Route": "BudgetMate.styles.css.gz",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\s2nq3vjt16-ihvxgaycsh.gz",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-android\\compressed\\s2nq3vjt16-qk11oxu47z.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1514,7 +1514,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2084"
+          "Value": "2106"
         },
         {
           "Name": "Content-Type",
@@ -1522,11 +1522,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=\""
+          "Value": "\"crAbuuAR4XUt8yAZLcsZe/IGBSb2EJIyQwY5+1v/LZQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 08:40:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1544,7 +1544,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps="
+          "Value": "sha256-crAbuuAR4XUt8yAZLcsZe/IGBSb2EJIyQwY5+1v/LZQ="
         }
       ]
     },

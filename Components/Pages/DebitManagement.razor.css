@@ -1,0 +1,241 @@
+﻿h3 {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+/* Filters Section */
+.filters {
+    display: flex;
+    flex-wrap: nowrap; /* Ensures buttons stay in one row on full width */
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Wraps only when necessary */
+}
+
+    /* Styling for Select Dropdowns */
+    .filters select {
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+        min-width: 150px;
+        flex: 1; /* Makes sure all elements resize dynamically */
+        max-width: 220px; /* Prevents elements from becoming too wide */
+        appearance: none; /* Removes default styling */
+        background-color: #fff;
+        background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%232A329C' d='M2 0L0 2h4zM2 5L0 3h4z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 10px;
+        cursor: pointer;
+    }
+
+        /* Dropdown Hover & Focus */
+        .filters select:hover,
+        .filters select:focus {
+            border-color: #2A329C;
+            box-shadow: 0 0 5px rgba(42, 50, 156, 0.3);
+        }
+
+    /* Styling for Text Inputs & Date Inputs */
+    .filters input[type="date"],
+    .filters input[type="text"] {
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+        min-width: 150px;
+        flex: 1;
+        max-width: 220px;
+    }
+
+    .filters input[type="text"] {
+        min-width: 200px;
+    }
+
+    /* Styling for Buttons */
+    .filters button {
+        background-color: #2A329C;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        white-space: nowrap;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+        .filters button:hover {
+            background-color: #282B4B;
+        }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .filters {
+        flex-wrap: wrap; /* Allows wrapping when necessary */
+        gap: 8px;
+        justify-content: center;
+    }
+
+        .filters select,
+        .filters input[type="date"],
+        .filters input[type="text"],
+        .filters button {
+            flex: 1 1 100%; /* Each filter takes full width on small screens */
+            min-width: 100%; /* Makes sure each item is stacked */
+        }
+}
+
+/* Transactions Table */
+.transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .transactions-table th,
+    .transactions-table td {
+        text-align: center;
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .transactions-table th {
+        background-color: #2A329C;
+        color: white;
+    }
+
+    .transactions-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .transactions-table tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .transactions-table th button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+    }
+
+/* Mobile Table Styling */
+@media (max-width: 768px) {
+    .transactions-table {
+        display: block;
+        overflow-x: auto; /* Enables horizontal scrolling */
+    }
+
+        .transactions-table th,
+        .transactions-table td {
+            white-space: nowrap; /* Prevents text wrapping */
+            padding: 10px;
+        }
+}
+
+/* Note Button */
+.add-note-btn {
+    background-color: #2A329C;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+    .add-note-btn:hover {
+        background-color: #282B4B;
+    }
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%; /* Makes modal responsive */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 10001;
+}
+
+    .modal-content h4 {
+        margin-bottom: 15px;
+        text-align: center;
+        font-size: 18px;
+        color: #333;
+    }
+
+    .modal-content textarea {
+        width: 100%;
+        height: 100px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+/* Modal Buttons */
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .modal-actions button {
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+    }
+
+    .modal-actions .save-btn {
+        background-color: #28a745;
+        color: white;
+    }
+
+        .modal-actions .save-btn:hover {
+            background-color: #218838;
+        }
+
+    .modal-actions .cancel-btn {
+        background-color: #dc3545;
+        color: white;
+    }
+
+        .modal-actions .cancel-btn:hover {
+            background-color: #c82333;
+        }
+
+.modal.show {
+    display: flex !important;
+}

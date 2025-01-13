@@ -1,2 +1,258 @@
-﻿body {
+﻿/* Grid layout for transactions (Highest & Lowest side by side) */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 1rem;
 }
+
+/* No Transactions Message inside Table */
+.no-transactions-message {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    background: #f9f9f9;
+    padding: 12px;
+    font-weight: bold;
+}
+
+
+/* Display tables side by side on larger screens */
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Styled Table (Applied to Highest, Lowest & Pending Debts) */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+    /* Table Headers */
+    .styled-table thead {
+        background-color: #2A329C;
+        color: white;
+        text-align: center;
+    }
+
+    /* Table Header Cells */
+    .styled-table th {
+        padding: 12px;
+    }
+
+    /* Table Cells */
+    .styled-table td {
+        text-align: center;
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* Alternating Row Colors */
+    .styled-table tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    /* Row Hover Effect */
+    .styled-table tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+
+
+.pending-debts-container{
+    margin-top: 1.5rem;
+}
+
+/* No Debts Message inside Table */
+.no-debts-message {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    background: #f9f9f9;
+    padding: 12px;
+    font-weight: bold;
+}
+
+/* Filter Buttons (Below Pending Debts) */
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filter-btn {
+    background-color: #2A329C;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+    .filter-btn:hover {
+        background-color: #22287D;
+    }
+
+/* Clear Button for Pending Debts */
+.clear-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+    .clear-btn:hover {
+        background-color: #45a049;
+    }
+
+/* Success and Error Messages */
+.success {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Overview Section */
+.overview-container {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Overview Cards */
+.col {
+    background: #e9e9e9;
+    border-radius: 8px;
+    padding: 16px;
+    flex: 1;
+    max-width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.value {
+    font-size: 20px;
+    color: #4caf50;
+    font-weight: bold;
+}
+
+/* Transaction Summary Section */
+.tran-details {
+    display: flex;
+    gap: 24px;
+    padding: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Transaction Summary Cards */
+.tran-col {
+    border-radius: 8px;
+    padding: 16px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.tran-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Modal Box */
+.modal-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Header */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Modal Footer */
+.modal-footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Modal Buttons */
+.cancel-btn, .confirm-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+}
+
+    .cancel-btn:hover {
+        background-color: #d32f2f;
+    }
+
+.confirm-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+    .confirm-btn:hover {
+        background-color: #45a049;
+    }
