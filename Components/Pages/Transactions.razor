@@ -225,12 +225,20 @@
         sourceOfDebtRow.style.display = selectedType === 'debt' ? 'block' : 'none';
         tagsRow.style.display = selectedType === 'debt' ? 'none' : 'block';
 
-        let tags = [];
-        if (selectedType === 'expense') {
-            tags = ['Clothes', 'Rent', 'Groceries'];
-        } else if (selectedType === 'income') {
-            tags = ['Salary', 'Gifts', 'Savings', 'Refunds'];
-        }
+           let tags = [];
+
+    if (selectedType === 'expense') {
+        tags = [
+            'Yearly', 'Monthly', 'Food', 'Drinks', 'Clothes', 'Gadgets',
+            'Miscellaneous', 'Fuel', 'Rent', 'EMI', 'Party'
+        ];
+    } else if (selectedType === 'income') {
+        tags = [
+            'Salary', 'Gifts', 'Savings', 'Refunds', 'Investment Returns',
+            'Freelance Income', 'Cashback', 'Rental Income'
+        ];
+    }
+
 
             tags.forEach(tag => {
         const tagButton = document.createElement('div');

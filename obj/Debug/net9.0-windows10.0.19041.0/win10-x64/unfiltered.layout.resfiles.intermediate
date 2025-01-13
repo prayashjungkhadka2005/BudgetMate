@@ -11,11 +11,11 @@ Components\Pages\Transactions.razor.css
 wwwroot\css\bootstrap\bootstrap.min.css.map.gz
 wwwroot\css\app.css.gz
 wwwroot\css\bootstrap\bootstrap.min.css.gz
-wwwroot\BudgetMate.nugh156yjs.bundle.scp.css.gz
+wwwroot\BudgetMate.tmsim5f4zd.bundle.scp.css.gz
 wwwroot\css\bootstrap\bootstrap.min.css.map.br
 wwwroot\css\app.css.br
 wwwroot\css\bootstrap\bootstrap.min.css.br
-wwwroot\BudgetMate.nugh156yjs.bundle.scp.css.br
+wwwroot\BudgetMate.tmsim5f4zd.bundle.scp.css.br
 wwwroot\BudgetMate.styles.css.br
 wwwroot\index.html.br
 wwwroot\BudgetMate.styles.css.gz
@@ -78,7 +78,7 @@ splashSplashScreen.scale-150.png
 splashSplashScreen.scale-200.png
 splashSplashScreen.scale-400.png
 wwwroot\BudgetMate.styles.css
-wwwroot\BudgetMate.nugh156yjs.bundle.scp.css
+wwwroot\BudgetMate.tmsim5f4zd.bundle.scp.css
 AboutAssets.txt
 wwwroot\assets\budgetmate.png
 wwwroot\css\app.css
