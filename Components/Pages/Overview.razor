@@ -5,13 +5,28 @@
 @using BudgetMate.Components.Models
 @inject BudgetMate.Components.Services.UserService UserService
 
-<h1>Dashboard</h1>
+<div class="dash-title">
+    <h1>Dashboard</h1>
+    <!-- Date Filter Section -->
+    <div class="filter-container">
+        <label class="date-label">From:</label>
+        <input type="date" @bind-value="startDate" />
+
+        <label class="date-label">To:</label>
+        <input type="date" @bind-value="endDate" />
+
+        <button class="apply-btn" @onclick="ApplyDateFilter">Apply Filter</button>
+    </div>
+</div>
+
+
+
 
 <div class="overview-container">
-   
+
 
     <div class="col">
-        <div class="col-content">
+        <div class="col-content">   
             <i class="fas fa-arrow-down icon"></i>
             <div class="title">Total Inflows</div>
             <div class="value">$@TotalInflows</div>
@@ -148,7 +163,7 @@
 <div class="pending-debts-container">
     <h3 class="table-title">Pending Debts</h3>
 
-   
+
     @if (!string.IsNullOrEmpty(message))
     {
         <div class="@((isSuccess ? "success" : "error"))">@message</div>
@@ -208,9 +223,15 @@
             </div>
         </div>
     </div>
+}
 
 
 @code {
+
+
+    private DateTime? startDate;
+    private DateTime? endDate;
+
     private int TotalInflows { get; set; }
     private int TotalOutflows { get; set; }
     private int TotalDebt { get; set; }
@@ -230,19 +251,55 @@
 
     protected override void OnInitialized()
     {
-        TotalInflows = UserService.GetTotalInflows();
-        TotalOutflows = UserService.GetTotalOutflow();
-        TotalDebt = UserService.GetTotalDebt();
-        TotalNumberOfTransactions = UserService.GetTotalNumberOfTransactions();
-        TotalAmountOfTransactions = UserService.GetTotalTransactionsAmount();
-        pendingDebts = UserService.GetPendingDebts();
-        RemainingDebts = UserService.GetRemainingDebt();
-        ClearedDebts = UserService.GetClearedDebt();
-        TotalBalance = UserService.GetTotalBalance();
 
-        var allTransactions = UserService.GetAllTransactions();
-        HighestTransactions = allTransactions.OrderByDescending(t => t.Amount).Take(5).ToList();
-        LowestTransactions = allTransactions.OrderBy(t => t.Amount).Take(5).ToList();
+        LoadDashboardData();
+
+
+    }
+
+    private void LoadDashboardData()
+    {
+        if (!startDate.HasValue || !endDate.HasValue)
+        {
+            TotalInflows = UserService.GetTotalInflows();
+            TotalOutflows = UserService.GetTotalOutflow();
+            TotalDebt = UserService.GetTotalDebt();
+            TotalNumberOfTransactions = UserService.GetTotalNumberOfTransactions();
+            TotalAmountOfTransactions = UserService.GetTotalTransactionsAmount();
+            pendingDebts = UserService.GetPendingDebts();
+            RemainingDebts = UserService.GetRemainingDebt();
+            ClearedDebts = UserService.GetClearedDebt();
+            TotalBalance = UserService.GetTotalBalance();
+
+            var allTransactions = UserService.GetAllTransactions();
+            HighestTransactions = allTransactions.OrderByDescending(t => t.Amount).Take(5).ToList();
+            LowestTransactions = allTransactions.OrderBy(t => t.Amount).Take(5).ToList();
+
+        }
+        else
+        {
+
+            TotalInflows = UserService.GetTotalInflowsForDateRange(startDate.Value, endDate.Value);
+            TotalOutflows = UserService.GetTotalOutflowForDateRange(startDate.Value, endDate.Value);
+            TotalDebt = UserService.GetTotalDebtForDateRange(startDate.Value, endDate.Value);
+            TotalNumberOfTransactions = UserService.GetTotalNumberOfTransactionsForDateRange(startDate.Value, endDate.Value);
+            TotalAmountOfTransactions = UserService.GetTotalTransactionsAmountForDateRange(startDate.Value, endDate.Value);
+            pendingDebts = UserService.GetPendingDebtsForDateRange(startDate.Value, endDate.Value);
+            RemainingDebts = UserService.GetRemainingDebtForDateRange(startDate.Value, endDate.Value);
+            ClearedDebts = UserService.GetClearedDebtForDateRange(startDate.Value, endDate.Value);
+
+
+            var allTransactions = UserService.GetAllTransactionsForDateRange(startDate.Value, endDate.Value);
+            HighestTransactions = allTransactions.OrderByDescending(t => t.Amount).Take(5).ToList();
+            LowestTransactions = allTransactions.OrderBy(t => t.Amount).Take(5).ToList();
+
+            
+        }
+    }
+
+    private void ApplyDateFilter()
+    {
+        LoadDashboardData();
     }
 
     private void ShowConfirmationModal(int debtId)
@@ -339,11 +396,51 @@
 
 }
 
-
+<style>
+   .dash-title {
+    display: flex;
+    justify-content: space-between; /* Align heading and filters on opposite sides */
+    align-items: center; /* Align items vertically in the center */
+    margin-bottom: 20px; /* Add some spacing below the title section */
 }
 
-<style>
+.dash-title h1 {
+      font-weight: bold;
+    font-size: 25px;
+}
 
-   
-    
+.filter-container {
+    display: flex;
+    align-items: center; /* Align filter inputs vertically */
+    gap: 10px; /* Add spacing between filter elements */
+}
+
+.filter-container .date-label {
+    font-size: 1rem;
+    margin-right: 5px;
+}
+
+.filter-container input[type="date"] {
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.filter-container .apply-btn {
+    background-color: #2A329C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.filter-container .apply-btn:hover {
+    background-color: #22287D;
+}
+
+
 </style>

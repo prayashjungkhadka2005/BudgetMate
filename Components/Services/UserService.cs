@@ -4,6 +4,7 @@
     using SQLite;
     using BudgetMate.Components.Models;
     using System.Data.Common;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
     namespace BudgetMate.Components.Services
     {
@@ -545,8 +546,180 @@
             }
         }
 
+        public int GetTotalInflowsForDateRange(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                var inflows = _database.Table<Credit>().ToList()
+                    .Where(c => DateTime.TryParse(c.CreditTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .Sum(c => c.CreditAmount);
+
+                var clearedDebts = _database.Table<Debt>().ToList()
+                    .Where(d => d.isCleared && DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .Sum(d => d.DebtAmount);
+
+                return inflows - clearedDebts;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error filtering total inflows: {ex.Message}");
+                return 0;
+            }
+        }
+
+        public int GetTotalOutflowForDateRange(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                return _database.Table<Debit>().ToList()
+                    .Where(d => DateTime.TryParse(d.DebitTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .Sum(d => d.DebitAmount);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error filtering total outflows: {ex.Message}");
+                return 0;
+            }
+        }
+
+        public int GetTotalDebtForDateRange(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                return _database.Table<Debt>().ToList()
+                    .Where(d => DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .Sum(d => d.DebtAmount);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error filtering total debt: {ex.Message}");
+                return 0;
+            }
+        }
+
+        public int GetRemainingDebtForDateRange(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                return _database.Table<Debt>().ToList()
+                    .Where(d => !d.isCleared && DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .Sum(d => d.DebtAmount);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error filtering remaining debt: {ex.Message}");
+                return 0;
+            }
+        }
+
+        public int GetClearedDebtForDateRange(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                return _database.Table<Debt>().ToList()
+                    .Where(d => d.isCleared && DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .Sum(d => d.DebtAmount);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error filtering cleared debt: {ex.Message}");
+                return 0;
+            }
+        }
+
+        public int GetTotalNumberOfTransactionsForDateRange(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                int debitCount = _database.Table<Debit>().ToList()
+                    .Count(d => DateTime.TryParse(d.DebitTransactionDate, out DateTime date) && date >= startDate && date <= endDate);
+
+                int creditCount = _database.Table<Credit>().ToList()
+                    .Count(c => DateTime.TryParse(c.CreditTransactionDate, out DateTime date) && date >= startDate && date <= endDate);
+
+                int clearedDebtCount = _database.Table<Debt>().ToList()
+                    .Count(d => d.isCleared && DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate);
+
+                return debitCount + creditCount + clearedDebtCount;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error filtering total number of transactions: {ex.Message}");
+                return 0;
+            }
+        }
+
+        public int GetTotalTransactionsAmountForDateRange(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                int totalInflow = _database.Table<Credit>().ToList()
+                    .Where(c => DateTime.TryParse(c.CreditTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .Sum(c => c.CreditAmount);
+
+                int totalOutflow = _database.Table<Debit>().ToList()
+                    .Where(d => DateTime.TryParse(d.DebitTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .Sum(d => d.DebitAmount);
+
+                int clearedDebts = _database.Table<Debt>().ToList()
+                    .Where(d => d.isCleared && DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .Sum(d => d.DebtAmount);
+
+                return totalInflow + clearedDebts - totalOutflow;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error filtering total transactions amount: {ex.Message}");
+                return 0;
+            }
+        }
+
+        public List<Debt> GetPendingDebtsForDateRange(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                return _database.Table<Debt>().ToList()
+                    .Where(d => !d.isCleared && DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error filtering pending debts: {ex.Message}");
+                return new List<Debt>();
+            }
+        }
+
+        public List<Transaction> GetAllTransactionsForDateRange(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                return _database.Table<Transaction>().ToList()
+                    .Where(t =>
+                    {
+                        if (DateTime.TryParse(t.TransactionDate, out DateTime parsedDate))
+                        {
+                            return parsedDate >= startDate && parsedDate <= endDate;
+                        }
+                        return false;
+                    })
+                    .OrderByDescending(t => DateTime.Parse(t.TransactionDate)) // Ensure valid parsing before sorting
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error filtering transactions: {ex.Message}");
+                return new List<Transaction>();
+            }
+        }
+
+
+
 
 
 
     }
+
+
+
+
 }

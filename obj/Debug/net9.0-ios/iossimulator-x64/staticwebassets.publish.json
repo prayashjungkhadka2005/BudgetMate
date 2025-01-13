@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RM8Rcna5Z/MaS6d1k0IPN60cfDgx7oUvM+es3LRcorU=",
+  "Hash": "KuQE1F3KCNSNSKy9kfV9R+FPaf3hjv5E5ceXYilySxI=",
   "Source": "BudgetMate",
   "BasePath": "/",
   "Mode": "Root",
@@ -80,12 +80,12 @@
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\g9f1ckn6yb-ihvxgaycsh.gz",
+      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\g9f1ckn6yb-1c1lf27c0q.gz",
       "SourceId": "BudgetMate",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "BudgetMate#[.{fingerprint=ihvxgaycsh}]!.bundle.scp.css.gz",
+      "RelativePath": "BudgetMate#[.{fingerprint=1c1lf27c0q}]!.bundle.scp.css.gz",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Alternative",
@@ -94,8 +94,8 @@
       "RelatedAsset": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "jchu7ipnn8",
-      "Integrity": "rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=",
+      "Fingerprint": "8z8d7b2uc6",
+      "Integrity": "TH5AGgjQh/rDcOOolc2iv/WnM0oef+ivh9zN7JkCKr4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css"
@@ -164,12 +164,12 @@
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\g9f1ckn6yb-ihvxgaycsh.br",
+      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\g9f1ckn6yb-1c1lf27c0q.br",
       "SourceId": "BudgetMate",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\",
       "BasePath": "/",
-      "RelativePath": "BudgetMate#[.{fingerprint=ihvxgaycsh}]!.bundle.scp.css.br",
+      "RelativePath": "BudgetMate#[.{fingerprint=1c1lf27c0q}]!.bundle.scp.css.br",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Alternative",
@@ -178,19 +178,19 @@
       "RelatedAsset": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "br",
-      "Fingerprint": "npiz4pzsmr",
-      "Integrity": "hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=",
+      "Fingerprint": "gyksazpypl",
+      "Integrity": "6OA8vGtw8r/GlDrCsLka47Y/QM6vkUGAMgQCL34sN84=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\s2nq3vjt16-ihvxgaycsh.br",
+      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\s2nq3vjt16-1c1lf27c0q.br",
       "SourceId": "BudgetMate",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\",
       "BasePath": "/",
-      "RelativePath": "BudgetMate#[.{fingerprint=ihvxgaycsh}]?.styles.css.br",
+      "RelativePath": "BudgetMate#[.{fingerprint=1c1lf27c0q}]?.styles.css.br",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Alternative",
@@ -199,8 +199,8 @@
       "RelatedAsset": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\scopedcss\\bundle\\BudgetMate.styles.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "br",
-      "Fingerprint": "npiz4pzsmr",
-      "Integrity": "hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=",
+      "Fingerprint": "gyksazpypl",
+      "Integrity": "6OA8vGtw8r/GlDrCsLka47Y/QM6vkUGAMgQCL34sN84=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\scopedcss\\bundle\\BudgetMate.styles.css"
@@ -227,12 +227,12 @@
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\wwwroot\\index.html"
     },
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\s2nq3vjt16-ihvxgaycsh.gz",
+      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\s2nq3vjt16-1c1lf27c0q.gz",
       "SourceId": "BudgetMate",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "BudgetMate#[.{fingerprint=ihvxgaycsh}]?.styles.css.gz",
+      "RelativePath": "BudgetMate#[.{fingerprint=1c1lf27c0q}]?.styles.css.gz",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Alternative",
@@ -241,8 +241,8 @@
       "RelatedAsset": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\scopedcss\\bundle\\BudgetMate.styles.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "jchu7ipnn8",
-      "Integrity": "rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=",
+      "Fingerprint": "8z8d7b2uc6",
+      "Integrity": "TH5AGgjQh/rDcOOolc2iv/WnM0oef+ivh9zN7JkCKr4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\scopedcss\\bundle\\BudgetMate.styles.css"
@@ -283,8 +283,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "ihvxgaycsh",
-      "Integrity": "Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=",
+      "Fingerprint": "1c1lf27c0q",
+      "Integrity": "ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\scopedcss\\bundle\\BudgetMate.styles.css"
@@ -304,8 +304,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "ihvxgaycsh",
-      "Integrity": "Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=",
+      "Fingerprint": "1c1lf27c0q",
+      "Integrity": "ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css"
@@ -521,13 +521,13 @@
       ]
     },
     {
-      "Route": "BudgetMate.bundle.scp.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\g9f1ckn6yb-ihvxgaycsh.gz",
+      "Route": "BudgetMate.1c1lf27c0q.bundle.scp.css",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\g9f1ckn6yb-1c1lf27c0q.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000479616307"
+          "Quality": "0.000256147541"
         }
       ],
       "ResponseHeaders": [
@@ -537,19 +537,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2084"
+          "Value": "3903"
         },
         {
           "Name": "ETag",
-          "Value": "\"rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=\""
+          "Value": "\"TH5AGgjQh/rDcOOolc2iv/WnM0oef+ivh9zN7JkCKr4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -565,24 +565,32 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "W/\"ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "1c1lf27c0q"
+        },
+        {
+          "Name": "label",
+          "Value": "BudgetMate.bundle.scp.css"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE="
         }
       ]
     },
     {
-      "Route": "BudgetMate.bundle.scp.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\g9f1ckn6yb-ihvxgaycsh.br",
+      "Route": "BudgetMate.1c1lf27c0q.bundle.scp.css",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\g9f1ckn6yb-1c1lf27c0q.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "br",
-          "Quality": "0.000579374276"
+          "Quality": "0.000306936771"
         }
       ],
       "ResponseHeaders": [
@@ -592,19 +600,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1725"
+          "Value": "3257"
         },
         {
           "Name": "ETag",
-          "Value": "\"hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=\""
+          "Value": "\"6OA8vGtw8r/GlDrCsLka47Y/QM6vkUGAMgQCL34sN84=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -620,18 +628,26 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "W/\"ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "1c1lf27c0q"
+        },
+        {
+          "Name": "label",
+          "Value": "BudgetMate.bundle.scp.css"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE="
         }
       ]
     },
     {
-      "Route": "BudgetMate.bundle.scp.css",
+      "Route": "BudgetMate.1c1lf27c0q.bundle.scp.css",
       "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -641,7 +657,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8489"
+          "Value": "23226"
         },
         {
           "Name": "Content-Type",
@@ -649,264 +665,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "\"ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
-        }
-      ]
-    },
-    {
-      "Route": "BudgetMate.bundle.scp.css.br",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\g9f1ckn6yb-ihvxgaycsh.br",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1725"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "br"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ="
-        }
-      ]
-    },
-    {
-      "Route": "BudgetMate.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\g9f1ckn6yb-ihvxgaycsh.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2084"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps="
-        }
-      ]
-    },
-    {
-      "Route": "BudgetMate.ihvxgaycsh.bundle.scp.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\g9f1ckn6yb-ihvxgaycsh.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000479616307"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2084"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
-        },
-        {
-          "Name": "label",
-          "Value": "BudgetMate.bundle.scp.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
-        }
-      ]
-    },
-    {
-      "Route": "BudgetMate.ihvxgaycsh.bundle.scp.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\g9f1ckn6yb-ihvxgaycsh.br",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "br",
-          "Quality": "0.000579374276"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1725"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "br"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
-        },
-        {
-          "Name": "label",
-          "Value": "BudgetMate.bundle.scp.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
-        }
-      ]
-    },
-    {
-      "Route": "BudgetMate.ihvxgaycsh.bundle.scp.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "8489"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -916,7 +679,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
+          "Value": "1c1lf27c0q"
         },
         {
           "Name": "label",
@@ -924,13 +687,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE="
         }
       ]
     },
     {
-      "Route": "BudgetMate.ihvxgaycsh.bundle.scp.css.br",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\g9f1ckn6yb-ihvxgaycsh.br",
+      "Route": "BudgetMate.1c1lf27c0q.bundle.scp.css.br",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\g9f1ckn6yb-1c1lf27c0q.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -939,7 +702,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1725"
+          "Value": "3257"
         },
         {
           "Name": "Content-Type",
@@ -947,11 +710,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=\""
+          "Value": "\"6OA8vGtw8r/GlDrCsLka47Y/QM6vkUGAMgQCL34sN84=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -969,7 +732,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
+          "Value": "1c1lf27c0q"
         },
         {
           "Name": "label",
@@ -977,13 +740,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ="
+          "Value": "sha256-6OA8vGtw8r/GlDrCsLka47Y/QM6vkUGAMgQCL34sN84="
         }
       ]
     },
     {
-      "Route": "BudgetMate.ihvxgaycsh.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\g9f1ckn6yb-ihvxgaycsh.gz",
+      "Route": "BudgetMate.1c1lf27c0q.bundle.scp.css.gz",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\g9f1ckn6yb-1c1lf27c0q.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -992,7 +755,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2084"
+          "Value": "3903"
         },
         {
           "Name": "Content-Type",
@@ -1000,11 +763,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=\""
+          "Value": "\"TH5AGgjQh/rDcOOolc2iv/WnM0oef+ivh9zN7JkCKr4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1022,7 +785,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
+          "Value": "1c1lf27c0q"
         },
         {
           "Name": "label",
@@ -1030,18 +793,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps="
+          "Value": "sha256-TH5AGgjQh/rDcOOolc2iv/WnM0oef+ivh9zN7JkCKr4="
         }
       ]
     },
     {
-      "Route": "BudgetMate.ihvxgaycsh.styles.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\s2nq3vjt16-ihvxgaycsh.br",
+      "Route": "BudgetMate.1c1lf27c0q.styles.css",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\s2nq3vjt16-1c1lf27c0q.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "br",
-          "Quality": "0.000579374276"
+          "Quality": "0.000306936771"
         }
       ],
       "ResponseHeaders": [
@@ -1051,15 +814,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1725"
+          "Value": "3257"
         },
         {
           "Name": "ETag",
-          "Value": "\"hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=\""
+          "Value": "\"6OA8vGtw8r/GlDrCsLka47Y/QM6vkUGAMgQCL34sN84=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1079,13 +842,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "W/\"ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
+          "Value": "1c1lf27c0q"
         },
         {
           "Name": "label",
@@ -1093,18 +856,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE="
         }
       ]
     },
     {
-      "Route": "BudgetMate.ihvxgaycsh.styles.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\s2nq3vjt16-ihvxgaycsh.gz",
+      "Route": "BudgetMate.1c1lf27c0q.styles.css",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\s2nq3vjt16-1c1lf27c0q.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000479616307"
+          "Quality": "0.000256147541"
         }
       ],
       "ResponseHeaders": [
@@ -1114,15 +877,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2084"
+          "Value": "3903"
         },
         {
           "Name": "ETag",
-          "Value": "\"rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=\""
+          "Value": "\"TH5AGgjQh/rDcOOolc2iv/WnM0oef+ivh9zN7JkCKr4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1142,13 +905,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "W/\"ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
+          "Value": "1c1lf27c0q"
         },
         {
           "Name": "label",
@@ -1156,12 +919,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE="
         }
       ]
     },
     {
-      "Route": "BudgetMate.ihvxgaycsh.styles.css",
+      "Route": "BudgetMate.1c1lf27c0q.styles.css",
       "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\scopedcss\\bundle\\BudgetMate.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1171,7 +934,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8489"
+          "Value": "23226"
         },
         {
           "Name": "Content-Type",
@@ -1179,11 +942,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "\"ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1193,7 +956,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
+          "Value": "1c1lf27c0q"
         },
         {
           "Name": "label",
@@ -1201,13 +964,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE="
         }
       ]
     },
     {
-      "Route": "BudgetMate.ihvxgaycsh.styles.css.br",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\s2nq3vjt16-ihvxgaycsh.br",
+      "Route": "BudgetMate.1c1lf27c0q.styles.css.br",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\s2nq3vjt16-1c1lf27c0q.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1216,7 +979,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1725"
+          "Value": "3257"
         },
         {
           "Name": "Content-Type",
@@ -1224,11 +987,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=\""
+          "Value": "\"6OA8vGtw8r/GlDrCsLka47Y/QM6vkUGAMgQCL34sN84=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1246,7 +1009,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
+          "Value": "1c1lf27c0q"
         },
         {
           "Name": "label",
@@ -1254,13 +1017,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ="
+          "Value": "sha256-6OA8vGtw8r/GlDrCsLka47Y/QM6vkUGAMgQCL34sN84="
         }
       ]
     },
     {
-      "Route": "BudgetMate.ihvxgaycsh.styles.css.gz",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\s2nq3vjt16-ihvxgaycsh.gz",
+      "Route": "BudgetMate.1c1lf27c0q.styles.css.gz",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\s2nq3vjt16-1c1lf27c0q.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1269,7 +1032,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2084"
+          "Value": "3903"
         },
         {
           "Name": "Content-Type",
@@ -1277,11 +1040,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=\""
+          "Value": "\"TH5AGgjQh/rDcOOolc2iv/WnM0oef+ivh9zN7JkCKr4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1299,7 +1062,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ihvxgaycsh"
+          "Value": "1c1lf27c0q"
         },
         {
           "Name": "label",
@@ -1307,73 +1070,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps="
+          "Value": "sha256-TH5AGgjQh/rDcOOolc2iv/WnM0oef+ivh9zN7JkCKr4="
         }
       ]
     },
     {
-      "Route": "BudgetMate.styles.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\s2nq3vjt16-ihvxgaycsh.br",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "br",
-          "Quality": "0.000579374276"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1725"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "br"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
-        }
-      ]
-    },
-    {
-      "Route": "BudgetMate.styles.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\s2nq3vjt16-ihvxgaycsh.gz",
+      "Route": "BudgetMate.bundle.scp.css",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\g9f1ckn6yb-1c1lf27c0q.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000479616307"
+          "Quality": "0.000256147541"
         }
       ],
       "ResponseHeaders": [
@@ -1383,15 +1091,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2084"
+          "Value": "3903"
         },
         {
           "Name": "ETag",
-          "Value": "\"rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=\""
+          "Value": "\"TH5AGgjQh/rDcOOolc2iv/WnM0oef+ivh9zN7JkCKr4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1411,13 +1119,305 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "W/\"ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE="
+        }
+      ]
+    },
+    {
+      "Route": "BudgetMate.bundle.scp.css",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\g9f1ckn6yb-1c1lf27c0q.br",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "br",
+          "Quality": "0.000306936771"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3257"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6OA8vGtw8r/GlDrCsLka47Y/QM6vkUGAMgQCL34sN84=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "br"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE="
+        }
+      ]
+    },
+    {
+      "Route": "BudgetMate.bundle.scp.css",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "23226"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE="
+        }
+      ]
+    },
+    {
+      "Route": "BudgetMate.bundle.scp.css.br",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\g9f1ckn6yb-1c1lf27c0q.br",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3257"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6OA8vGtw8r/GlDrCsLka47Y/QM6vkUGAMgQCL34sN84=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "br"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6OA8vGtw8r/GlDrCsLka47Y/QM6vkUGAMgQCL34sN84="
+        }
+      ]
+    },
+    {
+      "Route": "BudgetMate.bundle.scp.css.gz",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\g9f1ckn6yb-1c1lf27c0q.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3903"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TH5AGgjQh/rDcOOolc2iv/WnM0oef+ivh9zN7JkCKr4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TH5AGgjQh/rDcOOolc2iv/WnM0oef+ivh9zN7JkCKr4="
+        }
+      ]
+    },
+    {
+      "Route": "BudgetMate.styles.css",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\s2nq3vjt16-1c1lf27c0q.br",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "br",
+          "Quality": "0.000306936771"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3257"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6OA8vGtw8r/GlDrCsLka47Y/QM6vkUGAMgQCL34sN84=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "br"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE="
+        }
+      ]
+    },
+    {
+      "Route": "BudgetMate.styles.css",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\s2nq3vjt16-1c1lf27c0q.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000256147541"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3903"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TH5AGgjQh/rDcOOolc2iv/WnM0oef+ivh9zN7JkCKr4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE="
         }
       ]
     },
@@ -1432,7 +1432,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8489"
+          "Value": "23226"
         },
         {
           "Name": "Content-Type",
@@ -1440,11 +1440,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY=\""
+          "Value": "\"ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1454,13 +1454,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Wko4U1RDAPeYwANlC3l7yZYGEDuuzr+4dEvJRNdi/vY="
+          "Value": "sha256-ASEhsYhVIBM9+B1iHyOd1UwCZulTQLdl+AYhPgJZAlE="
         }
       ]
     },
     {
       "Route": "BudgetMate.styles.css.br",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\s2nq3vjt16-ihvxgaycsh.br",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\publish\\s2nq3vjt16-1c1lf27c0q.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1469,7 +1469,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1725"
+          "Value": "3257"
         },
         {
           "Name": "Content-Type",
@@ -1477,11 +1477,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ=\""
+          "Value": "\"6OA8vGtw8r/GlDrCsLka47Y/QM6vkUGAMgQCL34sN84=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1499,13 +1499,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-hf71YRnerj7CuE+viWFLGFof98eSpa4+cfDdCifLqRQ="
+          "Value": "sha256-6OA8vGtw8r/GlDrCsLka47Y/QM6vkUGAMgQCL34sN84="
         }
       ]
     },
     {
       "Route": "BudgetMate.styles.css.gz",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\s2nq3vjt16-ihvxgaycsh.gz",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\compressed\\s2nq3vjt16-1c1lf27c0q.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1514,7 +1514,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2084"
+          "Value": "3903"
         },
         {
           "Name": "Content-Type",
@@ -1522,11 +1522,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps=\""
+          "Value": "\"TH5AGgjQh/rDcOOolc2iv/WnM0oef+ivh9zN7JkCKr4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 09:25:05 GMT"
+          "Value": "Mon, 13 Jan 2025 14:05:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1544,7 +1544,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-rQ1glF3I+5e0lfVdUMVLQuJMATJLcc0fnp61d6PTqps="
+          "Value": "sha256-TH5AGgjQh/rDcOOolc2iv/WnM0oef+ivh9zN7JkCKr4="
         }
       ]
     },
