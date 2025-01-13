@@ -13,7 +13,6 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
         private SQLiteConnection _database;
         private string _dbPath;
 
-        // Store the logged-in user (for session tracking)
         private static User _currentUser = null;
 
         public UserService()
@@ -40,31 +39,27 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
             Debug.WriteLine($"Database path: {_dbPath}");
         }
 
-        // User Login Function
         public User LoginUser(string username, string password)
         {
             var user = _database.Table<User>().FirstOrDefault(u => u.Username == username && u.Password == password);
             if (user != null)
             {
-                _currentUser = user;  // Store user session
+                _currentUser = user;  
             }
             return user;
         }
 
-        // Logout Function
         public void Logout()
         {
-            _currentUser = null; // Clear session
+            _currentUser = null;
             Debug.WriteLine("User logged out successfully.");
         }
 
-        // Check if user is logged in
         public bool IsUserLoggedIn()
         {
             return _currentUser != null;
         }
 
-        // Get current logged-in user
         public User GetCurrentUser()
         {
             return _currentUser;

@@ -84,7 +84,7 @@
 .nav-scrollable {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 3.5rem); /* Adjust based on navbar height */
+    height: calc(100vh - 3.5rem); 
     overflow-y: auto;
 }
 .navbar-toggler:checked ~ .nav-scrollable {
@@ -106,10 +106,9 @@
 .nav-content {
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Ensures it takes available space */
+    flex-grow: 1;
 }
 
-/* Spacer pushes the logout button down */
 .nav-spacer {
     flex-grow: 1;
 }
@@ -120,7 +119,7 @@
 }
 
 .logout-button {
-    background-color: #dc3545; /* Red Logout Button */
+    background-color: #dc3545; 
     color: white;
     border: none;
     padding: 10px 20px;
@@ -135,7 +134,7 @@
 }
 
     .logout-button:hover {
-        background-color: #c82333; /* Darker red on hover */
+        background-color: #c82333;
     }
 
 @media (min-width: 641px) {

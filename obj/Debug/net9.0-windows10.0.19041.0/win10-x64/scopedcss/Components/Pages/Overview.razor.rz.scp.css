@@ -128,15 +128,15 @@ h3[b-hjwq8akmqr] {
     }
 
 .success[b-hjwq8akmqr] {
-    text-align: center;
     color: green;
     font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 .error[b-hjwq8akmqr] {
     color: red;
-    text-align: center;
     font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 .overview-container[b-hjwq8akmqr] {

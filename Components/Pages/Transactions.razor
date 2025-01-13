@@ -16,7 +16,7 @@
     <div class="transaction-box">
         <form>
             <div class="transaction-row">
-                <div class="trow-field">
+                <div class="trow-field" >
                     @if (!string.IsNullOrEmpty(message))
                     {
                         <div class="@((isSuccess ? "success" : "error"))">@message</div>
@@ -86,7 +86,7 @@
 </div>
 
 @code {
-    private string transactiontype = "expense"; // Or set the default to "debt" if you want it to show by default
+    private string transactiontype = "expense";
     private string transactiontitle;
     private int transactionamount;
     private DateTime debtduedate = DateTime.MinValue;
@@ -299,11 +299,13 @@
 
 <style>
     .success {
+        text-align: center;
     color: green;
     font-weight: bold;
 }
 
 .error {
+        text-align: center;
     color: red;
     font-weight: bold;
 }
