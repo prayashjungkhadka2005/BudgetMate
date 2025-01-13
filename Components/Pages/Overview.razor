@@ -6,58 +6,66 @@
 @inject BudgetMate.Components.Services.UserService UserService
 
 <h1>Dashboard</h1>
+
 <div class="overview-container">
+   
+
     <div class="col">
-        <div class="title">Total Balance</div>
-        <div class="value">$@TotalBalance</div>
-    </div>
-    <div class="col">
-        <div class="title">Total inflows</div>
-        <div class="value">$@TotalInflows</div>
+        <div class="col-content">
+            <i class="fas fa-arrow-down icon"></i>
+            <div class="title">Total Inflows</div>
+            <div class="value">$@TotalInflows</div>
+        </div>
     </div>
 
     <div class="col">
-        <div class="title">Total outflows</div>
-        <div class="value">$@TotalOutflows</div>
+        <div class="col-content">
+            <i class="fas fa-arrow-up icon"></i>
+            <div class="title">Total Outflows</div>
+            <div class="value">$@TotalOutflows</div>
+        </div>
     </div>
 
     <div class="col">
-        <div class="title">Total debt</div>
-        <div class="value">$@TotalDebt</div>
+        <div class="col-content">
+            <i class="fas fa-hand-holding-usd icon"></i>
+            <div class="title">Total Debt</div>
+            <div class="value">$@TotalDebt</div>
+        </div>
     </div>
 
     <div class="col">
-        <div class="title">Cleared debt</div>
-        <div class="value">$@ClearedDebts</div>
+        <div class="col-content">
+            <i class="fas fa-check-circle icon"></i>
+            <div class="title">Cleared Debt</div>
+            <div class="value">$@ClearedDebts</div>
+        </div>
     </div>
 
     <div class="col">
-        <div class="title">Remaining debt</div>
-        <div class="value">@RemainingDebts</div>
+        <div class="col-content">
+            <i class="fas fa-exclamation-circle icon"></i>
+            <div class="title">Remaining Debt</div>
+            <div class="value">@RemainingDebts</div>
+        </div>
     </div>
 </div>
+
 
 <div class="tran-details">
     <div class="tran-col">
+        <i class="fas fa-list-alt tran-icon"></i>
         <div class="tran-title">Total Number of Transactions</div>
-        <div class="number">
-            <div class="icon">
-                <span class="fas fa-umbrella-beach" aria-hidden="true"></span>
-            </div>
-            <div class="num-value">@TotalNumberOfTransactions</div>
-        </div>
+        <div class="tran-value">@TotalNumberOfTransactions</div>
     </div>
 
     <div class="tran-col">
+        <i class="fas fa-coins tran-icon"></i>
         <div class="tran-title">Total Transactions</div>
-        <div class="number">
-            <div class="icon">
-                <span class="fas fa-coins" aria-hidden="true"></span>
-            </div>
-            <div class="num-value">$@TotalAmountOfTransactions</div>
-        </div>
+        <div class="tran-value">$@TotalAmountOfTransactions</div>
     </div>
 </div>
+
 
 <div class="grid-container">
     <div>

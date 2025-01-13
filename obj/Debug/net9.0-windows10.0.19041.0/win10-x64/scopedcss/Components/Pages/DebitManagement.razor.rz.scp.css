@@ -4,10 +4,9 @@ h3[b-efmrok9j39] {
     margin-bottom: 15px;
 }
 
-/* Filters Section */
 .filters[b-efmrok9j39] {
     display: flex;
-    flex-wrap: nowrap; /* Ensures buttons stay in one row on full width */
+    flex-wrap: nowrap; 
     gap: 10px;
     justify-content: center;
     align-items: center;
@@ -16,10 +15,9 @@ h3[b-efmrok9j39] {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    flex-wrap: wrap; /* Wraps only when necessary */
+    flex-wrap: wrap; 
 }
 
-    /* Styling for Select Dropdowns */
     .filters select[b-efmrok9j39] {
         padding: 10px;
         font-size: 14px;
@@ -27,9 +25,9 @@ h3[b-efmrok9j39] {
         border-radius: 5px;
         outline: none;
         min-width: 150px;
-        flex: 1; /* Makes sure all elements resize dynamically */
-        max-width: 220px; /* Prevents elements from becoming too wide */
-        appearance: none; /* Removes default styling */
+        flex: 1; 
+        max-width: 220px; 
+        appearance: none; 
         background-color: #fff;
         background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%232A329C' d='M2 0L0 2h4zM2 5L0 3h4z'/%3E%3C/svg%3E");
         background-repeat: no-repeat;
@@ -38,14 +36,12 @@ h3[b-efmrok9j39] {
         cursor: pointer;
     }
 
-        /* Dropdown Hover & Focus */
         .filters select:hover[b-efmrok9j39],
         .filters select:focus[b-efmrok9j39] {
             border-color: #2A329C;
             box-shadow: 0 0 5px rgba(42, 50, 156, 0.3);
         }
 
-    /* Styling for Text Inputs & Date Inputs */
     .filters input[type="date"][b-efmrok9j39],
     .filters input[type="text"][b-efmrok9j39] {
         padding: 10px;
@@ -62,7 +58,6 @@ h3[b-efmrok9j39] {
         min-width: 200px;
     }
 
-    /* Styling for Buttons */
     .filters button[b-efmrok9j39] {
         background-color: #2A329C;
         color: white;
@@ -79,10 +74,9 @@ h3[b-efmrok9j39] {
             background-color: #282B4B;
         }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .filters[b-efmrok9j39] {
-        flex-wrap: wrap; /* Allows wrapping when necessary */
+        flex-wrap: wrap; 
         gap: 8px;
         justify-content: center;
     }
@@ -91,12 +85,11 @@ h3[b-efmrok9j39] {
         .filters input[type="date"][b-efmrok9j39],
         .filters input[type="text"][b-efmrok9j39],
         .filters button[b-efmrok9j39] {
-            flex: 1 1 100%; /* Each filter takes full width on small screens */
-            min-width: 100%; /* Makes sure each item is stacked */
+            flex: 1 1 100%; 
+            min-width: 100%; 
         }
 }
 
-/* Transactions Table */
 .transactions-table[b-efmrok9j39] {
     width: 100%;
     border-collapse: collapse;
@@ -134,21 +127,19 @@ h3[b-efmrok9j39] {
         color: white;
     }
 
-/* Mobile Table Styling */
 @media (max-width: 768px) {
     .transactions-table[b-efmrok9j39] {
         display: block;
-        overflow-x: auto; /* Enables horizontal scrolling */
+        overflow-x: auto; 
     }
 
         .transactions-table th[b-efmrok9j39],
         .transactions-table td[b-efmrok9j39] {
-            white-space: nowrap; /* Prevents text wrapping */
+            white-space: nowrap; 
             padding: 10px;
         }
 }
 
-/* Note Button */
 .add-note-btn[b-efmrok9j39] {
     background-color: #2A329C;
     color: white;
@@ -163,7 +154,6 @@ h3[b-efmrok9j39] {
         background-color: #282B4B;
     }
 
-/* Modal */
 .modal[b-efmrok9j39] {
     position: fixed;
     top: 0;
@@ -182,7 +172,7 @@ h3[b-efmrok9j39] {
     padding: 20px;
     border-radius: 8px;
     width: 400px;
-    max-width: 90%; /* Makes modal responsive */
+    max-width: 90%; 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     position: relative;
     z-index: 10001;
@@ -205,7 +195,6 @@ h3[b-efmrok9j39] {
         font-size: 14px;
     }
 
-/* Modal Buttons */
 .modal-actions[b-efmrok9j39] {
     display: flex;
     justify-content: space-between;

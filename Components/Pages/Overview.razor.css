@@ -57,6 +57,7 @@
 
 .pending-debts-container{
     margin-top: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .no-debts-message {
@@ -117,9 +118,9 @@
 .overview-container {
     display: flex;
     gap: 16px;
-    padding: 16px;
     justify-content: center;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .col {
@@ -127,47 +128,79 @@
     border-radius: 8px;
     padding: 16px;
     flex: 1;
-    max-width: 200px;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Ensures alignment inside each column */
+.col-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align everything to the left */
+    gap: 6px;
+}
+
+/* Font Awesome Icons */
+.icon {
+    font-size: 24px;
+    color: black;
+}
+
+/* Title styling */
 .title {
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 8px;
     color: #555;
 }
 
+/* Value styling */
 .value {
     font-size: 20px;
-    color: #4caf50;
+    color: black;
     font-weight: bold;
 }
 
+
 .tran-details {
+    
     display: flex;
-    gap: 24px;
-    padding: 16px;
+    gap: 16px;
     justify-content: center;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .tran-col {
-    border-radius: 8px;
     padding: 16px;
-    width: 100%;
-    max-width: 350px;
+    flex: 1;
+    max-width: 100%;
+    align-items: center; /* Ensures vertical alignment */
+    gap: 12px; /* Space between icon, title, and value */
+    border-radius: 8px;
+    padding: 22px;
+    margin-top: 1.5rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    text-align: left; /* Align text content */
+
+}
+
+.tran-icon {
+    font-size: 24px;
+    color: black;
 }
 
 .tran-title {
     font-size: 18px;
     font-weight: bold;
     color: #333;
-    margin-bottom: 12px;
 }
+
+.tran-value {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4caf50;
+}
+
 
 .modal-overlay {
     position: fixed;

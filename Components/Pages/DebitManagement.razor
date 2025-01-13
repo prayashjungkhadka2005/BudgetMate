@@ -92,12 +92,12 @@
 
 
 @code {
-    private string selectedType = ""; // Default: Show All
-    private string selectedTag = ""; // Default: Show All
+    private string selectedType = ""; 
+    private string selectedTag = ""; 
     private DateTime? fromDate;
     private DateTime? toDate;
     private string searchQuery = "";
-    private string sortOrder = "desc"; // Default: Newest First
+    private string sortOrder = "desc";
     private List<Transaction> allTransactions = new();
     private List<Transaction> filteredTransactions = new();
     private Transaction selectedTransaction;
