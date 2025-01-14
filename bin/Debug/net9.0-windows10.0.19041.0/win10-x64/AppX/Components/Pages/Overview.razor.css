@@ -128,15 +128,15 @@ h3 {
     }
 
 .success {
-    text-align: center;
     color: green;
     font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 .error {
     color: red;
-    text-align: center;
     font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 .overview-container {

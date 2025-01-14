@@ -116,67 +116,113 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
         //    }
         //}
 
+        //public bool AddDebitTransaction(Debit debit)
+        //    {
+
+        //        if (debit == null)
+        //        {
+        //            Debug.WriteLine("Debit transaction data is null");
+        //            return false;
+        //        }
+
+        //        Debug.WriteLine($"Debit transaction: Title={debit.DebitTransactionTitle}, Amount={debit.DebitAmount}, Tag={debit.DebitTags}");
+
+        //        if (string.IsNullOrEmpty(debit.DebitTransactionTitle) || debit.DebitAmount <= 0)
+        //        {
+        //            Debug.WriteLine("Invalid debit transaction data");
+        //            return false;
+        //        }
+
+        //        try
+        //        {
+        //        int totalBalance = GetTotalBalance();
+        //        if(debit.DebitAmount > totalBalance)
+        //        {
+        //            return false;
+        //        }
+        //        else
+        //        {
+        //            _database.BeginTransaction();
+
+        //            _database.Insert(debit);
+
+        //            var transaction = new Transaction
+        //            {
+        //                TransactionDate = debit.DebitTransactionDate,
+        //                Amount = debit.DebitAmount,
+        //                Type = "Debit",
+        //                Tags = debit.DebitTags,
+        //            };
+        //            _database.Insert(transaction); // Insert into Transaction table
+
+        //            _database.Commit();
+        //            RecalculateBalance();
+
+        //            Debug.WriteLine("Debit transaction inserted successfully.");
+        //            return true;
+        //        }
+
+
+
+        //        }
+        //        catch (SQLiteException ex)
+        //        {
+        //            _database.Rollback();
+        //            Debug.WriteLine($"Error inserting debit transaction: {ex.Message}");
+        //            return false;
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Debug.WriteLine($"Unexpected error: {ex.Message}");
+        //            return false;
+        //        }
+        //    }
+
         public bool AddDebitTransaction(Debit debit)
+        {
+            if (debit == null || string.IsNullOrEmpty(debit.DebitTransactionTitle) || debit.DebitAmount <= 0)
             {
-
-                if (debit == null)
-                {
-                    Debug.WriteLine("Debit transaction data is null");
-                    return false;
-                }
-
-                Debug.WriteLine($"Debit transaction: Title={debit.DebitTransactionTitle}, Amount={debit.DebitAmount}, Tag={debit.DebitTags}");
-
-                if (string.IsNullOrEmpty(debit.DebitTransactionTitle) || debit.DebitAmount <= 0)
-                {
-                    Debug.WriteLine("Invalid debit transaction data");
-                    return false;
-                }
-
-                try
-                {
-                int totalBalance = GetTotalBalance();
-                if(debit.DebitAmount > totalBalance)
-                {
-                    return false;
-                }
-                else
-                {
-                    _database.BeginTransaction();
-
-                    _database.Insert(debit);
-
-                    var transaction = new Transaction
-                    {
-                        TransactionDate = debit.DebitTransactionDate,
-                        Amount = debit.DebitAmount,
-                        Type = "Debit",
-                        Tags = debit.DebitTags,
-                    };
-                    _database.Insert(transaction); // Insert into Transaction table
-
-                    _database.Commit();
-                    RecalculateBalance();
-
-                    Debug.WriteLine("Debit transaction inserted successfully.");
-                    return true;
-                }
-
-
-               
-                }
-                catch (SQLiteException ex)
-                {
-                    _database.Rollback();
-                    Debug.WriteLine($"Error inserting debit transaction: {ex.Message}");
-                    return false;
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine($"Unexpected error: {ex.Message}");
-                    return false;
-                }
+                Debug.WriteLine("Invalid debit transaction data");
+                return false;
             }
+
+            try
+            {
+                int totalBalance = GetTotalBalance();
+
+                if (debit.DebitAmount > totalBalance)
+                {
+                    Debug.WriteLine("Transaction denied: Insufficient balance.");
+                    return false; 
+                }
+
+                _database.BeginTransaction();
+
+                _database.Insert(debit);
+
+                var transaction = new Transaction
+                {
+                    TransactionDate = debit.DebitTransactionDate,
+                    Amount = debit.DebitAmount,
+                    Type = "Debit",
+                    Tags = debit.DebitTags,
+                };
+                _database.Insert(transaction);
+
+                _database.Commit();
+                RecalculateBalance();  
+
+                Debug.WriteLine("Debit transaction inserted successfully.");
+                return true;
+            }
+            catch (SQLiteException ex)
+            {
+                _database.Rollback();
+                Debug.WriteLine($"Error inserting debit transaction: {ex.Message}");
+                return false;
+            }
+        }
+
 
         //public void AutoClearDebts()
         //{
@@ -337,55 +383,101 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
                 }
             }
 
+        //public bool ClearDebt(int debtId)
+        //{
+        //    try
+        //    {
+        //        var debt = _database.Table<Debt>().FirstOrDefault(d => d.DebtId == debtId);
+
+        //        if (debt != null)
+        //        {
+        //            int totalInflow = GetTotalInflows();
+
+        //            if (debt.DebtAmount <= totalInflow)
+        //            {
+        //                _database.BeginTransaction(); 
+        //                debt.isCleared = true;
+
+        //                _database.Update(debt);
+
+        //                var transaction = new Transaction
+        //                {
+        //                    TransactionDate = DateTime.Now.ToString("yyyy-MM-dd"),
+        //                    Amount = debt.DebtAmount,
+        //                    Type = "Debt Cleared", 
+        //                    Tags = debt.SourceOfDebt,
+        //                    Note = "Debt paid successfully"
+        //                };
+        //                _database.Insert(transaction);
+
+        //                _database.Commit(); 
+
+        //                RecalculateBalance();
+
+        //                Debug.WriteLine($"Debt of ${debt.DebtAmount} cleared successfully.");
+        //                return true;
+        //            }
+        //            else
+        //            {
+        //                Debug.WriteLine("Not enough balance to clear the debt.");
+        //                return false; 
+        //            }
+        //        }
+
+        //        return false; 
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Debug.WriteLine($"Error while clearing debt: {ex.Message}");
+        //        return false; 
+        //    }
+        //}
+
+
         public bool ClearDebt(int debtId)
         {
             try
             {
                 var debt = _database.Table<Debt>().FirstOrDefault(d => d.DebtId == debtId);
-
                 if (debt != null)
                 {
-                    int totalInflow = GetTotalInflows();
-
-                    if (debt.DebtAmount <= totalInflow)
-                    {
-                        _database.BeginTransaction(); 
-                        debt.isCleared = true;
-
-                        _database.Update(debt);
-
-                        var transaction = new Transaction
-                        {
-                            TransactionDate = DateTime.Now.ToString("yyyy-MM-dd"),
-                            Amount = debt.DebtAmount,
-                            Type = "Debt Cleared", 
-                            Tags = debt.SourceOfDebt,
-                            Note = "Debt paid successfully"
-                        };
-                        _database.Insert(transaction);
-
-                        _database.Commit(); 
-
-                        RecalculateBalance();
-
-                        Debug.WriteLine($"Debt of ${debt.DebtAmount} cleared successfully.");
-                        return true;
-                    }
-                    else
+                    int availableBalance = GetTotalBalance();
+                    if (debt.DebtAmount > availableBalance)
                     {
                         Debug.WriteLine("Not enough balance to clear the debt.");
-                        return false; 
+                        return false;
                     }
+
+                    _database.BeginTransaction();
+                    debt.isCleared = true;
+                    _database.Update(debt);
+
+                    var transaction = new Transaction
+                    {
+                        TransactionDate = DateTime.Now.ToString("yyyy-MM-dd"),
+                        Amount = debt.DebtAmount,
+                        Type = "Debt Cleared",
+                        Tags = debt.SourceOfDebt,
+                        Note = "Debt paid successfully"
+                    };
+                    _database.Insert(transaction);
+                    _database.Commit();
+
+                    RecalculateBalance();
+                    Debug.WriteLine($"Debt of ${debt.DebtAmount} cleared successfully.");
+                    return true;
                 }
 
-                return false; 
+                return false;
             }
             catch (Exception ex)
             {
+                _database.Rollback();
                 Debug.WriteLine($"Error while clearing debt: {ex.Message}");
-                return false; 
+                return false;
             }
         }
+
 
         public int GetTotalInflows()
         {
@@ -523,6 +615,34 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
         //        Debug.WriteLine($"Error recalculating balance: {ex.Message}");
         //    }
         //}
+        //public void RecalculateBalance()
+        //{
+        //    try
+        //    {
+        //        int totalInflows = GetTotalInflows();
+        //        int totalOutflows = GetTotalOutflow();
+        //        int remainingDebt = GetRemainingDebt();
+
+        //        int totalBalance = totalInflows - totalOutflows - remainingDebt;
+
+        //        var balance = _database.Table<Balance>().FirstOrDefault();
+        //        if (balance == null)
+        //        {
+        //            _database.Insert(new Balance { TotalBalance = totalBalance });
+        //        }
+        //        else
+        //        {
+        //            _database.Execute("UPDATE Balance SET TotalBalance = ?", totalBalance);
+        //        }
+
+        //        Debug.WriteLine($"Updated Balance: {totalBalance}");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Debug.WriteLine($"Error recalculating balance: {ex.Message}");
+        //    }
+        //}
+
         public void RecalculateBalance()
         {
             try
@@ -530,26 +650,22 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
                 int totalInflows = GetTotalInflows();
                 int totalOutflows = GetTotalOutflow();
                 int remainingDebt = GetRemainingDebt();
-
                 int totalBalance = totalInflows - totalOutflows - remainingDebt;
 
-                var balance = _database.Table<Balance>().FirstOrDefault();
-                if (balance == null)
-                {
-                    _database.Insert(new Balance { TotalBalance = totalBalance });
-                }
-                else
-                {
-                    _database.Execute("UPDATE Balance SET TotalBalance = ?", totalBalance);
-                }
+                _database.BeginTransaction();
+                _database.Execute("DELETE FROM Balance");
+                _database.Insert(new Balance { TotalBalance = totalBalance });
+                _database.Commit();
 
                 Debug.WriteLine($"Updated Balance: {totalBalance}");
             }
             catch (Exception ex)
             {
+                _database.Rollback();
                 Debug.WriteLine($"Error recalculating balance: {ex.Message}");
             }
         }
+
 
         public List<Debt> GetOverdueDebts()
         {
