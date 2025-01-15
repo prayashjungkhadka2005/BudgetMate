@@ -238,7 +238,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
                 if (_currentUser == null) return false;
 
                 var debt = _database.Table<Debt>().FirstOrDefault(d => d.DebtId == debtId && d.UserId == _currentUser.UserId);
-                if (debt != null && debt.DebtAmount <= GetTotalBalance())
+                if (debt != null && debt.DebtAmount < GetTotalBalance())
                 {
                     _database.BeginTransaction();
                     debt.isCleared = true;
