@@ -25,7 +25,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
                 Directory.CreateDirectory(folderPath);
             }
 
-            _dbPath = Path.Combine(folderPath, "BudgetMates.db3");
+            _dbPath = Path.Combine(folderPath, "BudgetMate.db3");
 
             _database = new SQLiteConnection(_dbPath);
 
@@ -649,8 +649,8 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
             {
                 int totalInflows = GetTotalInflows();
                 int totalOutflows = GetTotalOutflow();
-                int remainingDebt = GetRemainingDebt();
-                int totalBalance = totalInflows - totalOutflows - remainingDebt;
+                int debts = GetTotalDebt();
+                int totalBalance = totalInflows - totalOutflows + debts;
 
                 _database.BeginTransaction();
                 _database.Execute("DELETE FROM Balance");
