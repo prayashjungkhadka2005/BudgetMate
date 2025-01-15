@@ -140,7 +140,8 @@ main[b-btdjf3oo18] {
 
 .nav-item[b-ah7ugpknd2]{
     margin-top: 0.3rem;
-    font-size: 15.5px;
+    font-size: 16.5px;
+    
 }
 
 .nav-item span[b-ah7ugpknd2] {
@@ -177,9 +178,11 @@ main[b-btdjf3oo18] {
         }
 
 .nav-scrollable[b-ah7ugpknd2] {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 3.5rem); 
+    overflow-y: auto;
 }
-
 .navbar-toggler:checked ~ .nav-scrollable[b-ah7ugpknd2] {
     display: block;
 }
@@ -196,24 +199,108 @@ main[b-btdjf3oo18] {
     gap: 0.5rem; 
 }
 
+.nav-content[b-ah7ugpknd2] {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.nav-spacer[b-ah7ugpknd2] {
+    flex-grow: 1;
+}
+
+.logout-button-container[b-ah7ugpknd2] {
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.logout-button[b-ah7ugpknd2] {
+    background-color: #dc3545; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+    .logout-button:hover[b-ah7ugpknd2] {
+        background-color: #c82333;
+    }
+
 @media (min-width: 641px) {
     .navbar-toggler[b-ah7ugpknd2] {
         display: none;
     }
 
     .nav-scrollable[b-ah7ugpknd2] {
-        display: block;
+        display: flex;
+        flex-direction: column;
         height: calc(100vh - 3.5rem);
         overflow-y: auto;
     }
 }
-/* /Components/Pages/DebitManagement.razor.rz.scp.css */
 /* /Components/Pages/DebtManagement.razor.rz.scp.css */
 h3[b-juz39syoi9] {
     font-weight: bold;
     font-size: 25px;
     margin-bottom: 15px;
 }
+
+
+h1[b-juz39syoi9] {
+    font-weight: bold;
+    font-size: 25px;
+}
+.dash-title[b-juz39syoi9] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    .dash-title h1[b-juz39syoi9] {
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+.filter-container[b-juz39syoi9] {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+    .filter-container .date-label[b-juz39syoi9] {
+        font-size: 1rem;
+        margin-right: 5px;
+    }
+
+    .filter-container input[type="date"][b-juz39syoi9] {
+        padding: 5px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .filter-container .apply-btn[b-juz39syoi9] {
+        background-color: #2A329C;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 15px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+        .filter-container .apply-btn:hover[b-juz39syoi9] {
+            background-color: #22287D;
+        }
 
 
 .pending-debts-container[b-juz39syoi9], .overdue-debts-container[b-juz39syoi9], .cleared-debts-container[b-juz39syoi9] {
@@ -616,7 +703,10 @@ h3[b-v5hdeoumal] {
 }
 /* /Components/Pages/Home.razor.rz.scp.css */
 /* /Components/Pages/Overview.razor.rz.scp.css */
-
+h1[b-hjwq8akmqr] {
+    font-weight: bold;
+    font-size: 25px;
+}
 
 h3[b-hjwq8akmqr] {
     font-weight: bold;
@@ -743,15 +833,15 @@ h3[b-hjwq8akmqr] {
     }
 
 .success[b-hjwq8akmqr] {
-    text-align: center;
     color: green;
     font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 .error[b-hjwq8akmqr] {
     color: red;
-    text-align: center;
     font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 .overview-container[b-hjwq8akmqr] {
@@ -918,8 +1008,7 @@ h3[b-48be2bzejc] {
     border: 0.5px solid #293198;
     border-radius: 6px;
     width: 100%;
-    max-width: 840px;
-    max-height: 490px;
+   
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
@@ -1028,8 +1117,7 @@ button[b-48be2bzejc] {
     }
 
     .transaction-container[b-48be2bzejc] {
-        max-width: 900px;
-        max-height: 600px;
+        
     }
 
     .transaction-box[b-48be2bzejc] {
