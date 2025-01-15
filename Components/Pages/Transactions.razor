@@ -30,9 +30,9 @@
                 <div class="trow-field">
                     <select name="transaction-type" id="transaction-type" @bind="transactiontype">
                         <option value="" disabled selected>Select your transaction type</option>
-                        <option value="expense">Debit</option>
-                        <option value="income">Credit</option>
-                        <option value="debt">Debt</option>
+                        <option value="Cashin">Cashin</option>
+                        <option value="Cashout">Cashout</option>
+                        <option value="Debt">Debt</option>
                     </select>
                 </div>
             </div>
@@ -86,7 +86,7 @@
 </div>
 
 @code {
-    private string transactiontype = "expense";
+    private string transactiontype = "Cashout";
     private string transactiontitle;
     private int transactionamount;
     private DateTime debtduedate = DateTime.MinValue;
@@ -129,7 +129,7 @@
             return;
         }
 
-        if (transactiontype == "debt" && debtduedate == DateTime.MinValue)
+        if (transactiontype == "Debt" && debtduedate == DateTime.MinValue)
         {
             message = "Please select a valid due date for debt.";
             isSuccess = false;
@@ -139,7 +139,7 @@
         // Only check for tag selection if NOT debt
         string transactionTags = !string.IsNullOrEmpty(customtag) ? customtag : selectedTag;
 
-        if (transactiontype != "debt" && string.IsNullOrEmpty(transactionTags))
+        if (transactiontype != "Debt" && string.IsNullOrEmpty(transactionTags))
         {
             message = "Please select or enter a tag.";
             isSuccess = false;
@@ -147,7 +147,7 @@
         }
 
         var success = false;
-        if (transactiontype == "expense")
+        if (transactiontype == "Cashout")
         {
             var date = DateTime.Now;
             var newDebit = new Debit
@@ -165,7 +165,7 @@
                 return;
             }
         }
-        else if (transactiontype == "income")
+        else if (transactiontype == "Cashin")
         {
             var date = DateTime.Now;
             var newCredit = new Credit
@@ -177,7 +177,7 @@
                 };
             success = UserService.AddCreditTransaction(newCredit);
         }
-        else if (transactiontype == "debt")
+        else if (transactiontype == "Debt")
         {
             var date = DateTime.Now;
             bool isCleared = false;
@@ -198,6 +198,12 @@
             message = $"{transactiontype} transaction added successfully!";
             isSuccess = true;
             ClearForm();
+            if (transactiontype == "Cashin")
+            {
+                await Task.Delay(2000);
+                NavigationManager.NavigateTo("/overview");
+            }
+            
         }
         else
         {
@@ -234,18 +240,18 @@
 
         tagsContainer.innerHTML = '';  // clear existing tags
         customTagInput.style.display = 'none';
-        dueDateRow.style.display = selectedType === 'debt' ? 'block' : 'none';
+        dueDateRow.style.display = selectedType === 'Debt' ? 'block' : 'none';
         sourceOfDebtRow.style.display = selectedType === 'debt' ? 'block' : 'none';
-        tagsRow.style.display = selectedType === 'debt' ? 'none' : 'block';
+        tagsRow.style.display = selectedType === 'Debt' ? 'none' : 'block';
 
            let tags = [];
 
-    if (selectedType === 'expense') {
+    if (selectedType === 'Cashout') {
         tags = [
             'Yearly', 'Monthly', 'Food', 'Drinks', 'Clothes', 'Gadgets',
             'Miscellaneous', 'Fuel', 'Rent', 'EMI', 'Party'
         ];
-    } else if (selectedType === 'income') {
+    } else if (selectedType === 'Cashin') {
         tags = [
             'Salary', 'Gifts', 'Savings', 'Refunds', 'Investment Returns',
             'Freelance Income', 'Cashback', 'Rental Income'
@@ -261,7 +267,7 @@
         tagsContainer.appendChild(tagButton);
     });
 
-    if (selectedType !== 'debt') {
+    if (selectedType !== 'Debt') {
         const customTagButton = document.createElement('div');
         customTagButton.classList.add('tag-button');
         customTagButton.textContent = 'Custom Tag';
@@ -269,7 +275,7 @@
         tagsContainer.appendChild(customTagButton);
     }
 
-     if (selectedType === 'debt') {
+     if (selectedType === 'Debt') {
         selectedTag = "Debt";
         DotNet.invokeMethodAsync('BudgetMate', 'SetSelectedTag', selectedTag);
     }
@@ -310,13 +316,11 @@
 
 <style>
     .success {
-        text-align: center;
     color: green;
     font-weight: bold;
 }
 
 .error {
-        text-align: center;
     color: red;
     font-weight: bold;
 }

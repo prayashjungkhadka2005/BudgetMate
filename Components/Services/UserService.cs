@@ -111,7 +111,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
                     TransactionTitle = debit.DebitTransactionTitle,
                     TransactionDate = debit.DebitTransactionDate,
                     Amount = debit.DebitAmount,
-                    Type = "Debit",
+                    Type = "Cashout",
                     Tags = debit.DebitTags
                 };
 
@@ -159,7 +159,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
                     TransactionTitle = credit.CreditTransactionTitle,
                     TransactionDate = credit.CreditTransactionDate,
                     Amount = credit.CreditAmount,
-                    Type = "Credit",
+                    Type = "Cashin",
                     Tags = credit.CreditTags
                 };
 
@@ -249,7 +249,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
                         TransactionTitle = debt.DebtTransactionTitle,
                         TransactionDate = DateTime.Now.ToString("yyyy-MM-dd"),
                         Amount = debt.DebtAmount,
-                        Type = "Debt Cleared",
+                        Type = "Debt",
                         Tags = debt.SourceOfDebt,
                         Note = "Debt paid successfully"
                     });
@@ -407,69 +407,6 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
             var balance = _database.Table<Balance>().FirstOrDefault(b => b.UserId == _currentUser.UserId);
             return balance?.TotalBalance ?? 0; 
         }
-
-
-
-
-        //public void RecalculateBalance()
-        //{
-        //    try
-        //    {
-        //        // Calculate total inflows, outflows, and remaining debts
-        //        int totalInflows = GetTotalInflows();
-        //        int totalOutflows = GetTotalOutflow();
-        //        int remainingDebt = GetRemainingDebt();
-
-        //        // Calculate the balance
-        //        int totalBalance = totalInflows - totalOutflows - remainingDebt;
-
-        //        var balance = _database.Table<Balance>().FirstOrDefault();
-        //        if (balance == null)
-        //        {
-        //            balance = new Balance { TotalBalance = totalBalance };
-        //            _database.Insert(balance);
-        //        }
-        //        else
-        //        {
-        //            balance.TotalBalance = totalBalance;
-        //            _database.Update(balance);
-        //        }
-
-
-        //        Debug.WriteLine($"Recalculated Balance: {totalBalance}");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Debug.WriteLine($"Error recalculating balance: {ex.Message}");
-        //    }
-        //}
-        //public void RecalculateBalance()
-        //{
-        //    try
-        //    {
-        //        int totalInflows = GetTotalInflows();
-        //        int totalOutflows = GetTotalOutflow();
-        //        int remainingDebt = GetRemainingDebt();
-
-        //        int totalBalance = totalInflows - totalOutflows - remainingDebt;
-
-        //        var balance = _database.Table<Balance>().FirstOrDefault();
-        //        if (balance == null)
-        //        {
-        //            _database.Insert(new Balance { TotalBalance = totalBalance });
-        //        }
-        //        else
-        //        {
-        //            _database.Execute("UPDATE Balance SET TotalBalance = ?", totalBalance);
-        //        }
-
-        //        Debug.WriteLine($"Updated Balance: {totalBalance}");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Debug.WriteLine($"Error recalculating balance: {ex.Message}");
-        //    }
-        //}
 
         public void RecalculateBalance()
         {
