@@ -51,7 +51,7 @@
                     <tr>
                         <td>@debt.DebtDueDate</td>
                         <td>@debt.SourceOfDebt</td>
-                        <td>$@debt.DebtAmount</td>
+                        <td>@currencySymbol @debt.DebtAmount</td>
                         <td>
                             <button class="clear-btn" @onclick="() => ShowConfirmationModal(debt.DebtId)">Clear</button>
                         </td>
@@ -89,7 +89,7 @@
                     <tr>
                         <td>@debt.DebtDueDate</td>
                         <td>@debt.SourceOfDebt</td>
-                        <td>$@debt.DebtAmount</td>
+                        <td>@currencySymbol @debt.DebtAmount</td>
                         <td>
                             <button class="clear-btn" @onclick="() => ShowConfirmationModal(debt.DebtId)">Clear</button>
                         </td>
@@ -127,7 +127,7 @@
                     <tr>
                         <td>@debt.DebtDueDate</td>
                         <td>@debt.SourceOfDebt</td>
-                        <td>$@debt.DebtAmount</td>
+                        <td>@currencySymbol @debt.DebtAmount</td>
                         <td><span class="paid-status">Paid</span></td>
                     </tr>
                 }
@@ -168,12 +168,23 @@
     private int debtToClearId { get; set; }
     private string message;
     private bool isSuccess = false;
+    private string currencySymbol;
 
     protected override void OnInitialized()
     {
         pendingDebts = UserService.GetPendingDebts();
         overdueDebts = UserService.GetOverdueDebts();
         clearedDebts = UserService.GetClearedDebts(); // Fetch cleared debts
+        string userCurrency = UserService.GetUserCurrency();
+        currencySymbol = userCurrency switch
+        {
+            "USD" => "$",
+            "EUR" => "€",
+            "INR" => "₹",
+            "NPR" => "Rs.",
+            _ => "Rs."
+        };
+
     }
 
     public void LoadDashboardData()

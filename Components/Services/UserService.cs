@@ -900,6 +900,12 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
             }
         }
 
+        public string GetUserCurrency()
+        {
+            var user = GetCurrentUser();
+            return user?.PreferredCurrency ?? "NPR";
+        }
+
 
 
 

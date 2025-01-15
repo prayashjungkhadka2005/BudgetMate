@@ -60,7 +60,7 @@
         {
             <tr>
                 <td>@transaction.TransactionDate</td>
-                <td>$@transaction.Amount</td>
+                <td>@currencySymbol @transaction.Amount</td>
                 <td>@string.Join(", ", string.IsNullOrEmpty(transaction.Tags) ? new List<string>() : transaction.Tags.Split(',').ToList())</td>
                 <td>@(transaction.Note ?? "No note added")</td>
                 <td>@transaction.Type</td>
@@ -103,10 +103,20 @@
     private Transaction selectedTransaction;
     private bool isNoteModalOpen = false;
     private bool isSortedAscending = true;
+    private string currencySymbol;
 
     protected override void OnInitialized()
     {
         LoadTransactions();
+        string userCurrency = UserService.GetUserCurrency();
+        currencySymbol = userCurrency switch
+        {
+            "USD" => "$",
+            "EUR" => "€",
+            "INR" => "₹",
+            "NPR" => "Rs.",
+            _ => "Rs."
+        };
     }
 
     private void LoadTransactions()
