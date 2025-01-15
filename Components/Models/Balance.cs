@@ -7,10 +7,15 @@
 
     namespace BudgetMate.Components.Models
     {
-        public class Balance
-        {
-            [AutoIncrement, PrimaryKey]
-            public int BalanceId { get; set; }
-            public int TotalBalance { get; set; }
-        }
+    public class Balance
+    {
+        [PrimaryKey, AutoIncrement]
+        public int BalanceId { get; set; }
+
+        [Indexed]
+        public int UserId { get; set; } // FK -> User
+
+        public int TotalBalance { get; set; }
     }
+
+}

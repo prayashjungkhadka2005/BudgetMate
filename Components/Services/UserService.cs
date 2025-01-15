@@ -29,11 +29,14 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
             _database = new SQLiteConnection(_dbPath);
 
+            _database.Execute("PRAGMA foreign_keys = ON;");
+
             _database.CreateTable<User>();
-            _database.CreateTable<Debt>();
+            _database.CreateTable<Transaction>();
             _database.CreateTable<Debit>();
             _database.CreateTable<Credit>();
-            _database.CreateTable<Transaction>();
+            _database.CreateTable<Debt>();
+
             _database.CreateTable<Balance>();
 
             Debug.WriteLine($"Database path: {_dbPath}");
@@ -44,7 +47,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
             var user = _database.Table<User>().FirstOrDefault(u => u.Username == username && u.Password == password);
             if (user != null)
             {
-                _currentUser = user;  
+                _currentUser = user;
             }
             return user;
         }
@@ -67,13 +70,12 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
         public bool RegisterUser(User user)
         {
-            var existingUser = _database.Table<User>().FirstOrDefault(u => u.Username == user.Username); //checking if username exists
+            var existingUser = _database.Table<User>().FirstOrDefault(u => u.Username == user.Username);
             if (existingUser != null)
             {
                 return false;
             }
-
-            _database.Insert(user); //inserting user
+            _database.Insert(user);
             return true;
         }
 
@@ -180,39 +182,45 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
         public bool AddDebitTransaction(Debit debit)
         {
+            if (_currentUser == null) return false;
             if (debit == null || string.IsNullOrEmpty(debit.DebitTransactionTitle) || debit.DebitAmount <= 0)
             {
-                Debug.WriteLine("Invalid debit transaction data");
                 return false;
             }
 
             try
             {
+                debit.UserId = _currentUser.UserId;
                 int totalBalance = GetTotalBalance();
 
                 if (debit.DebitAmount > totalBalance)
                 {
-                    Debug.WriteLine("Transaction denied: Insufficient balance.");
-                    return false; 
+                    return false;
                 }
 
                 _database.BeginTransaction();
 
-                _database.Insert(debit);
-
+                // Step 1: Insert into Transaction table first
                 var transaction = new Transaction
                 {
+                    UserId = _currentUser.UserId,
                     TransactionDate = debit.DebitTransactionDate,
                     Amount = debit.DebitAmount,
                     Type = "Debit",
-                    Tags = debit.DebitTags,
+                    Tags = debit.DebitTags
                 };
+
                 _database.Insert(transaction);
 
-                _database.Commit();
-                RecalculateBalance();  
+                // Retrieve the generated TransactionID
+                int transactionId = _database.ExecuteScalar<int>("SELECT last_insert_rowid()");
 
-                Debug.WriteLine("Debit transaction inserted successfully.");
+                // Step 2: Insert into Debit table with the retrieved TransactionID
+                debit.TransactionID = transactionId;
+                _database.Insert(debit);
+
+                _database.Commit();
+                RecalculateBalance();
                 return true;
             }
             catch (SQLiteException ex)
@@ -222,6 +230,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
                 return false;
             }
         }
+
 
 
         //public void AutoClearDebts()
@@ -263,35 +272,39 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
         public bool AddCreditTransaction(Credit credit)
         {
+            if (_currentUser == null) return false;
             if (credit == null || string.IsNullOrEmpty(credit.CreditTransactionTitle) || credit.CreditAmount <= 0)
             {
-                Debug.WriteLine("Invalid credit transaction data");
                 return false;
             }
 
             try
             {
+                credit.UserId = _currentUser.UserId;
+
                 _database.BeginTransaction();
 
-                _database.Insert(credit);
-
+                // Step 1: Insert into Transaction table first
                 var transaction = new Transaction
                 {
-                    TransactionID = credit.CreditID,
+                    UserId = _currentUser.UserId,
                     TransactionDate = credit.CreditTransactionDate,
                     Amount = credit.CreditAmount,
                     Type = "Credit",
                     Tags = credit.CreditTags
                 };
+
                 _database.Insert(transaction);
 
+                // Retrieve the generated TransactionID
+                int transactionId = _database.ExecuteScalar<int>("SELECT last_insert_rowid()");
+
+                // Step 2: Insert into Credit table with the retrieved TransactionID
+                credit.TransactionID = transactionId;
+                _database.Insert(credit);
+
                 _database.Commit();
-
-                // Update balance if possible
                 RecalculateBalance();
-                
-
-                Debug.WriteLine("Credit transaction inserted successfully");
                 return true;
             }
             catch (Exception ex)
@@ -304,55 +317,95 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
         public bool AddDebtTransaction(Debt debt)
+        {
+            if (_currentUser == null) return false;
+            if (debt == null || string.IsNullOrEmpty(debt.DebtTransactionTitle) || debt.DebtAmount <= 0 || debt.DebtDueDate == default)
             {
-                if (debt == null)
-                {
-                    Debug.WriteLine("Debt transaction data is null");
-                    return false;
-                }
-
-                if (string.IsNullOrEmpty(debt.DebtTransactionTitle) || debt.DebtAmount <= 0 || debt.DebtDueDate == default)
-                {
-                    Debug.WriteLine("Invalid debt transaction data");
-                    return false;
-                }
-
-                Debug.WriteLine($"Debt transaction: Title={debt.DebtTransactionTitle}, Amount={debt.DebtAmount}, DueDate={debt.DebtDueDate}, SourceOfDebt={debt.SourceOfDebt}");
-
-                try
-                {
-                    _database.BeginTransaction();
-
-                    _database.Insert(debt);
-
-                    
-
-
-
-                    _database.Commit();
-                RecalculateBalance();
-
-                Debug.WriteLine("Debt transaction inserted successfully.");
-                    return true;
-                }
-                catch (SQLiteException ex)
-                {
-                    _database.Rollback();
-                    Debug.WriteLine($"Error inserting debt transaction: {ex.Message}");
-                    return false;
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine($"Unexpected error: {ex.Message}");
-                    return false;
-                }
-
+                return false;
             }
 
-          
+            try
+            {
+                debt.UserId = _currentUser.UserId;
+
+                _database.BeginTransaction();
+
+                // Step 1: Insert into Transaction table first
+                var transaction = new Transaction
+                {
+                    UserId = _currentUser.UserId,
+                    TransactionDate = debt.DebtTransactionDate,
+                    Amount = debt.DebtAmount,
+                    Type = "Debt",
+                    Tags = debt.SourceOfDebt
+                };
+
+                _database.Insert(transaction);
+
+                // Retrieve the generated TransactionID
+                int transactionId = _database.ExecuteScalar<int>("SELECT last_insert_rowid()");
+
+                // Step 2: Insert into Debt table with the retrieved TransactionID
+                debt.TransactionID = transactionId;
+                _database.Insert(debt);
+
+                _database.Commit();
+                RecalculateBalance();
+                return true;
+            }
+            catch (SQLiteException ex)
+            {
+                _database.Rollback();
+                Debug.WriteLine($"Error inserting debt transaction: {ex.Message}");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Unexpected error: {ex.Message}");
+                return false;
+            }
+        }
+
+        public bool ClearDebt(int debtId)
+        {
+            try
+            {
+                if (_currentUser == null) return false;
+
+                var debt = _database.Table<Debt>().FirstOrDefault(d => d.DebtId == debtId && d.UserId == _currentUser.UserId);
+                if (debt != null && debt.DebtAmount <= GetTotalBalance())
+                {
+                    _database.BeginTransaction();
+                    debt.isCleared = true;
+                    _database.Update(debt);
+                    _database.Insert(new Transaction
+                    {
+                        UserId = _currentUser.UserId,
+                        TransactionDate = DateTime.Now.ToString("yyyy-MM-dd"),
+                        Amount = debt.DebtAmount,
+                        Type = "Debt Cleared",
+                        Tags = debt.SourceOfDebt,
+                        Note = "Debt paid successfully"
+                    });
+                    _database.Commit();
+                    RecalculateBalance();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                _database.Rollback();
+                Debug.WriteLine($"Error while clearing debt: {ex.Message}");
+                return false;
+            }
+        }
+
+
         public List<Debt> GetPendingDebts()
         {
-            return _database.Table<Debt>().Where(debt => !debt.isCleared).ToList();
+            if (_currentUser == null) return new List<Debt>();
+            return _database.Table<Debt>().Where(debt => debt.UserId == _currentUser.UserId && !debt.isCleared).ToList();
         }
 
 
@@ -360,14 +413,17 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
         public List<Transaction> GetAllTransactions()
             {
-                return _database.Table<Transaction>().OrderBy(t => t.TransactionDate).ToList();
+            if (_currentUser == null) return new List<Transaction>();
+            return _database.Table<Transaction>().Where(t => t.UserId == _currentUser.UserId).OrderBy(t => t.TransactionDate).ToList();
             }
+
 
             public bool UpdateNote(int transactionId, string note)
             {
                 try
                 {
-                    var transaction = _database.Table<Transaction>().FirstOrDefault(t => t.TransactionID == transactionId);
+                if (_currentUser == null) return false;
+                var transaction = _database.Table<Transaction>().FirstOrDefault(t => t.UserId == _currentUser.UserId && t.TransactionID == transactionId);
                     if (transaction != null)
                     {
                         transaction.Note = note;
@@ -383,108 +439,15 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
                 }
             }
 
-        //public bool ClearDebt(int debtId)
-        //{
-        //    try
-        //    {
-        //        var debt = _database.Table<Debt>().FirstOrDefault(d => d.DebtId == debtId);
-
-        //        if (debt != null)
-        //        {
-        //            int totalInflow = GetTotalInflows();
-
-        //            if (debt.DebtAmount <= totalInflow)
-        //            {
-        //                _database.BeginTransaction(); 
-        //                debt.isCleared = true;
-
-        //                _database.Update(debt);
-
-        //                var transaction = new Transaction
-        //                {
-        //                    TransactionDate = DateTime.Now.ToString("yyyy-MM-dd"),
-        //                    Amount = debt.DebtAmount,
-        //                    Type = "Debt Cleared", 
-        //                    Tags = debt.SourceOfDebt,
-        //                    Note = "Debt paid successfully"
-        //                };
-        //                _database.Insert(transaction);
-
-        //                _database.Commit(); 
-
-        //                RecalculateBalance();
-
-        //                Debug.WriteLine($"Debt of ${debt.DebtAmount} cleared successfully.");
-        //                return true;
-        //            }
-        //            else
-        //            {
-        //                Debug.WriteLine("Not enough balance to clear the debt.");
-        //                return false; 
-        //            }
-        //        }
-
-        //        return false; 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Debug.WriteLine($"Error while clearing debt: {ex.Message}");
-        //        return false; 
-        //    }
-        //}
-
-
-        public bool ClearDebt(int debtId)
-        {
-            try
-            {
-                var debt = _database.Table<Debt>().FirstOrDefault(d => d.DebtId == debtId);
-                if (debt != null)
-                {
-                    int availableBalance = GetTotalBalance();
-                    if (debt.DebtAmount > availableBalance)
-                    {
-                        Debug.WriteLine("Not enough balance to clear the debt.");
-                        return false;
-                    }
-
-                    _database.BeginTransaction();
-                    debt.isCleared = true;
-                    _database.Update(debt);
-
-                    var transaction = new Transaction
-                    {
-                        TransactionDate = DateTime.Now.ToString("yyyy-MM-dd"),
-                        Amount = debt.DebtAmount,
-                        Type = "Debt Cleared",
-                        Tags = debt.SourceOfDebt,
-                        Note = "Debt paid successfully"
-                    };
-                    _database.Insert(transaction);
-                    _database.Commit();
-
-                    RecalculateBalance();
-                    Debug.WriteLine($"Debt of ${debt.DebtAmount} cleared successfully.");
-                    return true;
-                }
-
-                return false;
-            }
-            catch (Exception ex)
-            {
-                _database.Rollback();
-                Debug.WriteLine($"Error while clearing debt: {ex.Message}");
-                return false;
-            }
-        }
-
+      
 
         public int GetTotalInflows()
         {
             try
             {
-                int totalInflows = _database.Table<Credit>().Sum(c => c.CreditAmount);
-                int totalClearedDebts = _database.Table<Debt>().Where(d => d.isCleared).Sum(d => d.DebtAmount);
+                if (_currentUser == null) return 0;
+                int totalInflows = _database.Table<Credit>().Where(c => c.UserId == _currentUser.UserId).Sum(c => c.CreditAmount);
+                int totalClearedDebts = _database.Table<Debt>().Where(d => d.UserId == _currentUser.UserId && d.isCleared).Sum(d => d.DebtAmount);
                 return totalInflows - totalClearedDebts;
             }
             catch (Exception ex)
@@ -498,7 +461,8 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
         {
             try
             {
-                return _database.Table<Debit>().Sum(d => d.DebitAmount);
+                if (_currentUser == null) return 0;
+                return _database.Table<Debit>().Where(d => d.UserId == _currentUser.UserId).Sum(d => d.DebitAmount);
             }
             catch (Exception ex)
             {
@@ -512,7 +476,8 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
         {
             try
             {
-                return _database.Table<Debt>().Sum(d => d.DebtAmount);
+                if (_currentUser == null) return 0;
+                return _database.Table<Debt>().Where(d => d.UserId == _currentUser.UserId).Sum(d => d.DebtAmount);
             }
             catch (Exception ex)
             {
@@ -526,7 +491,8 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
         {
             try
             {
-                return _database.Table<Debt>().Where(debt => !debt.isCleared).Sum(d => d.DebtAmount);
+                if (_currentUser == null) return 0;
+                return _database.Table<Debt>().Where(d => !d.isCleared && d.UserId == _currentUser.UserId).Sum(d => d.DebtAmount);
             }
             catch (Exception ex)
             {
@@ -539,8 +505,9 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
         {
             try
             {
-               
-                return _database.Table<Debt>().Where(debt => debt.isCleared).Sum(d => d.DebtAmount);
+
+                if (_currentUser == null) return 0;
+                return _database.Table<Debt>().Where(d => d.isCleared && d.UserId == _currentUser.UserId).Sum(d => d.DebtAmount);
             }
             catch (Exception ex)
             {
@@ -553,30 +520,25 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
         public int GetTotalNumberOfTransactions()
         {
-            int debitCount = _database.Table<Debit>().Count();
-
-            int creditCount = _database.Table<Credit>().Count();
-
-
-            int clearedDebtCount = _database.Table<Debt>().Where(debt => debt.isCleared).Count();
-
-            return debitCount + creditCount  + clearedDebtCount;
+            if (_currentUser == null) return 0;
+            return _database.Table<Transaction>().Count(t => t.UserId == _currentUser.UserId);
         }
 
 
         public int GetTotalTransactionsAmount()
         {
-            int totalInflow = _database.Table<Credit>().Sum(c => c.CreditAmount);
-            int totalOutflow = _database.Table<Debit>().Sum(d => d.DebitAmount);
-            int clearedDebts = _database.Table<Debt>().Sum(d => d.DebtAmount); 
+            if (_currentUser == null) return 0;
+            int totalInflow = _database.Table<Credit>().Where(c => c.UserId == _currentUser.UserId).Sum(c => c.CreditAmount);
+            int totalOutflow = _database.Table<Debit>().Where(d => d.UserId == _currentUser.UserId).Sum(d => d.DebitAmount);
+            int debts = _database.Table<Debt>().Where(cd => cd.UserId == _currentUser.UserId).Sum(cd => cd.DebtAmount); 
 
-            return totalInflow + clearedDebts - totalOutflow;
+            return totalInflow + debts- totalOutflow;
         }
 
 
         public int GetTotalBalance()
         {
-            var balance = _database.Table<Balance>().FirstOrDefault();
+            var balance = _database.Table<Balance>().FirstOrDefault(b => b.UserId == _currentUser.UserId);
             return balance?.TotalBalance ?? 0; 
         }
 
@@ -647,17 +609,25 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
         {
             try
             {
+                if (_currentUser == null) return;
                 int totalInflows = GetTotalInflows();
                 int totalOutflows = GetTotalOutflow();
                 int debts = GetTotalDebt();
                 int totalBalance = totalInflows - totalOutflows + debts;
+                var balance = _database.Table<Balance>().FirstOrDefault(b => b.UserId == _currentUser.UserId);
+                if (balance == null)
 
-                _database.BeginTransaction();
-                _database.Execute("DELETE FROM Balance");
-                _database.Insert(new Balance { TotalBalance = totalBalance });
+                 _database.BeginTransaction();
+                if (balance == null)
+                {
+                    _database.Insert(new Balance { UserId = _currentUser.UserId, TotalBalance = totalBalance });
+                }
+                else
+                {
+                    balance.TotalBalance = totalBalance;
+                    _database.Update(balance);
+                }
                 _database.Commit();
-
-                Debug.WriteLine($"Updated Balance: {totalBalance}");
             }
             catch (Exception ex)
             {
@@ -669,7 +639,8 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
         public List<Debt> GetOverdueDebts()
         {
-            var allDebts = _database.Table<Debt>().Where(debt => !debt.isCleared).ToList();
+            if (_currentUser == null) return new List<Debt>();
+            var allDebts = _database.Table<Debt>().Where(debt => debt.UserId == _currentUser.UserId && !debt.isCleared).ToList();
 
             return allDebts
                 .Where(debt => DateTime.TryParse(debt.DebtDueDate, out DateTime dueDate) && dueDate < DateTime.Now)
@@ -682,7 +653,8 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
         {
             try
             {
-                return _database.Table<Debt>().Where(debt => debt.isCleared).ToList();
+                if (_currentUser == null) return new List<Debt>();
+                return _database.Table<Debt>().Where(debt => debt.UserId == _currentUser.UserId && debt.isCleared).ToList();
             }
             catch (Exception ex)
             {
@@ -696,14 +668,16 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
         public int GetTotalInflowsForDateRange(DateTime startDate, DateTime endDate)
         {
+            if (_currentUser == null) return 0;
             try
             {
+
                 var inflows = _database.Table<Credit>().ToList()
-                    .Where(c => DateTime.TryParse(c.CreditTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .Where(c => c.UserId == _currentUser.UserId && DateTime.TryParse(c.CreditTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
                     .Sum(c => c.CreditAmount);
 
                 var clearedDebts = _database.Table<Debt>().ToList()
-                    .Where(d => d.isCleared && DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .Where(d => d.UserId == _currentUser.UserId && d.isCleared && DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
                     .Sum(d => d.DebtAmount);
 
                 return inflows - clearedDebts;
@@ -717,10 +691,12 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
         public int GetTotalOutflowForDateRange(DateTime startDate, DateTime endDate)
         {
+            if (_currentUser == null) return 0;
+
             try
             {
                 return _database.Table<Debit>().ToList()
-                    .Where(d => DateTime.TryParse(d.DebitTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .Where(d => d.UserId == _currentUser.UserId && DateTime.TryParse(d.DebitTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
                     .Sum(d => d.DebitAmount);
             }
             catch (Exception ex)
@@ -732,10 +708,12 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
         public int GetTotalDebtForDateRange(DateTime startDate, DateTime endDate)
         {
+            if (_currentUser == null) return 0;
+
             try
             {
                 return _database.Table<Debt>().ToList()
-                    .Where(d => DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .Where(d => d.UserId == _currentUser.UserId && DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
                     .Sum(d => d.DebtAmount);
             }
             catch (Exception ex)
@@ -747,10 +725,11 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
         public int GetRemainingDebtForDateRange(DateTime startDate, DateTime endDate)
         {
+            if (_currentUser == null) return 0;
             try
             {
                 return _database.Table<Debt>().ToList()
-                    .Where(d => !d.isCleared && DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .Where(d => d.UserId == _currentUser.UserId && !d.isCleared && DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
                     .Sum(d => d.DebtAmount);
             }
             catch (Exception ex)
@@ -762,10 +741,11 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
         public int GetClearedDebtForDateRange(DateTime startDate, DateTime endDate)
         {
+            if (_currentUser == null) return 0;
             try
             {
                 return _database.Table<Debt>().ToList()
-                    .Where(d => d.isCleared && DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .Where(d => d.UserId == _currentUser.UserId && d.isCleared && DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
                     .Sum(d => d.DebtAmount);
             }
             catch (Exception ex)
@@ -777,10 +757,13 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
         public List<Debt> GetClearedDebtsListForDateRange(DateTime startDate, DateTime endDate)
         {
+            if (_currentUser == null) return new List<Debt>();
+
             try
+
             {
                 // Fetch all cleared debts
-                var allClearedDebts = _database.Table<Debt>().Where(debt => debt.isCleared).ToList();
+                var allClearedDebts = _database.Table<Debt>().Where(debt => debt.UserId == _currentUser.UserId && debt.isCleared).ToList();
 
                 // Filter debts by due date range after fetching
                 return allClearedDebts
@@ -799,16 +782,17 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
         public int GetTotalNumberOfTransactionsForDateRange(DateTime startDate, DateTime endDate)
         {
+            if (_currentUser == null) return 0;
             try
             {
                 int debitCount = _database.Table<Debit>().ToList()
-                    .Count(d => DateTime.TryParse(d.DebitTransactionDate, out DateTime date) && date >= startDate && date <= endDate);
+                    .Count(d => d.UserId == _currentUser.UserId && DateTime.TryParse(d.DebitTransactionDate, out DateTime date) && date >= startDate && date <= endDate);
 
                 int creditCount = _database.Table<Credit>().ToList()
-                    .Count(c => DateTime.TryParse(c.CreditTransactionDate, out DateTime date) && date >= startDate && date <= endDate);
+                    .Count(c => c.UserId == _currentUser.UserId && DateTime.TryParse(c.CreditTransactionDate, out DateTime date) && date >= startDate && date <= endDate);
 
                 int clearedDebtCount = _database.Table<Debt>().ToList()
-                    .Count(d => d.isCleared && DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate);
+                    .Count(d => d.UserId == _currentUser.UserId && d.isCleared && DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate);
 
                 return debitCount + creditCount + clearedDebtCount;
             }
@@ -821,18 +805,19 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
         public int GetTotalTransactionsAmountForDateRange(DateTime startDate, DateTime endDate)
         {
+            if (_currentUser == null) return 0;
             try
             {
                 int totalInflow = _database.Table<Credit>().ToList()
-                    .Where(c => DateTime.TryParse(c.CreditTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .Where(c => c.UserId == _currentUser.UserId && DateTime.TryParse(c.CreditTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
                     .Sum(c => c.CreditAmount);
 
                 int totalOutflow = _database.Table<Debit>().ToList()
-                    .Where(d => DateTime.TryParse(d.DebitTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .Where(d => d.UserId == _currentUser.UserId &&  DateTime.TryParse(d.DebitTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
                     .Sum(d => d.DebitAmount);
 
                 int clearedDebts = _database.Table<Debt>().ToList()
-                    .Where(d => d.isCleared && DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .Where(d => d.UserId == _currentUser.UserId && d.isCleared && DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
                     .Sum(d => d.DebtAmount);
 
                 return totalInflow + clearedDebts - totalOutflow;
@@ -846,10 +831,11 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
         public List<Debt> GetPendingDebtsForDateRange(DateTime startDate, DateTime endDate)
         {
+            if (_currentUser == null) return new List<Debt>();
             try
             {
                 return _database.Table<Debt>().ToList()
-                    .Where(d => !d.isCleared && DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
+                    .Where(d => d.UserId == _currentUser.UserId && !d.isCleared && DateTime.TryParse(d.DebtTransactionDate, out DateTime date) && date >= startDate && date <= endDate)
                     .ToList();
             }
             catch (Exception ex)
@@ -861,10 +847,11 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
         public List<Debt> GetPendingDebtsListForDateRange(DateTime startDate, DateTime endDate)
         {
+            if (_currentUser == null) return new List<Debt>();
             try
             {
                 return _database.Table<Debt>().ToList()
-                    .Where(debt => !debt.isCleared &&
+                    .Where(debt => debt.UserId == _currentUser.UserId && !debt.isCleared &&
                                    DateTime.TryParse(debt.DebtDueDate, out DateTime dueDate) &&
                                    dueDate >= startDate && dueDate <= endDate)
                     .ToList();
@@ -879,9 +866,10 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
         public List<Transaction> GetAllTransactionsForDateRange(DateTime startDate, DateTime endDate)
         {
+            if (_currentUser == null) return new List<Transaction>();
             try
             {
-                return _database.Table<Transaction>().ToList()
+                return _database.Table<Transaction>().Where(t => t.UserId == _currentUser.UserId).ToList()
                     .Where(t =>
                     {
                         if (DateTime.TryParse(t.TransactionDate, out DateTime parsedDate))
@@ -899,11 +887,20 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
                 return new List<Transaction>();
             }
         }
-
         public string GetUserCurrency()
         {
-            var user = GetCurrentUser();
-            return user?.PreferredCurrency ?? "NPR";
+            if (_currentUser == null) return "NPR"; 
+
+            try
+            {
+                var user = _database.Table<User>().FirstOrDefault(u => u.UserId == _currentUser.UserId);
+                return user?.PreferredCurrency ?? "NPR"; 
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error retrieving user currency: {ex.Message}");
+                return "NPR";
+            }
         }
 
 
