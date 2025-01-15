@@ -49,8 +49,8 @@
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\6tf1nxxxzx-6gzpyzhau4.gz">
       <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css.gz</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\g9f1ckn6yb-ovh1ykn0jm.gz">
-      <PackagePath>wwwroot\BudgetMate.ovh1ykn0jm.bundle.scp.css.gz</PackagePath>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\g9f1ckn6yb-ro54evpdso.gz">
+      <PackagePath>wwwroot\BudgetMate.ro54evpdso.bundle.scp.css.gz</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\0jo2qa72zh-8inm30yfxf.br">
       <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css.map.br</PackagePath>
@@ -61,16 +61,16 @@
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\6tf1nxxxzx-6gzpyzhau4.br">
       <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css.br</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\g9f1ckn6yb-ovh1ykn0jm.br">
-      <PackagePath>wwwroot\BudgetMate.ovh1ykn0jm.bundle.scp.css.br</PackagePath>
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\g9f1ckn6yb-ro54evpdso.br">
+      <PackagePath>wwwroot\BudgetMate.ro54evpdso.bundle.scp.css.br</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\s2nq3vjt16-ovh1ykn0jm.br">
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\s2nq3vjt16-ro54evpdso.br">
       <PackagePath>wwwroot\BudgetMate.styles.css.br</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\publish\sh6qiu7f4h-2q4157g3l5.br">
       <PackagePath>wwwroot\index.html.br</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\s2nq3vjt16-ovh1ykn0jm.gz">
+    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\s2nq3vjt16-ro54evpdso.gz">
       <PackagePath>wwwroot\BudgetMate.styles.css.gz</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\compressed\sh6qiu7f4h-2q4157g3l5.gz">
@@ -557,7 +557,7 @@
       <PackagePath>wwwroot\BudgetMate.styles.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\BudgetMate.bundle.scp.css">
-      <PackagePath>wwwroot\BudgetMate.ovh1ykn0jm.bundle.scp.css</PackagePath>
+      <PackagePath>wwwroot\BudgetMate.ro54evpdso.bundle.scp.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\wwwroot\css\app.css">
       <PackagePath>wwwroot\css\app.css</PackagePath>
@@ -579,9 +579,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\Components\Layout\NavMenu.razor.css">
       <PackagePath>Components\Layout\NavMenu.razor.css</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\Components\Pages\DebitManagement.razor.css">
-      <PackagePath>Components\Pages\DebitManagement.razor.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\source\repos\BudgetMate\Components\Pages\DebtManagement.razor.css">
       <PackagePath>Components\Pages\DebtManagement.razor.css</PackagePath>

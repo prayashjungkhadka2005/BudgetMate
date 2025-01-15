@@ -56,20 +56,31 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var transaction in filteredTransactions)
+        @if (filteredTransactions == null || !filteredTransactions.Any())
         {
             <tr>
-                <td>@transaction.TransactionDate</td>
-                <td>@currencySymbol @transaction.Amount</td>
-                <td>@string.Join(", ", string.IsNullOrEmpty(transaction.Tags) ? new List<string>() : transaction.Tags.Split(',').ToList())</td>
-                <td>@(transaction.Note ?? "No note added")</td>
-                <td>@transaction.Type</td>
-                <td>
-                    <button class="add-note-btn" @onclick="() => OpenNoteModal(transaction)">Add/Update Note</button>
-                </td>
+                <td colspan="6" class="no-transactions-message">No transactions available.</td>
             </tr>
         }
+        else
+        {
+            @foreach (var transaction in filteredTransactions)
+            {
+                <tr>
+
+                    <td>@transaction.TransactionDate</td>
+                    <td>@currencySymbol @transaction.Amount</td>
+                    <td>@string.Join(", ", string.IsNullOrEmpty(transaction.Tags) ? new List<string>() : transaction.Tags.Split(',').ToList())</td>
+                    <td>@(transaction.Note ?? "No note added")</td>
+                    <td>@transaction.Type</td>
+                    <td>
+                        <button class="add-note-btn" @onclick="() => OpenNoteModal(transaction)">Add/Update Note</button>
+                    </td>
+                </tr>
+            }
+        }
     </tbody>
+
 </table>
 
 @if (isNoteModalOpen)

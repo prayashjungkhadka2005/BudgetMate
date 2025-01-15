@@ -83,102 +83,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 
-        //        public bool AddDebitTransaction(Debit debit)
-        //        {
-        //            Debug.WriteLine($"Debit transaction: {debit}");
-
-        //            if (debit == null)
-        //            {
-        //                Debug.WriteLine("Debit transaction is null");
-        //                return false;
-        //            }
-
-        //            if (string.IsNullOrEmpty(debit.DebitTransactionTitle) || debit.DebitAmount <= 0)
-        //            {
-        //                Debug.WriteLine("Invalid debit transaction data: Title or Amount is missing");
-        //                return false;
-        //            }
-
-        //            try
-        //            {
-        //                _database.Insert(debit);  // Insert debit transaction into database
-        //                Debug.WriteLine("Debit transaction inserted successfully.");
-        //                return true;
-        //            }
-        //            catch (Exception ex)
-        //            {
-        //                Debug.WriteLine($"Error inserting debit transaction: {ex.Message}");
-        //                return false;
-        //            }
-        //        }
-
-
-
-
-        //    }
-        //}
-
-        //public bool AddDebitTransaction(Debit debit)
-        //    {
-
-        //        if (debit == null)
-        //        {
-        //            Debug.WriteLine("Debit transaction data is null");
-        //            return false;
-        //        }
-
-        //        Debug.WriteLine($"Debit transaction: Title={debit.DebitTransactionTitle}, Amount={debit.DebitAmount}, Tag={debit.DebitTags}");
-
-        //        if (string.IsNullOrEmpty(debit.DebitTransactionTitle) || debit.DebitAmount <= 0)
-        //        {
-        //            Debug.WriteLine("Invalid debit transaction data");
-        //            return false;
-        //        }
-
-        //        try
-        //        {
-        //        int totalBalance = GetTotalBalance();
-        //        if(debit.DebitAmount > totalBalance)
-        //        {
-        //            return false;
-        //        }
-        //        else
-        //        {
-        //            _database.BeginTransaction();
-
-        //            _database.Insert(debit);
-
-        //            var transaction = new Transaction
-        //            {
-        //                TransactionDate = debit.DebitTransactionDate,
-        //                Amount = debit.DebitAmount,
-        //                Type = "Debit",
-        //                Tags = debit.DebitTags,
-        //            };
-        //            _database.Insert(transaction); // Insert into Transaction table
-
-        //            _database.Commit();
-        //            RecalculateBalance();
-
-        //            Debug.WriteLine("Debit transaction inserted successfully.");
-        //            return true;
-        //        }
-
-
-
-        //        }
-        //        catch (SQLiteException ex)
-        //        {
-        //            _database.Rollback();
-        //            Debug.WriteLine($"Error inserting debit transaction: {ex.Message}");
-        //            return false;
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            Debug.WriteLine($"Unexpected error: {ex.Message}");
-        //            return false;
-        //        }
-        //    }
+       
 
         public bool AddDebitTransaction(Debit debit)
         {
@@ -231,42 +136,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 
-        //public void AutoClearDebts()
-        //{
-        //    try
-        //    {
-        //        var pendingDebts = GetPendingDebts().OrderBy(debt => debt.DebtDueDate).ToList();
-        //        int totalBalance = GetTotalBalance();
-
-        //        foreach (var debt in pendingDebts)
-        //        {
-        //            // Check if the balance is sufficient to clear the debt
-        //            if (debt.DebtAmount <= totalBalance)
-        //            {
-        //                debt.isCleared = true;
-        //                _database.Update(debt);
-
-        //                // Deduct the cleared debt amount from the current balance
-        //                totalBalance -= debt.DebtAmount;
-
-
-        //                Debug.WriteLine($"Cleared Debt: {debt.DebtAmount}, Remaining Balance: {totalBalance}");
-        //            }
-        //            else
-        //            {
-        //                break; // Stop processing if balance is insufficient
-        //            }
-        //        }
-
-        //        // Recalculate balance after processing debts
-        //        RecalculateBalance();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Debug.WriteLine($"Error auto-clearing debts: {ex.Message}");
-        //    }
-        //}
-
+       
 
         public bool AddCreditTransaction(Credit credit)
         {

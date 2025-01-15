@@ -228,3 +228,13 @@
 .modal.show {
     display: flex !important;
 }
+
+.no-transactions-message {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    background: #f9f9f9;
+    padding: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
