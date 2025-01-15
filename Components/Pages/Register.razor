@@ -5,6 +5,7 @@
 @using Microsoft.AspNetCore.Components.Forms
 @using BudgetMate.Components.Services
 @inject UserService UserService
+@using BCrypt.Net
 
 
 
@@ -163,10 +164,11 @@
 
         try
         {
+            string hashedPassword = BCrypt.HashPassword(password);
             var user = new User
                 {
                     Username = username,
-                    Password = password,
+                    Password = hashedPassword,
                     PreferredCurrency = currency
                 };
 
