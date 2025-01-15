@@ -701,7 +701,16 @@ h3[b-v5hdeoumal] {
 .modal.show[b-v5hdeoumal] {
     display: flex !important;
 }
-/* /Components/Pages/Home.razor.rz.scp.css */
+
+.no-transactions-message[b-v5hdeoumal] {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    background: #f9f9f9;
+    padding: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
 /* /Components/Pages/Overview.razor.rz.scp.css */
 h1[b-hjwq8akmqr] {
     font-weight: bold;

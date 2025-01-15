@@ -246,6 +246,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
                     _database.Insert(new Transaction
                     {
                         UserId = _currentUser.UserId,
+                        TransactionTitle = debt.DebtTransactionTitle,
                         TransactionDate = DateTime.Now.ToString("yyyy-MM-dd"),
                         Amount = debt.DebtAmount,
                         Type = "Debt Cleared",
