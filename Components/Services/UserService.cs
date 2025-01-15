@@ -200,7 +200,6 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
                 _database.BeginTransaction();
 
-                // Step 1: Insert into Transaction table first
                 var transaction = new Transaction
                 {
                     UserId = _currentUser.UserId,
@@ -215,7 +214,6 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
                 // Retrieve the generated TransactionID
                 int transactionId = _database.ExecuteScalar<int>("SELECT last_insert_rowid()");
 
-                // Step 2: Insert into Debit table with the retrieved TransactionID
                 debit.TransactionID = transactionId;
                 _database.Insert(debit);
 
@@ -296,10 +294,8 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
                 _database.Insert(transaction);
 
-                // Retrieve the generated TransactionID
                 int transactionId = _database.ExecuteScalar<int>("SELECT last_insert_rowid()");
 
-                // Step 2: Insert into Credit table with the retrieved TransactionID
                 credit.TransactionID = transactionId;
                 _database.Insert(credit);
 
@@ -330,7 +326,6 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
                 _database.BeginTransaction();
 
-                // Step 1: Insert into Transaction table first
                 var transaction = new Transaction
                 {
                     UserId = _currentUser.UserId,
@@ -342,10 +337,8 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
                 _database.Insert(transaction);
 
-                // Retrieve the generated TransactionID
                 int transactionId = _database.ExecuteScalar<int>("SELECT last_insert_rowid()");
 
-                // Step 2: Insert into Debt table with the retrieved TransactionID
                 debt.TransactionID = transactionId;
                 _database.Insert(debt);
 

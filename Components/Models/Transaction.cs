@@ -9,11 +9,11 @@ namespace BudgetMate.Components.Models
         public int TransactionID { get; set; }
 
         [Indexed]
-        public int UserId { get; set; } // FK -> User
+        public int UserId { get; set; } 
 
         public string TransactionDate { get; set; }
         public int Amount { get; set; }
-        public string Type { get; set; } // Debit, Credit, Debt
+        public string Type { get; set; } 
         public string Tags { get; set; }
         public string Note { get; set; }
 

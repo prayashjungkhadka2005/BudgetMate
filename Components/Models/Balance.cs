@@ -13,7 +13,7 @@
         public int BalanceId { get; set; }
 
         [Indexed]
-        public int UserId { get; set; } // FK -> User
+        public int UserId { get; set; } 
 
         public int TotalBalance { get; set; }
     }

@@ -14,7 +14,7 @@ namespace BudgetMate.Components.Models
 
         [Indexed]
         public int UserId { get; set; }
-        public int TransactionID { get; set; }  // Foreign Key to Transaction
+        public int TransactionID { get; set; }  
 
         public string DebitTransactionTitle { get; set; }
         public int DebitAmount { get; set; }
