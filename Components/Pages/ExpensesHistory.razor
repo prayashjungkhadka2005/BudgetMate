@@ -48,6 +48,7 @@
     <thead>
         <tr>
             <th>Date <button @onclick="SortByDate">⇅</button></th>
+            <th>Title</th>
             <th>Amount</th>
             <th>Tags/Source</th>
             <th>Note</th>
@@ -69,6 +70,8 @@
                 <tr>
 
                     <td>@transaction.TransactionDate</td>
+                    <td>@transaction.TransactionTitle</td>
+
                     <td>@currencySymbol @transaction.Amount</td>
                     <td>@string.Join(", ", string.IsNullOrEmpty(transaction.Tags) ? new List<string>() : transaction.Tags.Split(',').ToList())</td>
                     <td>@(transaction.Note ?? "No note added")</td>
@@ -143,7 +146,7 @@
                         && (string.IsNullOrEmpty(selectedTag) || (t.Tags ?? "").Contains(selectedTag))
                         && (!fromDate.HasValue || DateTime.Parse(t.TransactionDate) >= fromDate.Value)
                         && (!toDate.HasValue || DateTime.Parse(t.TransactionDate) <= toDate.Value)
-                        && (string.IsNullOrEmpty(searchQuery) || (t.Note ?? "").Contains(searchQuery, StringComparison.OrdinalIgnoreCase)))
+                        && (string.IsNullOrEmpty(searchQuery) || (t.TransactionTitle ?? "").Contains(searchQuery, StringComparison.OrdinalIgnoreCase)))
             .OrderByDescending(t => DateTime.Parse(t.TransactionDate)) // Fix sorting
             .ToList();
     }

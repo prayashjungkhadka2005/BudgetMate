@@ -25,7 +25,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
                 Directory.CreateDirectory(folderPath);
             }
 
-            _dbPath = Path.Combine(folderPath, "BudgetMate.db3");
+            _dbPath = Path.Combine(folderPath, "BudgetMateDatabase.db3");
 
             _database = new SQLiteConnection(_dbPath);
 
@@ -108,6 +108,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
                 var transaction = new Transaction
                 {
                     UserId = _currentUser.UserId,
+                    TransactionTitle = debit.DebitTransactionTitle,
                     TransactionDate = debit.DebitTransactionDate,
                     Amount = debit.DebitAmount,
                     Type = "Debit",
@@ -152,10 +153,10 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
                 _database.BeginTransaction();
 
-                // Step 1: Insert into Transaction table first
                 var transaction = new Transaction
                 {
                     UserId = _currentUser.UserId,
+                    TransactionTitle = credit.CreditTransactionTitle,
                     TransactionDate = credit.CreditTransactionDate,
                     Amount = credit.CreditAmount,
                     Type = "Credit",
@@ -199,6 +200,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
                 var transaction = new Transaction
                 {
                     UserId = _currentUser.UserId,
+                    TransactionTitle = debt.DebtTransactionTitle,
                     TransactionDate = debt.DebtTransactionDate,
                     Amount = debt.DebtAmount,
                     Type = "Debt",

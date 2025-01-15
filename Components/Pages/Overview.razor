@@ -92,6 +92,7 @@
             <thead>
                 <tr>
                     <th>S.N</th>
+                    <th>Title</th>
                     <th>Amount</th>
                     <th>Transaction Type</th>
                     <th>Tags</th>
@@ -110,6 +111,7 @@
                     {
                         <tr>
                             <td>@(transaction.index + 1)</td>
+                            <td>@transaction.value.TransactionTitle</td>
                             <td>@currencySymbol @transaction.value.Amount</td>
                             <td>@transaction.value.Type</td>
                             <td>@string.Join(", ", string.IsNullOrEmpty(transaction.value.Tags) ? new List<string>() : transaction.value.Tags.Split(',').ToList())</td>
@@ -126,6 +128,7 @@
             <thead>
                 <tr>
                     <th>S.N</th>
+                    <th>Title</th>
                     <th>Amount</th>
                     <th>Transaction Type</th>
                     <th>Tags</th>
@@ -144,6 +147,7 @@
                     {
                         <tr>
                             <td>@(transaction.index + 1)</td>
+                            <td>@transaction.value.TransactionTitle</td>
                             <td>@currencySymbol @transaction.value.Amount</td>
                             <td>@transaction.value.Type</td>
                             <td>@string.Join(", ", string.IsNullOrEmpty(transaction.value.Tags) ? new List<string>() : transaction.value.Tags.Split(',').ToList())</td>

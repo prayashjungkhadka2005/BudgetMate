@@ -10,6 +10,7 @@ namespace BudgetMate.Components.Models
 
         [Indexed]
         public int UserId { get; set; } 
+        public string TransactionTitle { get; set; }
 
         public string TransactionDate { get; set; }
         public int Amount { get; set; }
