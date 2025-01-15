@@ -44,7 +44,8 @@
 
 .nav-item[b-ah7ugpknd2]{
     margin-top: 0.3rem;
-    font-size: 15.5px;
+    font-size: 16.5px;
+    
 }
 
 .nav-item span[b-ah7ugpknd2] {
@@ -81,9 +82,11 @@
         }
 
 .nav-scrollable[b-ah7ugpknd2] {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 3.5rem); 
+    overflow-y: auto;
 }
-
 .navbar-toggler:checked ~ .nav-scrollable[b-ah7ugpknd2] {
     display: block;
 }
@@ -100,13 +103,48 @@
     gap: 0.5rem; 
 }
 
+.nav-content[b-ah7ugpknd2] {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.nav-spacer[b-ah7ugpknd2] {
+    flex-grow: 1;
+}
+
+.logout-button-container[b-ah7ugpknd2] {
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.logout-button[b-ah7ugpknd2] {
+    background-color: #dc3545; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+    .logout-button:hover[b-ah7ugpknd2] {
+        background-color: #c82333;
+    }
+
 @media (min-width: 641px) {
     .navbar-toggler[b-ah7ugpknd2] {
         display: none;
     }
 
     .nav-scrollable[b-ah7ugpknd2] {
-        display: block;
+        display: flex;
+        flex-direction: column;
         height: calc(100vh - 3.5rem);
         overflow-y: auto;
     }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uNaVQpKdHvTniFM7okZGpA54x9DC5amSI6CFkd2DXEU=",
+  "Hash": "fKRdhYwH33mBgkisRGnRzXb7NFplCg9MWbk9n3Sndqc=",
   "Source": "BudgetMate",
   "BasePath": "/",
   "Mode": "Root",
@@ -80,12 +80,12 @@
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\g9f1ckn6yb-dvjbqp6hvw.gz",
+      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\g9f1ckn6yb-gvhgvq09ep.gz",
       "SourceId": "BudgetMate",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "BudgetMate#[.{fingerprint=dvjbqp6hvw}]!.bundle.scp.css.gz",
+      "RelativePath": "BudgetMate#[.{fingerprint=gvhgvq09ep}]!.bundle.scp.css.gz",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Alternative",
@@ -94,8 +94,8 @@
       "RelatedAsset": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "o0lu7kuaxx",
-      "Integrity": "GKN6QIBlMa/nR1J52CULMll1WFgxQw2M5Iel7MA4I5A=",
+      "Fingerprint": "m6ypip9plb",
+      "Integrity": "smA5tR+unbbbU4QfDAfbMGLstWsVhz3DHeL9Rz7VS/g=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css"
@@ -164,12 +164,12 @@
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\g9f1ckn6yb-dvjbqp6hvw.br",
+      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\g9f1ckn6yb-gvhgvq09ep.br",
       "SourceId": "BudgetMate",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\",
       "BasePath": "/",
-      "RelativePath": "BudgetMate#[.{fingerprint=dvjbqp6hvw}]!.bundle.scp.css.br",
+      "RelativePath": "BudgetMate#[.{fingerprint=gvhgvq09ep}]!.bundle.scp.css.br",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Alternative",
@@ -178,19 +178,19 @@
       "RelatedAsset": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "br",
-      "Fingerprint": "o1mc0p3t7s",
-      "Integrity": "nG6UM5mNJwo1C/Awp/7Bw+/i/mx76MMYxju2BoAdwNw=",
+      "Fingerprint": "ivnz7dyz7e",
+      "Integrity": "nv5YiX5K/vR704Qcc5XzTnGk64CvM+g0Qi/l56SB+4Y=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\s2nq3vjt16-dvjbqp6hvw.br",
+      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\s2nq3vjt16-gvhgvq09ep.br",
       "SourceId": "BudgetMate",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\",
       "BasePath": "/",
-      "RelativePath": "BudgetMate#[.{fingerprint=dvjbqp6hvw}]?.styles.css.br",
+      "RelativePath": "BudgetMate#[.{fingerprint=gvhgvq09ep}]?.styles.css.br",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Alternative",
@@ -199,8 +199,8 @@
       "RelatedAsset": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\scopedcss\\bundle\\BudgetMate.styles.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "br",
-      "Fingerprint": "o1mc0p3t7s",
-      "Integrity": "nG6UM5mNJwo1C/Awp/7Bw+/i/mx76MMYxju2BoAdwNw=",
+      "Fingerprint": "ivnz7dyz7e",
+      "Integrity": "nv5YiX5K/vR704Qcc5XzTnGk64CvM+g0Qi/l56SB+4Y=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\scopedcss\\bundle\\BudgetMate.styles.css"
@@ -227,12 +227,12 @@
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\wwwroot\\index.html"
     },
     {
-      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\s2nq3vjt16-dvjbqp6hvw.gz",
+      "Identity": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\s2nq3vjt16-gvhgvq09ep.gz",
       "SourceId": "BudgetMate",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "BudgetMate#[.{fingerprint=dvjbqp6hvw}]?.styles.css.gz",
+      "RelativePath": "BudgetMate#[.{fingerprint=gvhgvq09ep}]?.styles.css.gz",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Alternative",
@@ -241,8 +241,8 @@
       "RelatedAsset": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\scopedcss\\bundle\\BudgetMate.styles.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "o0lu7kuaxx",
-      "Integrity": "GKN6QIBlMa/nR1J52CULMll1WFgxQw2M5Iel7MA4I5A=",
+      "Fingerprint": "m6ypip9plb",
+      "Integrity": "smA5tR+unbbbU4QfDAfbMGLstWsVhz3DHeL9Rz7VS/g=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\scopedcss\\bundle\\BudgetMate.styles.css"
@@ -283,8 +283,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "dvjbqp6hvw",
-      "Integrity": "p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA=",
+      "Fingerprint": "gvhgvq09ep",
+      "Integrity": "fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\scopedcss\\bundle\\BudgetMate.styles.css"
@@ -304,8 +304,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "dvjbqp6hvw",
-      "Integrity": "p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA=",
+      "Fingerprint": "gvhgvq09ep",
+      "Integrity": "fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css"
@@ -522,12 +522,12 @@
     },
     {
       "Route": "BudgetMate.bundle.scp.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\g9f1ckn6yb-dvjbqp6hvw.gz",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\g9f1ckn6yb-gvhgvq09ep.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000256607647"
+          "Quality": "0.000242541838"
         }
       ],
       "ResponseHeaders": [
@@ -537,15 +537,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3896"
+          "Value": "4122"
         },
         {
           "Name": "ETag",
-          "Value": "\"GKN6QIBlMa/nR1J52CULMll1WFgxQw2M5Iel7MA4I5A=\""
+          "Value": "\"smA5tR+unbbbU4QfDAfbMGLstWsVhz3DHeL9Rz7VS/g=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -565,24 +565,24 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA=\""
+          "Value": "W/\"fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA="
+          "Value": "sha256-fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc="
         }
       ]
     },
     {
       "Route": "BudgetMate.bundle.scp.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\g9f1ckn6yb-dvjbqp6hvw.br",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\g9f1ckn6yb-gvhgvq09ep.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "br",
-          "Quality": "0.000306748466"
+          "Quality": "0.000290951411"
         }
       ],
       "ResponseHeaders": [
@@ -592,15 +592,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3259"
+          "Value": "3436"
         },
         {
           "Name": "ETag",
-          "Value": "\"nG6UM5mNJwo1C/Awp/7Bw+/i/mx76MMYxju2BoAdwNw=\""
+          "Value": "\"nv5YiX5K/vR704Qcc5XzTnGk64CvM+g0Qi/l56SB+4Y=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -620,13 +620,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA=\""
+          "Value": "W/\"fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA="
+          "Value": "sha256-fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc="
         }
       ]
     },
@@ -641,7 +641,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "23133"
+          "Value": "25129"
         },
         {
           "Name": "Content-Type",
@@ -649,11 +649,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA=\""
+          "Value": "\"fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -663,13 +663,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA="
+          "Value": "sha256-fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc="
         }
       ]
     },
     {
       "Route": "BudgetMate.bundle.scp.css.br",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\g9f1ckn6yb-dvjbqp6hvw.br",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\g9f1ckn6yb-gvhgvq09ep.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -678,7 +678,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3259"
+          "Value": "3436"
         },
         {
           "Name": "Content-Type",
@@ -686,11 +686,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"nG6UM5mNJwo1C/Awp/7Bw+/i/mx76MMYxju2BoAdwNw=\""
+          "Value": "\"nv5YiX5K/vR704Qcc5XzTnGk64CvM+g0Qi/l56SB+4Y=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -708,13 +708,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-nG6UM5mNJwo1C/Awp/7Bw+/i/mx76MMYxju2BoAdwNw="
+          "Value": "sha256-nv5YiX5K/vR704Qcc5XzTnGk64CvM+g0Qi/l56SB+4Y="
         }
       ]
     },
     {
       "Route": "BudgetMate.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\g9f1ckn6yb-dvjbqp6hvw.gz",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\g9f1ckn6yb-gvhgvq09ep.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -723,7 +723,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3896"
+          "Value": "4122"
         },
         {
           "Name": "Content-Type",
@@ -731,11 +731,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"GKN6QIBlMa/nR1J52CULMll1WFgxQw2M5Iel7MA4I5A=\""
+          "Value": "\"smA5tR+unbbbU4QfDAfbMGLstWsVhz3DHeL9Rz7VS/g=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -753,18 +753,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-GKN6QIBlMa/nR1J52CULMll1WFgxQw2M5Iel7MA4I5A="
+          "Value": "sha256-smA5tR+unbbbU4QfDAfbMGLstWsVhz3DHeL9Rz7VS/g="
         }
       ]
     },
     {
-      "Route": "BudgetMate.dvjbqp6hvw.bundle.scp.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\g9f1ckn6yb-dvjbqp6hvw.gz",
+      "Route": "BudgetMate.gvhgvq09ep.bundle.scp.css",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\g9f1ckn6yb-gvhgvq09ep.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000256607647"
+          "Quality": "0.000242541838"
         }
       ],
       "ResponseHeaders": [
@@ -774,15 +774,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3896"
+          "Value": "4122"
         },
         {
           "Name": "ETag",
-          "Value": "\"GKN6QIBlMa/nR1J52CULMll1WFgxQw2M5Iel7MA4I5A=\""
+          "Value": "\"smA5tR+unbbbU4QfDAfbMGLstWsVhz3DHeL9Rz7VS/g=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -802,13 +802,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA=\""
+          "Value": "W/\"fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "dvjbqp6hvw"
+          "Value": "gvhgvq09ep"
         },
         {
           "Name": "label",
@@ -816,18 +816,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA="
+          "Value": "sha256-fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc="
         }
       ]
     },
     {
-      "Route": "BudgetMate.dvjbqp6hvw.bundle.scp.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\g9f1ckn6yb-dvjbqp6hvw.br",
+      "Route": "BudgetMate.gvhgvq09ep.bundle.scp.css",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\g9f1ckn6yb-gvhgvq09ep.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "br",
-          "Quality": "0.000306748466"
+          "Quality": "0.000290951411"
         }
       ],
       "ResponseHeaders": [
@@ -837,15 +837,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3259"
+          "Value": "3436"
         },
         {
           "Name": "ETag",
-          "Value": "\"nG6UM5mNJwo1C/Awp/7Bw+/i/mx76MMYxju2BoAdwNw=\""
+          "Value": "\"nv5YiX5K/vR704Qcc5XzTnGk64CvM+g0Qi/l56SB+4Y=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -865,13 +865,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA=\""
+          "Value": "W/\"fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "dvjbqp6hvw"
+          "Value": "gvhgvq09ep"
         },
         {
           "Name": "label",
@@ -879,12 +879,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA="
+          "Value": "sha256-fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc="
         }
       ]
     },
     {
-      "Route": "BudgetMate.dvjbqp6hvw.bundle.scp.css",
+      "Route": "BudgetMate.gvhgvq09ep.bundle.scp.css",
       "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\scopedcss\\projectbundle\\BudgetMate.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -894,7 +894,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "23133"
+          "Value": "25129"
         },
         {
           "Name": "Content-Type",
@@ -902,11 +902,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA=\""
+          "Value": "\"fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -916,7 +916,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "dvjbqp6hvw"
+          "Value": "gvhgvq09ep"
         },
         {
           "Name": "label",
@@ -924,13 +924,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA="
+          "Value": "sha256-fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc="
         }
       ]
     },
     {
-      "Route": "BudgetMate.dvjbqp6hvw.bundle.scp.css.br",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\g9f1ckn6yb-dvjbqp6hvw.br",
+      "Route": "BudgetMate.gvhgvq09ep.bundle.scp.css.br",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\g9f1ckn6yb-gvhgvq09ep.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -939,7 +939,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3259"
+          "Value": "3436"
         },
         {
           "Name": "Content-Type",
@@ -947,11 +947,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"nG6UM5mNJwo1C/Awp/7Bw+/i/mx76MMYxju2BoAdwNw=\""
+          "Value": "\"nv5YiX5K/vR704Qcc5XzTnGk64CvM+g0Qi/l56SB+4Y=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -969,7 +969,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "dvjbqp6hvw"
+          "Value": "gvhgvq09ep"
         },
         {
           "Name": "label",
@@ -977,13 +977,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-nG6UM5mNJwo1C/Awp/7Bw+/i/mx76MMYxju2BoAdwNw="
+          "Value": "sha256-nv5YiX5K/vR704Qcc5XzTnGk64CvM+g0Qi/l56SB+4Y="
         }
       ]
     },
     {
-      "Route": "BudgetMate.dvjbqp6hvw.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\g9f1ckn6yb-dvjbqp6hvw.gz",
+      "Route": "BudgetMate.gvhgvq09ep.bundle.scp.css.gz",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\g9f1ckn6yb-gvhgvq09ep.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -992,7 +992,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3896"
+          "Value": "4122"
         },
         {
           "Name": "Content-Type",
@@ -1000,11 +1000,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"GKN6QIBlMa/nR1J52CULMll1WFgxQw2M5Iel7MA4I5A=\""
+          "Value": "\"smA5tR+unbbbU4QfDAfbMGLstWsVhz3DHeL9Rz7VS/g=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1022,7 +1022,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "dvjbqp6hvw"
+          "Value": "gvhgvq09ep"
         },
         {
           "Name": "label",
@@ -1030,18 +1030,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-GKN6QIBlMa/nR1J52CULMll1WFgxQw2M5Iel7MA4I5A="
+          "Value": "sha256-smA5tR+unbbbU4QfDAfbMGLstWsVhz3DHeL9Rz7VS/g="
         }
       ]
     },
     {
-      "Route": "BudgetMate.dvjbqp6hvw.styles.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\s2nq3vjt16-dvjbqp6hvw.br",
+      "Route": "BudgetMate.gvhgvq09ep.styles.css",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\s2nq3vjt16-gvhgvq09ep.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "br",
-          "Quality": "0.000306748466"
+          "Quality": "0.000290951411"
         }
       ],
       "ResponseHeaders": [
@@ -1051,15 +1051,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3259"
+          "Value": "3436"
         },
         {
           "Name": "ETag",
-          "Value": "\"nG6UM5mNJwo1C/Awp/7Bw+/i/mx76MMYxju2BoAdwNw=\""
+          "Value": "\"nv5YiX5K/vR704Qcc5XzTnGk64CvM+g0Qi/l56SB+4Y=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1079,13 +1079,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA=\""
+          "Value": "W/\"fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "dvjbqp6hvw"
+          "Value": "gvhgvq09ep"
         },
         {
           "Name": "label",
@@ -1093,18 +1093,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA="
+          "Value": "sha256-fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc="
         }
       ]
     },
     {
-      "Route": "BudgetMate.dvjbqp6hvw.styles.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\s2nq3vjt16-dvjbqp6hvw.gz",
+      "Route": "BudgetMate.gvhgvq09ep.styles.css",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\s2nq3vjt16-gvhgvq09ep.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000256607647"
+          "Quality": "0.000242541838"
         }
       ],
       "ResponseHeaders": [
@@ -1114,15 +1114,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3896"
+          "Value": "4122"
         },
         {
           "Name": "ETag",
-          "Value": "\"GKN6QIBlMa/nR1J52CULMll1WFgxQw2M5Iel7MA4I5A=\""
+          "Value": "\"smA5tR+unbbbU4QfDAfbMGLstWsVhz3DHeL9Rz7VS/g=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1142,13 +1142,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA=\""
+          "Value": "W/\"fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "dvjbqp6hvw"
+          "Value": "gvhgvq09ep"
         },
         {
           "Name": "label",
@@ -1156,12 +1156,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA="
+          "Value": "sha256-fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc="
         }
       ]
     },
     {
-      "Route": "BudgetMate.dvjbqp6hvw.styles.css",
+      "Route": "BudgetMate.gvhgvq09ep.styles.css",
       "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\scopedcss\\bundle\\BudgetMate.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1171,7 +1171,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "23133"
+          "Value": "25129"
         },
         {
           "Name": "Content-Type",
@@ -1179,11 +1179,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA=\""
+          "Value": "\"fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1193,7 +1193,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "dvjbqp6hvw"
+          "Value": "gvhgvq09ep"
         },
         {
           "Name": "label",
@@ -1201,13 +1201,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA="
+          "Value": "sha256-fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc="
         }
       ]
     },
     {
-      "Route": "BudgetMate.dvjbqp6hvw.styles.css.br",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\s2nq3vjt16-dvjbqp6hvw.br",
+      "Route": "BudgetMate.gvhgvq09ep.styles.css.br",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\s2nq3vjt16-gvhgvq09ep.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1216,7 +1216,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3259"
+          "Value": "3436"
         },
         {
           "Name": "Content-Type",
@@ -1224,11 +1224,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"nG6UM5mNJwo1C/Awp/7Bw+/i/mx76MMYxju2BoAdwNw=\""
+          "Value": "\"nv5YiX5K/vR704Qcc5XzTnGk64CvM+g0Qi/l56SB+4Y=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1246,7 +1246,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "dvjbqp6hvw"
+          "Value": "gvhgvq09ep"
         },
         {
           "Name": "label",
@@ -1254,13 +1254,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-nG6UM5mNJwo1C/Awp/7Bw+/i/mx76MMYxju2BoAdwNw="
+          "Value": "sha256-nv5YiX5K/vR704Qcc5XzTnGk64CvM+g0Qi/l56SB+4Y="
         }
       ]
     },
     {
-      "Route": "BudgetMate.dvjbqp6hvw.styles.css.gz",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\s2nq3vjt16-dvjbqp6hvw.gz",
+      "Route": "BudgetMate.gvhgvq09ep.styles.css.gz",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\s2nq3vjt16-gvhgvq09ep.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1269,7 +1269,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3896"
+          "Value": "4122"
         },
         {
           "Name": "Content-Type",
@@ -1277,11 +1277,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"GKN6QIBlMa/nR1J52CULMll1WFgxQw2M5Iel7MA4I5A=\""
+          "Value": "\"smA5tR+unbbbU4QfDAfbMGLstWsVhz3DHeL9Rz7VS/g=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1299,7 +1299,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "dvjbqp6hvw"
+          "Value": "gvhgvq09ep"
         },
         {
           "Name": "label",
@@ -1307,18 +1307,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-GKN6QIBlMa/nR1J52CULMll1WFgxQw2M5Iel7MA4I5A="
+          "Value": "sha256-smA5tR+unbbbU4QfDAfbMGLstWsVhz3DHeL9Rz7VS/g="
         }
       ]
     },
     {
       "Route": "BudgetMate.styles.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\s2nq3vjt16-dvjbqp6hvw.br",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\s2nq3vjt16-gvhgvq09ep.br",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "br",
-          "Quality": "0.000306748466"
+          "Quality": "0.000290951411"
         }
       ],
       "ResponseHeaders": [
@@ -1328,15 +1328,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3259"
+          "Value": "3436"
         },
         {
           "Name": "ETag",
-          "Value": "\"nG6UM5mNJwo1C/Awp/7Bw+/i/mx76MMYxju2BoAdwNw=\""
+          "Value": "\"nv5YiX5K/vR704Qcc5XzTnGk64CvM+g0Qi/l56SB+4Y=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1356,24 +1356,24 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA=\""
+          "Value": "W/\"fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA="
+          "Value": "sha256-fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc="
         }
       ]
     },
     {
       "Route": "BudgetMate.styles.css",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\s2nq3vjt16-dvjbqp6hvw.gz",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\s2nq3vjt16-gvhgvq09ep.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000256607647"
+          "Quality": "0.000242541838"
         }
       ],
       "ResponseHeaders": [
@@ -1383,15 +1383,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3896"
+          "Value": "4122"
         },
         {
           "Name": "ETag",
-          "Value": "\"GKN6QIBlMa/nR1J52CULMll1WFgxQw2M5Iel7MA4I5A=\""
+          "Value": "\"smA5tR+unbbbU4QfDAfbMGLstWsVhz3DHeL9Rz7VS/g=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1411,13 +1411,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA=\""
+          "Value": "W/\"fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA="
+          "Value": "sha256-fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc="
         }
       ]
     },
@@ -1432,7 +1432,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "23133"
+          "Value": "25129"
         },
         {
           "Name": "Content-Type",
@@ -1440,11 +1440,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA=\""
+          "Value": "\"fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1454,13 +1454,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-p8iHxKh9gmrzfZLl2JduVUtzuXRd/LyEMCB4MP8DNdA="
+          "Value": "sha256-fCVtRlBeYS5MG/3paK0ON5YSI/dQjemoulSR9smokgc="
         }
       ]
     },
     {
       "Route": "BudgetMate.styles.css.br",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\s2nq3vjt16-dvjbqp6hvw.br",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\publish\\s2nq3vjt16-gvhgvq09ep.br",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1469,7 +1469,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3259"
+          "Value": "3436"
         },
         {
           "Name": "Content-Type",
@@ -1477,11 +1477,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"nG6UM5mNJwo1C/Awp/7Bw+/i/mx76MMYxju2BoAdwNw=\""
+          "Value": "\"nv5YiX5K/vR704Qcc5XzTnGk64CvM+g0Qi/l56SB+4Y=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1499,13 +1499,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-nG6UM5mNJwo1C/Awp/7Bw+/i/mx76MMYxju2BoAdwNw="
+          "Value": "sha256-nv5YiX5K/vR704Qcc5XzTnGk64CvM+g0Qi/l56SB+4Y="
         }
       ]
     },
     {
       "Route": "BudgetMate.styles.css.gz",
-      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\s2nq3vjt16-dvjbqp6hvw.gz",
+      "AssetFile": "C:\\Users\\User\\source\\repos\\BudgetMate\\obj\\Debug\\net9.0-maccatalyst\\maccatalyst-x64\\compressed\\s2nq3vjt16-gvhgvq09ep.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1514,7 +1514,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3896"
+          "Value": "4122"
         },
         {
           "Name": "Content-Type",
@@ -1522,11 +1522,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"GKN6QIBlMa/nR1J52CULMll1WFgxQw2M5Iel7MA4I5A=\""
+          "Value": "\"smA5tR+unbbbU4QfDAfbMGLstWsVhz3DHeL9Rz7VS/g=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 13 Jan 2025 15:12:06 GMT"
+          "Value": "Wed, 15 Jan 2025 09:25:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1544,7 +1544,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-GKN6QIBlMa/nR1J52CULMll1WFgxQw2M5Iel7MA4I5A="
+          "Value": "sha256-smA5tR+unbbbU4QfDAfbMGLstWsVhz3DHeL9Rz7VS/g="
         }
       ]
     },

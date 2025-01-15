@@ -25,7 +25,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
                 Directory.CreateDirectory(folderPath);
             }
 
-            _dbPath = Path.Combine(folderPath, "BudgetMateDatabase.db3");
+            _dbPath = Path.Combine(folderPath, "BudgetMate.db3");
 
             _database = new SQLiteConnection(_dbPath);
 
@@ -771,6 +771,10 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 
+        public string GetLoggedInUsername()
+        {
+            return _currentUser?.Username ?? "Guest";
+        }
 
 
 
