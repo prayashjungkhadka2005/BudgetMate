@@ -4,6 +4,7 @@
 @using BudgetMate.Components.Layout
 @using BudgetMate.Components.Models
 @inject BudgetMate.Components.Services.UserService UserService
+@inject NotificationService NotificationService
 
 <div class="dash-title">
     <h1>Dashboard</h1>
@@ -164,11 +165,6 @@
     <h3 class="table-title">Pending Debts</h3>
 
 
-    @if (!string.IsNullOrEmpty(message))
-    {
-        <div class="@((isSuccess ? "success" : "error"))">@message</div>
-    }
-
     <table class="styled-table">
         <thead>
             <tr>
@@ -178,7 +174,7 @@
                 <th>Actions</th>
             </tr>
         </thead>
-        <tbody style="background-color: lightgoldenrodyellow">
+        <tbody>
             @if (pendingDebts == null || !pendingDebts.Any())
             {
                 <tr>
@@ -416,7 +412,7 @@
         }
         else
         {
-            message = "Not enough balance to clear the debt";
+            NotificationService.ShowMessage("Not enough balance to clear the debt", "error");
 
             // JSRuntime.InvokeVoidAsync("alert", "Not enough balance to clear the debt.");
         }
