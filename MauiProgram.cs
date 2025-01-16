@@ -21,6 +21,8 @@ namespace BudgetMate
     		builder.Services.AddBlazorWebViewDeveloperTools();  
     		builder.Logging.AddDebug();
             builder.Services.AddSingleton<UserService>();
+            builder.Services.AddSingleton<NotificationService>();
+
 #endif
 
             return builder.Build();

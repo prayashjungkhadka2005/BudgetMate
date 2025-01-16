@@ -1,0 +1,104 @@
+﻿@using BudgetMate.Components.Services
+@inject BudgetMate.Components.Services.NotificationService NotificationService
+
+@if (!string.IsNullOrEmpty(Message))
+{
+    <div class="notification-container @CssClass">
+        <div class="notification-content">
+            <div class="icon">
+                <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <div class="message">
+                <strong>@Message</strong>
+
+            </div>
+            <button class="close-btn" @onclick="DismissMessage">✖</button>
+        </div>
+    </div>
+}
+
+<style>
+    .notification-container {
+        position: fixed;
+        top: 70px;
+        right: 20px;
+        width: 350px;
+        background: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 15px;
+        border-left: 6px solid;
+        border-radius: 8px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .notification-content {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .icon {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    .message {
+        flex-grow: 1;
+    }
+
+    .close-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        color: gray;
+    }
+
+        .close-btn:hover {
+            color: black;
+        }
+
+    .alert-success {
+        border-left-color: #28a745; 
+        color: #155724;
+    }
+
+    .alert-danger {
+        border-left-color: #dc3545; 
+        color: #721c24;
+    }
+</style>
+
+@code {
+    private string Message = "";
+    private string Title = "";
+    private string CssClass = "";
+
+    protected override void OnInitialized()
+    {
+        NotificationService.OnMessageChanged += (message, type) =>
+        {
+            
+            Message = message;
+            CssClass = type == "success" ? "alert-success" : "alert-danger";
+            StateHasChanged();
+
+            Task.Delay(2000).ContinueWith(_ =>
+            {
+                Message = "";
+                StateHasChanged();
+            }, TaskScheduler.FromCurrentSynchronizationContext());
+        };
+    }
+
+    private void DismissMessage()
+    {
+        Message = "";
+        StateHasChanged();
+    }
+}

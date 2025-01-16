@@ -7,7 +7,7 @@
 @using BudgetMate.Components.Services
 @inject BudgetMate.Components.Services.UserService UserService
 @inject IJSRuntime JSRuntime
-
+@inject NotificationService NotificationService
 
 
 <h3>Transactions</h3>
@@ -15,14 +15,7 @@
 <div class="transaction-container">
     <div class="transaction-box">
         <form>
-            <div class="transaction-row">
-                <div class="trow-field" >
-                    @if (!string.IsNullOrEmpty(message))
-                    {
-                        <div class="@((isSuccess ? "success" : "error"))">@message</div>
-                    }
-                </div>
-            </div>
+
 
 
             <div class="transaction-row">
@@ -85,15 +78,14 @@
     </div>
 </div>
 
+
 @code {
-    private string transactiontype = "Cashout";
+    private string transactiontype = "Cashin";
     private string transactiontitle;
     private int transactionamount;
     private DateTime debtduedate = DateTime.MinValue;
     private string sourceofdebt;
     private string customtag;
-    private string message;
-    private bool isSuccess = false;
     private static string selectedTag;
     private int currentBalance;
     private string currencySymbol;
@@ -101,7 +93,7 @@
     protected override void OnInitialized()
     {
         var now = DateTime.Now;
-        debtduedate = new DateTime(now.Year, now.Month, 1); //default to current month
+        debtduedate = new DateTime(now.Year, now.Month, 1); // Default to current month
         currentBalance = UserService.GetTotalBalance();
         string userCurrency = UserService.GetUserCurrency();
         currencySymbol = userCurrency switch
@@ -122,65 +114,65 @@
 
     private async Task HandleSubmit()
     {
+        bool isEmpty = false;
+
         if (string.IsNullOrEmpty(transactiontitle) || transactionamount <= 0)
         {
-            message = "Transaction title and amount are required.";
-            isSuccess = false;
-            return;
+            isEmpty = true;
         }
 
-        if (transactiontype == "Debt" && debtduedate == DateTime.MinValue)
+        if (transactiontype == "Debt")
         {
-            message = "Please select a valid due date for debt.";
-            isSuccess = false;
-            return;
+            if (debtduedate == DateTime.MinValue || string.IsNullOrEmpty(sourceofdebt))
+            {
+                isEmpty = true;
+            }
         }
 
-        // Only check for tag selection if NOT debt
-        string transactionTags = !string.IsNullOrEmpty(customtag) ? customtag : selectedTag;
-
-        if (transactiontype != "Debt" && string.IsNullOrEmpty(transactionTags))
+        if (transactiontype != "Debt" && string.IsNullOrEmpty(customtag) && string.IsNullOrEmpty(selectedTag))
         {
-            message = "Please select or enter a tag.";
-            isSuccess = false;
+            isEmpty = true;
+        }
+
+        if (isEmpty)
+        {
+            NotificationService.ShowMessage("Empty Fields", "error");
             return;
         }
 
         var success = false;
+        var date = DateTime.Now;
+
         if (transactiontype == "Cashout")
         {
-            var date = DateTime.Now;
             var newDebit = new Debit
                 {
                     DebitTransactionTitle = transactiontitle,
                     DebitAmount = transactionamount,
-                    DebitTags = transactionTags,
+                    DebitTags = customtag ?? selectedTag,
                     DebitTransactionDate = date.ToString("yyyy-MM-dd"),
                 };
             success = UserService.AddDebitTransaction(newDebit);
+
             if (!success)
             {
-                message = "Insufficient balance";
-                isSuccess = false;
+                NotificationService.ShowMessage("Insufficient balance.", "error");
                 return;
             }
         }
         else if (transactiontype == "Cashin")
         {
-            var date = DateTime.Now;
             var newCredit = new Credit
                 {
                     CreditTransactionTitle = transactiontitle,
                     CreditAmount = transactionamount,
-                    CreditTags = transactionTags,
+                    CreditTags = customtag ?? selectedTag,
                     CreditTransactionDate = date.ToString("yyyy-MM-dd"),
                 };
             success = UserService.AddCreditTransaction(newCredit);
         }
         else if (transactiontype == "Debt")
         {
-            var date = DateTime.Now;
-            bool isCleared = false;
             var newDebt = new Debt
                 {
                     DebtTransactionTitle = transactiontitle,
@@ -188,30 +180,21 @@
                     DebtDueDate = debtduedate.ToString("yyyy-MM-dd"),
                     SourceOfDebt = sourceofdebt,
                     DebtTransactionDate = date.ToString("yyyy-MM-dd"),
-                    isCleared = isCleared,
+                    isCleared = false,
                 };
             success = UserService.AddDebtTransaction(newDebt);
         }
 
         if (success)
         {
-            message = $"{transactiontype} transaction added successfully!";
-            isSuccess = true;
+            NotificationService.ShowMessage($"{transactiontype} Successful", "success");
             ClearForm();
-            if (transactiontype == "Cashin")
-            {
-                await Task.Delay(2000);
-                NavigationManager.NavigateTo("/overview");
-            }
-            
         }
         else
         {
-            message = $"Failed to add {transactiontype} transaction.";
-            isSuccess = false;
+            NotificationService.ShowMessage("Transaction Failed", "error");
         }
     }
-
 
     private void ClearForm()
     {
@@ -220,10 +203,29 @@
         customtag = string.Empty;
         sourceofdebt = string.Empty;
         debtduedate = DateTime.MinValue;
+        selectedTag = null; 
+        JSRuntime.InvokeVoidAsync("clearSelectedTag"); //reset tag
     }
+
+
 }
 
 <script>
+        function clearSelectedTag() {
+            const allTags = document.querySelectorAll('.tag-button');
+            allTags.forEach(tag => tag.classList.remove('selected'));
+
+            const customTagInput = document.querySelector('.custom-tag-input');
+            if (customTagInput) {
+                customTagInput.style.display = 'none';
+            }
+
+            const customTagInputField = document.getElementById('custom-tag-input');
+            if (customTagInputField) {
+                customTagInputField.value = ''; 
+            }
+        }
+
  (function () {
          let selectedTag;
 
@@ -241,7 +243,7 @@
         tagsContainer.innerHTML = '';  // clear existing tags
         customTagInput.style.display = 'none';
         dueDateRow.style.display = selectedType === 'Debt' ? 'block' : 'none';
-        sourceOfDebtRow.style.display = selectedType === 'debt' ? 'block' : 'none';
+        sourceOfDebtRow.style.display = selectedType === 'Debt' ? 'block' : 'none';
         tagsRow.style.display = selectedType === 'Debt' ? 'none' : 'block';
 
            let tags = [];

@@ -4,7 +4,8 @@
 @using BudgetMate.Components.Models
 @inject NavigationManager NavigationManager
 @using Microsoft.AspNetCore.Components.Forms
-@inject BudgetMate.Components.Services.UserService UserService
+@inject UserService UserService
+@inject NotificationService NotificationService
 
 <div class="page">
     <div class="sidebar">
@@ -14,31 +15,29 @@
     <main>
         <div class="top-row">
             <div class="title">
-                Track you expenses at one stop
+
+                Track your expenses at one stop
             </div>
             <div class="title">
                 <i class="fas fa-user" style="color: darkred; margin-right: 5px;"></i>
                 <span style="color: darkred">@userName</span>
             </div>
-
-
+          
         </div>
 
-
-        <article class="content">
-            @Body
-        </article>
+       <article class="content">
+    <NotificationComponent />
+    @Body
+</article>
     </main>
 </div>
 
-
 @code {
-    private string userName;
+    private string userName = "Guest";
 
     protected override void OnInitialized()
     {
-        userName = UserService.GetLoggedInUsername();
-
+        var loggedInUser = UserService.GetCurrentUser();
+        userName = loggedInUser?.Username ?? "Guest"; 
     }
-
 }
