@@ -13,10 +13,12 @@
 <div class="filters">
     <select @bind="selectedType">
         <option value="">All Types</option>
-        <option value="Credit">Credit</option>
-        <option value="Debit">Debit</option>
+        <option value="Cashin">Cashin</option>
+        <option value="Cashout">Cashout</option>
         <option value="Debt">Debt</option>
     </select>
+
+
 
     <select @bind="selectedTag">
         <option value="">All Tags</option>
@@ -142,14 +144,22 @@
     private void ApplyFilters()
     {
         filteredTransactions = allTransactions
-            .Where(t => (string.IsNullOrEmpty(selectedType) || t.Type == selectedType)
-                        && (string.IsNullOrEmpty(selectedTag) || (t.Tags ?? "").Contains(selectedTag))
-                        && (!fromDate.HasValue || DateTime.Parse(t.TransactionDate) >= fromDate.Value)
-                        && (!toDate.HasValue || DateTime.Parse(t.TransactionDate) <= toDate.Value)
-                        && (string.IsNullOrEmpty(searchQuery) || (t.TransactionTitle ?? "").Contains(searchQuery, StringComparison.OrdinalIgnoreCase)))
-            .OrderByDescending(t => DateTime.Parse(t.TransactionDate)) // Fix sorting
+            .Where(t =>
+                (string.IsNullOrEmpty(selectedType) || t.Type.Equals(selectedType, StringComparison.OrdinalIgnoreCase)) 
+                && (string.IsNullOrEmpty(selectedTag) || (t.Tags ?? "").Contains(selectedTag, StringComparison.OrdinalIgnoreCase)) 
+                && (!fromDate.HasValue || DateTime.Parse(t.TransactionDate) >= fromDate.Value) 
+                && (!toDate.HasValue || DateTime.Parse(t.TransactionDate) <= toDate.Value)
+                && (string.IsNullOrEmpty(searchQuery) || 
+                    (t.TransactionTitle?.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) == true) ||
+                    (t.Type?.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) == true) ||
+                    (t.Tags?.Contains(searchQuery, StringComparison.OrdinalIgnoreCase) == true)))
+            .OrderByDescending(t => DateTime.Parse(t.TransactionDate))
             .ToList();
+
+        Console.WriteLine($"Filtered Transactions Count: {filteredTransactions.Count}");
     }
+
+
 
 
 
@@ -158,15 +168,22 @@
     {
         if (isSortedAscending)
         {
-            filteredTransactions = filteredTransactions.OrderBy(t => DateTime.Parse(t.TransactionDate)).ToList();
+            filteredTransactions = filteredTransactions
+                .OrderBy(t => DateTime.Parse(t.TransactionDate))
+                .ThenBy(t => t.Type)
+                .ToList();
         }
         else
         {
-            filteredTransactions = filteredTransactions.OrderByDescending(t => DateTime.Parse(t.TransactionDate)).ToList();
+            filteredTransactions = filteredTransactions
+                .OrderByDescending(t => DateTime.Parse(t.TransactionDate))
+                .ThenBy(t => t.Type)
+                .ToList();
         }
         isSortedAscending = !isSortedAscending;
         StateHasChanged();
     }
+
 
     private void OpenNoteModal(Transaction transaction)
     {
